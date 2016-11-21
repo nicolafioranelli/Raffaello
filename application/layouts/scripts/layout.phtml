@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="it" class="template-color-21DC7F">
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <?php echo $this->headTitle();?>
+    <!--<title>Leonardo - Home</title>-->
+
+    <!-- Bootstrap Core CSS -->
+    <link href="<?php echo $this->baseUrl("assets/css/bootstrap.min.css");?>" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="<?php echo $this->baseUrl("assets/css/main.css");?>" rel="stylesheet" />
+    <link id="colors" href="<?php echo $this->baseUrl("assets/css/colors/default.css");?>" rel="stylesheet" />
+    <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/responsive.css");?>" />
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/vendor.css");?>" />
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/simple-line-icons.css");?>" />
+    <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/pe-icon-7-stroke.css");?>">
+    <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/font-awesome.min.css");?>">
+    <link rel="stylesheet" href="<?php echo $this->baseUrl("calendar/calendar.css");?>">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800|Montserrat:400,700">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="<?php echo $this->baseUrl("assets/js/html5shiv.js");?>"></script>
+    <script src="<?php echo $this->baseUrl("assets/js/respond.min.js");?>"></script>
+    <![endif]-->
+    
+</head>
+
+<body>
+<!-- header ================================================== -->
+<header>
+    <div class="row-header">
+        <div class="logo">
+            <a href="<?php echo $this->url(
+                array(
+                    'controller' => 'public',
+                    'action' => 'index',
+                )
+            ); ?>" class="logo-light"></a>
+        </div>
+
+        <!-- Main Menu -->
+        <nav id="main-nav-wrap">
+            <ul class="main-navigation">
+
+                <li class="smoothscroll"><a href="<?php echo $this->url(
+                        array(
+                            'controller' => 'public',
+                            'action' => 'index',
+                        )
+                    ); ?>" title="">Home</a></li>
+
+                <li class="menu-drop"><a class="smoothscroll" href="#" title="">Aiuto <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="<?php echo $this->url(
+                                array(
+                                    'controller' => 'public',
+                                    'action' => 'faq',
+                                )
+                            ); ?>">FAQ</a></li>
+                        <li><a href="<?php echo $this->url(
+                                array(
+                                    'controller' => 'public',
+                                    'action' => 'terms',
+                                )
+                            ); ?>">Termini e condizioni</a></li>
+                    </ul>
+                </li>
+
+                <li><a class="smoothscroll" href="<?php echo $this->url(
+                        array(
+                            'controller' => 'public',
+                            'action' => 'contacts',
+                        )
+                    ); ?>" title="">Contatti</a></li>
+
+                <li class="highlight with-sep"><a href="<?php echo $this->url(
+                        array(
+                            'controller' => 'public',
+                            'action' => 'login',
+                        )
+                    ); ?>" title="">Accedi</a></li>
+
+                <li class="highlight with-sep"><a href="<?php echo $this->url(
+                        array(
+                            'controller' => 'public',
+                            'action' => 'register',
+                        )
+                    ); ?>" title="">Registrati</a></li>
+            </ul>
+
+            <!-- Mobile Menu -->
+            <ul class="main-navigation-mobile">
+
+                <li class="mobile-title"><a href="<?php echo $this->url(
+                        array(
+                            'controller' => 'public',
+                            'action' => 'index',
+                        )
+                    ); ?>" title="">Home</a></li>
+
+                <li class="mobile-title"><a href="#" title="">Aiuto </a>
+                    <ul class="mobile-content">
+                        <li><a href="<?php echo $this->url(
+                                array(
+                                    'controller' => 'public',
+                                    'action' => 'faq',
+                                )
+                            ); ?>">FAQ</a></li>
+                        <li><a href="<?php echo $this->url(
+                                array(
+                                    'controller' => 'public',
+                                    'action' => 'terms',
+                                )
+                            ); ?>">Termini e condizioni</a></li>
+                    </ul>
+                </li>
+
+                <li><a class="mobile-title" href="<?php echo $this->url(
+                        array(
+                            'controller' => 'public',
+                            'action' => 'contacts',
+                        )
+                    ); ?>" title="">Contatti</a></li>
+
+                <li class="mobile-title"><a href="<?php echo $this->url(
+                        array(
+                            'controller' => 'public',
+                            'action' => 'login',
+                        )
+                    ); ?>" title="">Accedi</a></li>
+
+                <li class="mobile-title"><a href="<?php echo $this->url(
+                        array(
+                            'controller' => 'public',
+                            'action' => 'register',
+                        )
+                    ); ?>" title="">Registrati</a></li>
+
+            </ul>
+        </nav>
+
+        <a class="menu-toggle" href="#"><span>Menu</span></a>
+    </div>
+</header>
+<!-- /header -->
+
+<?php echo $this->layout()->content; ?>
+
+<!-- footer ================================================== -->
+<footer>
+    <div class="footer-main">
+        <div class="row">
+
+            <div class="col-md-4 col-lg-4 footer-info">
+                <div class="footer-logo"></div>
+                <p>
+                    Il social network.
+                    <br> TekLab. Soluzioni per la
+                    <br> piccola e media impresa.
+                </p>
+            </div>
+
+            <!-- /footer-info -->
+            <div class="col-md-2 col-lg-2 site-links">
+                <h4>Azienda</h4>
+                <ul>
+                    <li><a href="<?php echo $this->url(
+                            array(
+                                'controller' => 'public',
+                                'action' => 'index',
+                            )
+                        ); ?>">Chi siamo</a></li>
+                    <li><a href="<?php echo $this->url(
+                            array(
+                                'controller' => 'public',
+                                'action' => 'terms',
+                            )
+                        ); ?>">Termini</a></li>
+                    <li><a href="<?php echo $this->url(
+                            array(
+                                'controller' => 'public',
+                                'action' => 'contacts',
+                            )
+                        ); ?>">Contatti</a></li>
+                </ul>
+            </div>
+
+            <!-- /social -->
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 footer-subscribe">
+                <h5 class="contact-us-ft">Contattaci</h5>
+                <p>+39 071-9536842</p>
+                <ul class="contact">
+                    <li><i class="pe-7s-map-marker"></i> Via Brecce Bianche, 4 - 60020 - Ancona (IT)</li>
+                    <li><i class="pe-7s-mail"></i> help@teklab.it</li>
+                </ul>
+            </div>
+            <!-- /subscribe -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /footer-main -->
+    <div class="footer-bottom">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                <div class="copyright">
+                    <span>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2016 - TekLab</span>
+                </div>
+                <div class="terms">
+                    <span>Terms and Conditions</span>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 top-footer">
+                <div id="go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /footer-bottom -->
+</footer>
+<!-- Preloader -->
+<div id="preloader">
+    <div id="loader"></div>
+</div>
+
+<!-- jQuery -->
+<script src="<?php echo $this->baseUrl("assets/js/jquery.min.js");?>"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="<?php echo $this->baseUrl("assets/js/bootstrap.min.js");?>"></script>
+<!-- Main -->
+<script src="<?php echo $this->baseUrl("assets/js/main.js");?>"></script>
+<!-- Preloader -->
+<script src="<?php echo $this->baseUrl("assets/js/prealoader.js");?>"></script>
+<!-- Google Map -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="<?php echo $this->baseUrl("assets/js/map.js");?>"></script>
+<script src="<?php echo $this->baseUrl("calendar/calendar.js");?>"></script>
+<script>
+    $("#nascita").bootstrapMaterialDatbePicker({
+            format:'DD/MM/YYYY',
+            lang : 'it',
+            weekStart:1,
+            cancelText: 'Annulla',
+            time: false
+        }
+    )
+</script>
+</body>
+
+</html>

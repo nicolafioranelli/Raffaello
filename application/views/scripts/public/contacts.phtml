@@ -1,0 +1,105 @@
+<html>
+<head>
+</head>
+<body>
+
+<!-- Box Contattaci -->
+<section id="hero" class="hero-contact">
+	<div id="particles-js">
+		<div class="cnt-herocontact-content">
+			<div class="hero-box">
+				<div class="container">
+					<div class="hero-text align-center">
+						<h1>Contattaci</h1>
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 action-started">
+							<a href="<?php echo $this->url(
+								array(
+									'controller' => 'public',
+									'action' => 'index',
+								)
+							); ?>" class="btn btn-outlined">Home</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Sezione form e contatti -->
+<section id="contact-sc">
+	<div class="cnt-contact-bg">
+		<div class="container">
+			<!-- form contatti -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="col-xs-12 col-lg-5 contact-me">
+						<h1>Scrivici</h1>
+						<p class="bottom-txt">Puoi contattarci per qualsiasi informazione relativa alla nostra azienda o circa il nostro social network.</p>
+						<div id="answers"></div>
+						<form id="contactForm" name="contactForm" method="post" action="#">
+							<fieldset>
+								<p>
+									<input id="name" class="textbox" name="name" minlength="2" type="text" placeholder="Inserisci il tuo nome" required tabindex="1" pattern="[a-zA-Z][a-zA-Z0-9\s]*" title="Username should only contain lowercase letters. e.g. john" />
+								</p>
+								<p>
+									<input type="email" id="email" name="email" class="textbox" placeholder="Inserisci una e-mail" spellcheck="false" required tabindex="2" />
+								</p>
+								<p>
+									<input type="text" id="subject" name="subject" class="textbox" placeholder="Inserisci un oggetto" spellcheck="false" required tabindex="3" />
+								</p>
+								<p>
+									<textarea id="message" name="message" placeholder="Ed ora dicci in cosa possiamo aiutarti..." spellcheck="false" tabindex="4"></textarea>
+								</p>
+								<p>
+									<button class="btn btn-lg btn-primary btn-block btn-contact" type="submit">Invia</button>
+								</p>
+							</fieldset>
+						</form>
+					</div>
+					<!-- form contatti -->
+
+					<div class="col-xs-12 col-lg-5 data-contact animated bounce">
+						<div class="col-lg-12">
+							<h2>Contatti</h2>
+							<ul class="data-content">
+								<li class="title-data">Chiamaci</li>
+								<li class="contact-separator"></li>
+								<li>+39 071-9536842</li>
+								<li class="title-data">Scrivici</li>
+								<li class="contact-separator"></li>
+								<li>help@teklab.it</li>
+								<li class="title-data">Trovaci</li>
+								<li class="contact-separator"></li>
+								<li>Via Brecce Bianche, 4 - 60020 - Ancona (IT)</li>
+							</ul>
+						</div>
+						<i class="pe-7s-map-marker" id="show-map"></i>
+					</div>
+				</div>
+			</div>
+			<!-- //.row -->
+		</div>
+		<!-- //.container-->
+	</div>
+	<!-- //.cnt-contact-bg -->
+</section>
+
+<!-- Mappa non funzionante -->
+<div id="map-hidden" class="hide">
+	<div class="cnt-maphidden-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-lg-12 map-google">
+					<div id="map"></div>
+				</div>
+			</div>
+		</div>
+		<!-- //.container-->
+	</div>
+	<!-- //.cnt-maphidden-bg -->
+</div>
+
+
+</body>
+</html>

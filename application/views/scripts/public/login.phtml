@@ -1,0 +1,35 @@
+<html>
+<head>
+</head>
+<body>
+
+
+<body class="black-background">
+
+<div class="logo-login" >
+</div>
+
+<div class="container" id="login-form">
+	<div class="card card-container">
+
+			<?php echo $this->loginForm; ?>
+			<hr class="separator-login">
+
+	</div>
+	<h2 class="sign-now">Non hai ancora un account? <span><a href="<?php echo $this->url(
+				array(
+					'controller' => 'public',
+					'action' => 'register',
+				)
+			); ?>" class="no-decoration">Registrati</a></span></h2>
+</div>
+<script>
+	$("#nascita").bootstrapMaterialDatePicker({
+		format:'DD/MM/YYYY',
+		lang : 'it',
+		weekStart:1,
+		cancelText: 'Annulla',
+		time: false
+		}
+	)
+</script>

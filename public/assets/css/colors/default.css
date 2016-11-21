@@ -1,0 +1,469 @@
+/*
+MAIN COLOR:#21DC7F; (default)
+*/
+
+/* - ELEMENTS
+================================================*/
+.template-color-21DC7F .cnt-hero-content .cnt-btn,
+.template-color-21DC7F #services .btn-outlined:hover,
+.template-color-21DC7F #features .btn-outlined:hover,
+.template-color-21DC7F .hero-features .btn-outlined:hover,
+.template-color-21DC7F #showcase .btn-outlined,
+.template-color-21DC7F #workwithus .cnt-btn:hover,
+.template-color-21DC7F #post-blog .btn-outlined,
+.template-color-21DC7F #post-blog #footer-blog .pager li a:hover,
+.template-color-21DC7F #post-blog #footer-blog-right .pager li a:hover,
+.template-color-21DC7F #post-blog #footer-blog-left .pager li a:hover,
+.template-color-21DC7F .hero-blog-post .btn-outlined:hover,
+.template-color-21DC7F #subscribe-blog .btn-subscribe,
+.template-color-21DC7F .blog-comment .btn.btn-comment,
+.template-color-21DC7F .hero-faq .btn-outlined:hover,
+.template-color-21DC7F .hero-privacy .btn-outlined:hover,
+.template-color-21DC7F .hero-comparisonchart .btn-outlined:hover,
+.template-color-21DC7F .hero-contact .btn-outlined:hover,
+.template-color-21DC7F .main-navigation li a:hover,
+.template-color-21DC7F #hero-4 .cnt-btn:hover,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-twitter:hover,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-facebook:hover,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-mail:hover,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-rss:hover,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-twitter:hover,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-facebook:hover,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-mail:hover,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-rss:hover,
+.template-color-21DC7F .pricing-content .price-block .button:hover,
+.template-color-21DC7F .pricing-content .price-block .button:focus,
+.template-color-21DC7F .btn-comparison:hover,
+.template-color-21DC7F .btn-comparison:focus,
+.template-color-21DC7F .cnt-contact-bg .data-contact i:hover,
+.template-color-21DC7F .cnt-contact-bg .data-contact-mobile i:hover,
+.template-color-21DC7F .hero-services .cnt-btn:hover,
+.template-color-21DC7F .hero-services .cnt-btn,
+.template-color-21DC7F .hero-error .btn-outlined:hover,
+.template-color-21DC7F #sblog .btn-outlined:hover,
+.template-color-21DC7F .main-navigation-mobile ul.mobile-content li a,
+.template-color-21DC7F #how-it-works .tab-nav a:hover,
+.template-color-21DC7F #how-it-works .tab-nav a.active,
+.template-color-21DC7F .container-left-sidebar .tag-cloud .tag:hover,
+.template-color-21DC7F .hero-careers .btn-outlined:hover,
+.template-color-21DC7F #hiring .job-position .button {
+    color: #fff;
+}
+
+.template-color-21DC7F .site-links li a:hover,
+.template-color-21DC7F .cnt-btn,
+.template-color-21DC7F .cnt-btn:hover,
+.template-color-21DC7F #services .btn-outlined,
+.template-color-21DC7F #features .btn-outlined,
+.template-color-21DC7F #started .btn-outlined:hover,
+.template-color-21DC7F .hero-features .btn-outlined,
+.template-color-21DC7F #solutions h2.key-features,
+.template-color-21DC7F #solutions .item-feature i,
+.template-color-21DC7F #solutions .learn-more:hover,
+.template-color-21DC7F #solutions #feature-item-01 h2,
+.template-color-21DC7F .between-words,
+.template-color-21DC7F #services i,
+.template-color-21DC7F #features .container b,
+.template-color-21DC7F #features .icon-box .icon i:hover,
+.template-color-21DC7F .left-icon-text h2,
+.template-color-21DC7F #stats i,
+.template-color-21DC7F .subscribe-form input[type="text"]:focus,
+.template-color-21DC7F .subscribe-coming .subscribe-form input[type="text"]:focus,
+.template-color-21DC7F .widget ul li a:hover,
+.template-color-21DC7F #get-quote .btn-outlined:hover,
+.template-color-21DC7F #intro-about h3.what-we-do,
+.template-color-21DC7F .team-list .team-detail h2,
+.template-color-21DC7F .team-detail .social:hover,
+.template-color-21DC7F #workwithus .cnt-btn.active-btn:hover,
+.template-color-21DC7F #login-form .btn.btn-signin:hover,
+.template-color-21DC7F #login-form .btn.btn-signin:active,
+.template-color-21DC7F #login-form .btn.btn-signin:focus,
+.template-color-21DC7F #login-form .forgot-password:hover,
+.template-color-21DC7F #login-form .forgot-password:active,
+.template-color-21DC7F #login-form .forgot-password:focus,
+.template-color-21DC7F #register .btn.btn-signup:hover,
+.template-color-21DC7F #register .btn.btn-signup:active,
+.template-color-21DC7F #register .btn.btn-signup:focus,
+.template-color-21DC7F #post-blog .btn:hover,
+.template-color-21DC7F .hero-blog-post .btn-outlined,
+.template-color-21DC7F .left-post i:hover,
+.template-color-21DC7F .right-post i:hover,
+.template-color-21DC7F #subscribe-blog .btn-subscribe:hover,
+.template-color-21DC7F .main-navigation li.highlight a,
+.template-color-21DC7F .main-navigation li a:hover,
+.template-color-21DC7F .main-navigation li.current a.current-sticky,
+.template-color-21DC7F .blog-comment .text-success,
+.template-color-21DC7F .blog-comment .media-body a,
+.template-color-21DC7F .blog-comment .btn.btn-comment:hover,
+.template-color-21DC7F .blog-comment .btn.btn-comment:active,
+.template-color-21DC7F .blog-comment .btn.btn-comment:focus,
+.template-color-21DC7F footer h4,
+.template-color-21DC7F footer h5,
+.template-color-21DC7F .footer-main ul a:hover,
+.template-color-21DC7F .footer-main ul a:focus,
+.template-color-21DC7F .hero-faq .btn-outlined,
+.template-color-21DC7F .hero-privacy .btn-outlined,
+.template-color-21DC7F .hero-comparisonchart .btn-outlined,
+.template-color-21DC7F .hero-contact .btn-outlined,
+.template-color-21DC7F #hero-4 .cnt-btn.active-btn:hover,
+.template-color-21DC7F #privacy ol li,
+.template-color-21DC7F #privacy ul li,
+.template-color-21DC7F .main-navigation li.current > a,
+.template-color-21DC7F .cnt-hero-content .cnt-btn:hover,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-twitter,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-facebook,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-mail,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-rss,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-twitter,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-facebook,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-mail,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-rss,
+.template-color-21DC7F .pricing-content .price-block .button,
+.template-color-21DC7F .btn-comparison,
+.template-color-21DC7F .contact-me .btn.btn-contact:hover,
+.template-color-21DC7F .contact-me .btn.btn-contact:active,
+.template-color-21DC7F .contact-me .btn.btn-contact:focus,
+.template-color-21DC7F .cnt-contact-bg .data-contact i,
+.template-color-21DC7F .cnt-contact-bg .data-contact ul.data-content,
+.template-color-21DC7F .cnt-contact-bg .data-contact-mobile i,
+.template-color-21DC7F .cnt-contact-bg .data-contact-mobile ul.data-content,
+.template-color-21DC7F .hero-services .cnt-btn.active-btn:hover,
+.template-color-21DC7F #showcase .btn-outlined:hover,
+.template-color-21DC7F .hero-error .btn-outlined,
+.template-color-21DC7F #sblog .btn-outlined,
+.template-color-21DC7F #services .container p.title-txt,
+.template-color-21DC7F #go-top a i:hover,
+.template-color-21DC7F .main-navigation-mobile li.mobile-title a,
+.template-color-21DC7F .main-navigation-mobile ul.mobile-content li a:hover,
+.template-color-21DC7F #sblog .cnt-post ul.data-post li.separator-post,
+.template-color-21DC7F #sblog .cnt-post ul.data-post li.category,
+.template-color-21DC7F #sblog .cnt-post .read-more,
+.template-color-21DC7F .footer-main .footer-subscribe ul.contact li i,
+.template-color-21DC7F .footer-bottom .copyright span i,
+.template-color-21DC7F #allservices i,
+.template-color-21DC7F #how-it-works .tab-nav a,
+.template-color-21DC7F #how-it-works .tab-nav a.active:hover,
+.template-color-21DC7F .tab-content .tab-content-txt ul.list-slider li i,
+.template-color-21DC7F #showcase .showcase-content h2,
+.template-color-21DC7F #showcase .showcase-content ul.showcase-list li i,
+.template-color-21DC7F .searchbutton:hover, .searchbutton:focus,
+.template-color-21DC7F .searchbutton:active,
+.template-color-21DC7F .container-right-sidebar .archives div.cnt-sidebar div span,
+.template-color-21DC7F .container-left-sidebar .archives div.cnt-sidebar div span,
+.template-color-21DC7F .container-right-sidebar .popular-posts .top_post_right h2,
+.template-color-21DC7F .container-left-sidebar .popular-posts .top_post_left h2,
+.template-color-21DC7F .clicked-filter,
+.template-color-21DC7F #login-form .sign-now span,
+.template-color-21DC7F .container-right-sidebar ul.archive-children li a:hover,
+.template-color-21DC7F .container-left-sidebar ul.archive-children li a:hover,
+.template-color-21DC7F .hero-careers .btn-outlined,
+.template-color-21DC7F #hiring .job-position .button:hover,
+.template-color-21DC7F #register h4 span,
+.template-color-21DC7F .cnt-herocoming-content #clock p.clock,
+.template-color-21DC7F .cfeature-first i:hover,
+.template-color-21DC7F .cfeature i:hover {
+    color: #21DC7F;
+}
+
+.template-color-21DC7F .main-header .btn-outlined,
+.template-color-21DC7F #services .btn-outlined,
+.template-color-21DC7F #features .btn-outlined,
+.template-color-21DC7F .hero-features .btn-outlined,
+.template-color-21DC7F #showcase .btn-outlined,
+.template-color-21DC7F #get-quote .btn-outlined,
+.template-color-21DC7F .subscribe-form input[type="text"]:focus,
+.template-color-21DC7F .subscribe-coming .subscribe-form input[type="text"]:focus,
+.template-color-21DC7F #login-form .btn.btn-signin:hover,
+.template-color-21DC7F #login-form .btn.btn-signin:active,
+.template-color-21DC7F #login-form .btn.btn-signin:focus,
+.template-color-21DC7F #register .btn.btn-signup:hover,
+.template-color-21DC7F #register .btn.btn-signup:active,
+.template-color-21DC7F #register .btn.btn-signup:focus,
+.template-color-21DC7F #post-blog .btn:hover,
+.template-color-21DC7F #subscribe-blog .btn-subscribe,
+.template-color-21DC7F .form-control-newsletter:focus,
+.template-color-21DC7F .tag li,
+.template-color-21DC7F .blog-comment textarea:focus,
+.template-color-21DC7F .blog-comment .btn.btn-comment:hover,
+.template-color-21DC7F .blog-comment .btn.btn-comment:active,
+.template-color-21DC7F .blog-comment .btn.btn-comment:focus,
+.template-color-21DC7F .footer-main .footer-subscribe .subscribe-form input[type="email"]:focus,
+.template-color-21DC7F #accordion .panel,
+.template-color-21DC7F .contact-me .btn.btn-contact:hover,
+.template-color-21DC7F .contact-me .btn.btn-contact:active,
+.template-color-21DC7F .contact-me .btn.btn-contact:focus,
+.template-color-21DC7F #sblog .btn-outlined,
+.template-color-21DC7F #how-it-works .tab-nav a,
+.template-color-21DC7F #how-it-works .tab-nav a.active
+.template-color-21DC7F .init-filter,
+.template-color-21DC7F .clicked-filter,
+.template-color-21DC7F .container-left-sidebar .tag-cloud .tag:hover,
+.template-color-21DC7F .container-right-sidebar .tag-cloud .tag:hover,
+.template-color-21DC7F .hero-careers .btn-outlined {
+    border: 1px solid #21DC7F;
+}
+
+.template-color-21DC7F .main-header .btn-outlined:hover,
+.template-color-21DC7F .cnt-hero-content .cnt-btn,
+.template-color-21DC7F #services .btn-outlined:hover,
+.template-color-21DC7F #features .btn-outlined:hover,
+.template-color-21DC7F #showcase .btn-outlined,
+.template-color-21DC7F .hero-features .btn-outlined:hover,
+.template-color-21DC7F #get-quote .btn-outlined,
+.template-color-21DC7F .txt-testimonial,
+.template-color-21DC7F .hero-mat,
+.template-color-21DC7F .cnt-started-bg,
+.template-color-21DC7F .btn-special,
+.template-color-21DC7F .btn-special:hover,
+.template-color-21DC7F #workwithus .cnt-btn.active-btn,
+.template-color-21DC7F #workwithus .cnt-btn:hover,
+.template-color-21DC7F .login-pg,
+.template-color-21DC7F #login-form .btn.btn-signin,
+.template-color-21DC7F #register .btn.btn-signup,
+.template-color-21DC7F #post-blog .btn-outlined,
+.template-color-21DC7F #post-blog #footer-blog .pager li a:hover,
+.template-color-21DC7F #post-blog #footer-blog-right .pager li a:hover,
+.template-color-21DC7F #post-blog #footer-blog-left .pager li a:hover,
+.template-color-21DC7F .hero-blog-post .btn-outlined:hover,
+.template-color-21DC7F #subscribe-blog .btn-subscribe,
+.template-color-21DC7F .main-navigation li.current a::after,
+.template-color-21DC7F .tag li:hover,
+.template-color-21DC7F .blog-comment .btn.btn-comment,
+.template-color-21DC7F .hero-faq .btn-outlined:hover,
+.template-color-21DC7F .hero-privacy .btn-outlined:hover,
+.template-color-21DC7F .hero-comparisonchart .btn-outlined:hover,
+.template-color-21DC7F .hero-contact .btn-outlined:hover,
+.template-color-21DC7F #hero-4 .cnt-btn.active-btn,
+.template-color-21DC7F #hero-4 .cnt-btn:hover,
+.template-color-21DC7F .hero--slider .slick-dots .slick-active button,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-twitter:hover,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-facebook:hover,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-mail:hover,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-rss:hover,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-twitter:hover,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-facebook:hover,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-mail:hover,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-rss:hover,
+.template-color-21DC7F .pricing-content .price-block .plan-title::after,
+.template-color-21DC7F .pricing-content .price-block .button:hover,
+.template-color-21DC7F .pricing-content .price-block .button:focus,
+.template-color-21DC7F .pricing-content .primary .top-part::before,
+.template-color-21DC7F .btn-comparison:hover,
+.template-color-21DC7F .btn-comparison:focus,
+.template-color-21DC7F #main-nav-wrap ul.main-navigation ul.dropdown-blog,
+.template-color-21DC7F #main-nav-wrap ul.main-navigation ul.dropdown,
+.template-color-21DC7F .contact-me .btn.btn-contact,
+.template-color-21DC7F .hero-services .cnt-btn.active-btn,
+.template-color-21DC7F .hero-services .cnt-btn:hover,
+.template-color-21DC7F .slidenow .slick-dots .slick-active button,
+.template-color-21DC7F .hero-error .btn-outlined:hover,
+.template-color-21DC7F #sblog .btn-outlined:hover,
+.template-color-21DC7F #sblog .cnt-blog-wg .cnt-post .fit_image img,
+.template-color-21DC7F #how-it-works .tab-nav a.active,
+.template-color-21DC7F #how-it-works .tab-nav a:hover,
+.template-color-21DC7F .center-tab .video,
+.template-color-21DC7F .center-tab .video .overlay-video,
+.template-color-21DC7F .searchbox:focus, .searchbox:hover,
+.template-color-21DC7F .searchbox:focus + .searchbutton, .searchbox:hover + .searchbutton,
+.template-color-21DC7F .init-filter,
+.template-color-21DC7F #post-blog .container-post .data-post-main,
+.template-color-21DC7F .container-left-sidebar .tag-cloud .tag:hover,
+.template-color-21DC7F .container-right-sidebar .tag-cloud .tag:hover,
+.template-color-21DC7F .hero-careers .btn-outlined:hover,
+.template-color-21DC7F #hiring .job-position .button,
+.template-color-21DC7F .cnt-herocoming-content #clock span {
+    background: #21DC7F;
+}
+
+.template-color-21DC7F .cnt-hero-content .cnt-btn,
+.template-color-21DC7F #workwithus .cnt-btn.active-btn,
+.template-color-21DC7F #workwithus .cnt-btn:hover,
+.template-color-21DC7F #post-blog #footer-blog .pager li a:hover,
+.template-color-21DC7F #post-blog #footer-blog-right .pager li a:hover,
+.template-color-21DC7F #post-blog #footer-blog-left .pager li a:hover,
+.template-color-21DC7F .hero-blog-post .btn-outlined,
+.template-color-21DC7F .hero-faq .btn-outlined,
+.template-color-21DC7F .hero-privacy .btn-outlined,
+.template-color-21DC7F .hero-comparisonchart .btn-outlined,
+.template-color-21DC7F .hero-contact .btn-outlined,
+.template-color-21DC7F #hero-4 .cnt-btn.active-btn,
+.template-color-21DC7F #hero-4 .cnt-btn:hover,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-twitter,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-facebook,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-mail,
+.template-color-21DC7F .container-right-sidebar .social-icon-holder-rss,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-twitter,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-facebook,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-mail,
+.template-color-21DC7F .container-left-sidebar .social-icon-holder-rss,
+.template-color-21DC7F .pricing-content .price-block,
+.template-color-21DC7F .pricing-content .price-block .button,
+.template-color-21DC7F .pricing-content .primary,
+.template-color-21DC7F .btn-comparison,
+.template-color-21DC7F .hero-services .cnt-btn.active-btn,
+.template-color-21DC7F .hero-services .cnt-btn:hover,
+.template-color-21DC7F .hero-error .btn-outlined,
+.template-color-21DC7F #sblog .cnt-blog-wg .cnt-post,
+.template-color-21DC7F #register input:focus,
+.template-color-21DC7F #hiring .job-position .button,
+.template-color-21DC7F #hiring .job-position .button:hover,
+.template-color-21DC7F #hiring .job-position {
+    border: 2px solid #21DC7F;
+}
+
+.template-color-21DC7F hr.question,
+.template-color-21DC7F #login-form .form-signin .form-control:focus,
+.template-color-21DC7F hr.title-sidebar,
+.template-color-21DC7F .contact-me input[type="text"]:focus,
+.template-color-21DC7F .contact-me textarea:focus,
+.template-color-21DC7F .contact-me input[type="email"]:focus {
+    border-color: #21DC7F;
+}
+
+.template-color-21DC7F .txt-testimonial:before {
+    border-color: #34495e #fff;
+
+}
+
+.template-color-21DC7F #get-quote .btn-outlined:hover,
+.template-color-21DC7F #workwithus .cnt-btn.active-btn:hover,
+.template-color-21DC7F #login-form .btn.btn-signin:hover,
+.template-color-21DC7F #login-form .btn.btn-signin:active,
+.template-color-21DC7F #login-form .btn.btn-signin:focus,
+.template-color-21DC7F #register .btn.btn-signup:hover,
+.template-color-21DC7F #register .btn.btn-signup:active,
+.template-color-21DC7F #register .btn.btn-signup:focus,
+.template-color-21DC7F #hero-4 .cnt-btn.active-btn:hover,
+.template-color-21DC7F #post-blog .btn:hover,
+.template-color-21DC7F #subscribe-blog .btn-subscribe:hover,
+.template-color-21DC7F .blog-comment .btn.btn-comment:hover,
+.template-color-21DC7F .footer-main .footer-subscribe .subscribe-form input[type="email"]:focus,
+.template-color-21DC7F .cnt-hero-content .cnt-btn:hover,
+.template-color-21DC7F .contact-me .btn.btn-contact:hover,
+.template-color-21DC7F .contact-me .btn.btn-contact:active,
+.template-color-21DC7F .contact-me .btn.btn-contact:focus,
+.template-color-21DC7F .hero-services .cnt-btn.active-btn:hover,
+.template-color-21DC7F #showcase .btn-outlined:hover,
+.template-color-21DC7F #how-it-works .tab-nav a.active:hover,
+.template-color-21DC7F .clicked-filter,
+.template-color-21DC7F #hiring .job-position .button:hover {
+    background: transparent;
+}
+
+.template-color-21DC7F .fit-image:after {
+    background: #21DC7F;
+    opacity: 0.6;
+
+}
+
+.template-color-21DC7F .error-path {
+    fill: #21DC7F;
+}
+
+.template-color-21DC7F #wearein #mapa:hover {
+    fill: #21DC7F;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+    cursor: pointer;
+}
+
+.template-color-21DC7F .theader,
+.template-color-21DC7F .cfeature-first {
+    border-top: 1px solid #21DC7F;
+}
+
+.template-color-21DC7F .cfeature,
+.template-color-21DC7F .cfeature-first,
+.template-color-21DC7F .free,
+.template-color-21DC7F .theader.free,
+.template-color-21DC7F .standard,
+.template-color-21DC7F .theader.standard,
+.template-color-21DC7F .premium,
+.template-color-21DC7F .theader.premium {
+    border-bottom: 1px solid #21DC7F;
+}
+
+.template-color-21DC7F .cfeature,
+.template-color-21DC7F .cfeature-first,
+.template-color-21DC7F .free,
+.template-color-21DC7F .standard {
+    border-left: 1px solid #21DC7F;
+}
+
+.template-color-21DC7F .standard,
+.template-color-21DC7F .premium {
+    border-right: 1px solid #21DC7F;
+}
+
+.template-color-21DC7F .cnt-contact-bg .data-contact {
+    border-top: 15px solid #21DC7F;
+}
+
+.template-color-21DC7F .cnt-contact-bg .data-contact {
+    border-bottom: 15px solid #21DC7F;
+}
+.button-green-nic {
+    background: #21DC7F;
+    font-size: 1.5rem;
+    height: 52px;
+    padding: 0px;
+    text-transform: uppercase;
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 800;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    -ms-border-radius: 60px;
+    -o-border-radius: 60px;
+    border-radius: 60px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+    cursor: pointer;
+}
+.button-green-nic:hover{
+    border: 1px solid #21DC7F;
+    background-color: transparent;
+    color: #21DC7F;
+    text-transform: uppercase;
+}
+
+.required {
+    color: #21DC7F;
+    font-size:1.4rem;
+    font-weight: 800;
+    font-family: 'Open Sans',sans-serif;
+}
+.form-login{
+    direction: ltr;
+    height: 46px;
+    font-size: 1.4rem;
+    font-weight: 100;
+    color: #A9B3B7;
+    font-family: 'Open Sans',sans-serif;
+}
+.form-register{
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    border: 2px solid #E3E7E9;
+    font-family: 'Open Sans',sans-serif;
+    direction: ltr;
+    height: 46px;
+    font-size: 1.4rem;
+    font-weight: 100;
+    color: #A9B3B7;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
