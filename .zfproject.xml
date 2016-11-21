@@ -24,6 +24,7 @@
           <actionMethod actionName="login"/>
           <actionMethod actionName="register"/>
           <actionMethod actionName="verifica"/>
+          <actionMethod actionName="autenticazione"/>
         </controllerFile>
       </controllersDirectory>
       <formsDirectory>
@@ -90,6 +91,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Public">
             <viewScriptFile forActionName="verifica"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Public">
+            <viewScriptFile forActionName="autenticazione"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

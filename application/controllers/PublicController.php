@@ -34,6 +34,11 @@ class PublicController extends Zend_Controller_Action
     public function loginAction()
     {
         $this->loginForm = new Application_Form_Login();
+        $this->loginForm->setAction($this->_helper->url->url(array(
+            'controller' => "public",
+            'action' => 'autenticazione',
+            'default'
+        )));
         return $this->loginForm;
     }
 
@@ -64,24 +69,49 @@ class PublicController extends Zend_Controller_Action
             $datiform=$this->registratiForm->getValues();
             $datiform['ruolo']="utente";
             $utentemodel=new Application_Model_Utente();
-            //$username=$this->controllaParam('username'); //prendo l'username inserito nella form
-            //if($utentemodel->existUsername($username)) //controllo se l'username inserito esiste già nel db
-            //{
-            //    $form->setDescription('Attenzione: l\'username che hai scelto non è disponibile.');
-            //    return $this->render('registrautente');
-            //}
-            //else{
+            $username=$this->controllaParam('username'); //prendo l'username inserito nella form
+            if($utentemodel->esistenzaUsername($username)) //controllo se l'username inserito esiste già nel db
+            {
+                $form->setDescription('Attenzione: l\'username che hai scelto non è disponibile.');
+                return $this->render('register');
+            }
+            else{
                 $utentemodel->inserisciUtente($datiform);
-                $this->_helper->redirector('index');
-            //}
+                $this->render('index');
+            }
         }
     }
 
-    public function controllaParam($parametro){
-        
+    /*public function autenticazioneAction()
+    {
+        $request = $this->getRequest();
+
+        if (!$request->isPost()) {
+            return $this->_helper->redirector('login');
+        }
+        $form = $this->loginForm;
+        if(!$form->isValid($request->getPost())) {
+            $form->setDescription('Attenzione: alcuni dati inseriti sono errati.');
+            return $this->render('login');
+        }
+        if (false === $this->_authService->authenticate($form->getValues())) {
+            $form->setDescription('Autenticazione fallita. Riprova');
+            return $this->render('loginutente');
+        }
+        return $this->_helper->redirector('index','livello'.$this->_authService->getIdentity()->current()->livello);
+    }*/
+
+    public function controllaParam($param)
+    {
+        $parametro=0;
+        if($this->hasParam("$param"))
+            $parametro=$this->getParam("$param");
+        return $parametro;
     }
 
 }
+
+
 
 
 

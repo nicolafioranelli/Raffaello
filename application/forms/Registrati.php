@@ -110,7 +110,7 @@ class Application_Form_Registrati extends Zend_Form
             'FormElements',
             array('HtmlTag', array('tag' => 'a', 'class' => 'zend_form')),
             array('Description', array('placement' => 'prepend', 'class' => 'formerror')),
-            'Form'
+            'Form',
         ));
 
         include_once ('Lingua.php');

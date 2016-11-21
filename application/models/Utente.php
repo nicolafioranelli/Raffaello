@@ -30,5 +30,16 @@ class Application_Model_Utente
         return $this->tabella->find($id);
     }
 
+    public function esistenzaUsername($user){
+        $risultato = $this->tabella->find($user);
+        $rowCount = count($risultato);
+        if ($rowCount > 0) {
+            $controllo = false;
+        } else {
+            $controllo = true;
+        }
+        return $controllo;
+    }
+
 }
 
