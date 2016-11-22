@@ -8,13 +8,15 @@ class Application_Form_Login extends Zend_Form
         $this->setMethod("post");
         $this->setName("login");
 
-        $this->addElement('text', 'email', array(
+        $this->addElement('text', 'username', array(
             'filters'    => array('StringTrim'),
             'required'         => true,
-            'label'      => 'Email:',
-            'placeholder' => 'Inserisci una e-mail',
-            'class' =>'form-control form-login',
-            'validators' => array(Zend_Validate_EmailAddress::INVALID => 'EmailAddress',),
+            'label'      => 'Username:',
+            'placeholder' => 'Inserisci una username',
+            'class' =>'form-control form-register',
+            'validators' => array(
+                array('StringLength', true, array(3, 64))
+            ),
         ));
 
         $this->addElement('password', 'password', array(

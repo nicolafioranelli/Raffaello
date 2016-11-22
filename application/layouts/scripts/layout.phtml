@@ -2,6 +2,14 @@
 <!DOCTYPE html>
 <html lang="it" class="template-color-21DC7F">
 
+<?php
+$authService = new Application_Service_Auth();
+$ruolo = "guest";
+if(Zend_Auth::getInstance()->hasIdentity()){
+    $ruolo = $authService->getIdentity()->current()->ruolo;
+}
+?>
+
 
 <head>
     <meta charset="utf-8" />
@@ -27,7 +35,7 @@
     <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/simple-line-icons.css");?>" />
     <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/pe-icon-7-stroke.css");?>">
     <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/font-awesome.min.css");?>">
-    <link rel="stylesheet" href="<?php echo $this->baseUrl("calendar/calendar.css");?>">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800|Montserrat:400,700">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -62,6 +70,7 @@
                         )
                     ); ?>" title="">Home</a></li>
 
+                <?php if($ruolo=="guest"):?>
                 <li class="menu-drop"><a class="smoothscroll" href="#" title="">Aiuto <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                     <ul class="dropdown">
                         <li><a href="<?php echo $this->url(
@@ -78,6 +87,7 @@
                             ); ?>">Termini e condizioni</a></li>
                     </ul>
                 </li>
+                <?php endif; ?>
 
                 <li><a class="smoothscroll" href="<?php echo $this->url(
                         array(
@@ -86,19 +96,37 @@
                         )
                     ); ?>" title="">Contatti</a></li>
 
+                <?php if($ruolo=="guest"):?>
                 <li class="highlight with-sep"><a href="<?php echo $this->url(
                         array(
                             'controller' => 'public',
                             'action' => 'login',
                         )
                     ); ?>" title="">Accedi</a></li>
+                <?php else: ?>
+                    <li class="highlight with-sep"><a href="<?php echo $this->url(
+                            array(
+                                'controller' => $ruolo,
+                                'action' => 'index',
+                            )
+                        ); ?>" title=""><?php echo $ruolo?></a></li>
+                <?php endif; ?>
 
+                <?php if($ruolo=="guest"):?>
                 <li class="highlight with-sep"><a href="<?php echo $this->url(
                         array(
                             'controller' => 'public',
                             'action' => 'register',
                         )
                     ); ?>" title="">Registrati</a></li>
+                <?php else: ?>
+                    <li class="highlight with-sep"><a href="<?php echo $this->url(
+                            array(
+                                'controller' => $ruolo,
+                                'action' => 'logout',
+                            )
+                        ); ?>" title="">Logout</a></li>
+                <?php endif; ?>
             </ul>
 
             <!-- Mobile Menu -->
@@ -240,24 +268,12 @@
 <script src="<?php echo $this->baseUrl("assets/js/jquery.min.js");?>"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="<?php echo $this->baseUrl("assets/js/bootstrap.min.js");?>"></script>
-<!-- Main -->
-<script src="<?php echo $this->baseUrl("assets/js/main.js");?>"></script>
 <!-- Preloader -->
 <script src="<?php echo $this->baseUrl("assets/js/prealoader.js");?>"></script>
-<!-- Google Map -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-<script src="<?php echo $this->baseUrl("assets/js/map.js");?>"></script>
-<script src="<?php echo $this->baseUrl("calendar/calendar.js");?>"></script>
-<script>
-    $("#nascita").bootstrapMaterialDatbePicker({
-            format:'DD/MM/YYYY',
-            lang : 'it',
-            weekStart:1,
-            cancelText: 'Annulla',
-            time: false
-        }
-    )
-</script>
+<!-- Main -->
+<script src="<?php echo $this->baseUrl("assets/js/main.js");?>"></script>
+
+
 </body>
 
 </html>

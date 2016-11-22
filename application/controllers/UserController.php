@@ -1,7 +1,8 @@
 <?php
 
-class AdminController extends Zend_Controller_Action
+class UserController extends Zend_Controller_Action
 {
+
     protected $_authService;
     protected $utenteCorrente;
 
@@ -19,7 +20,7 @@ class AdminController extends Zend_Controller_Action
 
     public function logoutAction()
     {
-       Zend_Auth::getInstance()->clearIdentity();
+        Zend_Auth::getInstance()->clearIdentity();
         $this->_helper->redirector("index","public");
     }
 

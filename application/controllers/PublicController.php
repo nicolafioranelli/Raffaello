@@ -6,11 +6,15 @@ class PublicController extends Zend_Controller_Action
     protected $registratiForm = null;
 
     protected $loginForm = null;
+    protected $_authService;
+    protected $utenteCorrente;
+
 
     public function init()
     {
         $this->view->assign("registratiForm",$this->registerAction());
         $this->view->assign("loginForm",$this->loginAction());
+        $this->_authService = new Application_Service_Auth();
     }
 
     public function indexAction()
@@ -69,7 +73,7 @@ class PublicController extends Zend_Controller_Action
             $datiform=$this->registratiForm->getValues();
             $datiform['ruolo']="utente";
             $utentemodel=new Application_Model_Utente();
-            $username=$this->controllaParam('username'); //prendo l'username inserito nella form
+            $username=$datiform['username']; //prendo l'username inserito nella form
             if($utentemodel->esistenzaUsername($username)) //controllo se l'username inserito esiste già nel db
             {
                 $form->setDescription('Attenzione: l\'username che hai scelto non è disponibile.');
@@ -82,7 +86,7 @@ class PublicController extends Zend_Controller_Action
         }
     }
 
-    /*public function autenticazioneAction()
+    public function autenticazioneAction()
     {
         $request = $this->getRequest();
 
@@ -91,23 +95,21 @@ class PublicController extends Zend_Controller_Action
         }
         $form = $this->loginForm;
         if(!$form->isValid($request->getPost())) {
+
             $form->setDescription('Attenzione: alcuni dati inseriti sono errati.');
             return $this->render('login');
         }
+
+
         if (false === $this->_authService->authenticate($form->getValues())) {
             $form->setDescription('Autenticazione fallita. Riprova');
-            return $this->render('loginutente');
+            return $this->render('login');
         }
-        return $this->_helper->redirector('index','livello'.$this->_authService->getIdentity()->current()->livello);
-    }*/
 
-    public function controllaParam($param)
-    {
-        $parametro=0;
-        if($this->hasParam("$param"))
-            $parametro=$this->getParam("$param");
-        return $parametro;
+        return $this->_helper->redirector('index',$this->_authService->getIdentity()->current()->ruolo);
+
     }
+
 
 }
 

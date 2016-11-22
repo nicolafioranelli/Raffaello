@@ -22,13 +22,13 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $front->setRequest($request);
     }
     //loader
-    /*protected function _initDefaultModuleAutoloader()
+    protected function _initDefaultModuleAutoloader()
     {
         $loader = Zend_Loader_Autoloader::getInstance();
         $loader->registerNamespace('App_');
         $this->getResourceLoader()
             ->addResourceType('modelResource','models/resources','Resource');
-    }*/
+    }
     /*protected function _initFrontControllerPlugin()
     {
         $front = Zend_Controller_Front::getInstance();
@@ -52,6 +52,16 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
             'charset' => 'utf8'
         ));
         Zend_Db_Table::setDefaultAdapter($dbAdapter);
+    }
+
+    /**
+     * utilizziamo l'ACL su base model, ogni volta che si fa il bootstrap si deve dire dove trovare i plugin dell'acl
+     * instanzia ogni volta il plugin per l'acl
+     */
+    protected function _initFrontControllerPlugin()
+    {
+        $front = Zend_Controller_Front::getInstance();
+        $front->registerPlugin(new App_Controller_Plugin_Acl());
     }
 
 

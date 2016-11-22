@@ -1,9 +1,5 @@
 <?php
-/**
- * Developer:   Andrea Civita
- * Web-site:    http://www.andreacivita.it
- * GitHub:      https://github.com/andreacivita/
- */
+
 class Application_Service_Auth
 {
     protected $_utenteModel;
@@ -22,7 +18,7 @@ class Application_Service_Auth
         if (!$result->isValid()) {
             return false;
         }
-        $user = $this->_utenteModel->getUtenteByUsernamePassword($dati['username'],$dati['password']);
+        $user = $this->_utenteModel->verificaLogin($dati['username'],$dati['password']);
         $auth->getStorage()->write($user);
         return true;
     }

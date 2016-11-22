@@ -2951,7 +2951,7 @@ padding-top: 0px;
 padding-bottom: 0px;
 position: relative;
 color: #fff;
-height: 500px;
+height: 150px;
 }
 canvas {
 index: 0;
@@ -2966,6 +2966,7 @@ width: 100%;
 position: absolute;
 text-align: center;
 }
+
 .cnt-heroblog-content .hero-box{
 text-align: center;
 position: relative;
@@ -2981,6 +2982,7 @@ background-repeat: no-repeat;
 background-size: cover;
 background-position: 50% 50%;
 }
+
 .hero-box h1,
 .hero-box p
 {
@@ -6037,6 +6039,82 @@ font-weight: 400;
 color: #9f9f9f;
 width: 80%;
 }
+
+/* MENU ADMIN */
+.container-left-sidebar .cnt-admin
+{
+  width: 100%;
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+.container-left-sidebar .cnt-admin h3
+{
+  font-size: 2rem;
+  font-family: 'Montserrat',sans-serif;
+  font-weight: 800;
+  color: #182A3C;
+}
+.container-left-sidebar .cnt-admin img{
+  position: relative;
+  right: 20px;
+  top: 15px;
+
+}
+.container-left-sidebar .cnt-admin .txt-admin{
+  position: relative;
+  margin-top: 25px;
+  padding-left: 0;
+}
+.container-left-sidebar .cnt-admin .txt-admin p{
+  font-family: 'Open Sans',sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #9f9f9f;
+  width: 80%;
+}
+.container-left-sidebar .cnt-admin .top_post_left{
+  position: relative;
+  border-bottom: 1px solid #dddae5;
+  padding-left: 0;
+  padding-bottom: 20px;
+  margin-top: 15px;
+
+}
+.container-left-sidebar .cnt-admin .top_post_left:last-child{
+  border: none;
+}
+.container-left-sidebar .cnt-admin .top_post_left h2{
+  font-weight: 400;
+  font-size: 1.8rem;
+  font-family: 'Montserrat',sans-serif;
+}
+.container-left-sidebar .cnt-admin .top_post_left h2:hover{
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;-moz-transition: all 0.3s ease;
+}
+.container-left-sidebar .cnt-admin .top_post_left p{
+  color:#B5B5B5;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 300;
+  font-size: 1.4rem;
+  margin-top: 10px;
+  width: 100%;
+}
+.container-left-sidebar .cnt-admin .top_post_left ul.data-post-left{
+  position: relative;
+  padding-top: 10px;
+  font-family: 'Montserrat',sans-serif;
+  right: 10px;
+}
+.container-left-sidebar .cnt-admin .top_post_left ul li{
+  display: inline-block;
+  font-weight: 800;
+  font-size: 1.3rem;
+  padding-left: 11px;
+  color: #182A3C;
+}
+
+/* FINE ADMIN */
 
 .container-left-sidebar .popular-posts
 {

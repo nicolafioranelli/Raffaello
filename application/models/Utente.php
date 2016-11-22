@@ -31,14 +31,21 @@ class Application_Model_Utente
     }
 
     public function esistenzaUsername($user){
-        $risultato = $this->tabella->find($user);
+        $risultato = $this->tabella->fetchAll($this->tabella->select()->where("username = '$user'"));
         $rowCount = count($risultato);
         if ($rowCount > 0) {
-            $controllo = false;
-        } else {
             $controllo = true;
+        } else {
+            $controllo = false;
         }
         return $controllo;
+    }
+
+    public function verificaLogin($username, $password){
+        $sql = $this->tabella->select()
+                             ->where("username = '$username' AND password = '$password'");
+        $user =$this->tabella->fetchAll($sql);
+        return $user;
     }
 
 }
