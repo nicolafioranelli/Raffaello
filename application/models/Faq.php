@@ -26,5 +26,9 @@ class Application_Model_Faq
         return $this->tabella->fetchAll();
     }
 
+    public function elencoFaqById($id){
+        return $this->tabella->find($id);
+    }
+
 }
 

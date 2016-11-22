@@ -30,6 +30,7 @@ if(Zend_Auth::getInstance()->hasIdentity()){
 
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/vendor.css");?>" />
+    <link rel="stylesheet" href="<?php echo $this->baseUrl("datatables/media/css/dataTables.bootstrap4.css");?>" />
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/simple-line-icons.css");?>" />
@@ -272,6 +273,10 @@ if(Zend_Auth::getInstance()->hasIdentity()){
 <script src="<?php echo $this->baseUrl("assets/js/prealoader.js");?>"></script>
 <!-- Main -->
 <script src="<?php echo $this->baseUrl("assets/js/main.js");?>"></script>
+<!-- Datatables -->
+<script src="<?php echo $this->baseUrl("datatables/media/js/dataTables.bootstrap4.js");?>"></script>
+<script src="<?php echo $this->baseUrl("datatables/media/js/jquery.dataTables.js");?>"></script>
+
 
 
 </body>

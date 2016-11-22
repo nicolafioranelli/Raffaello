@@ -1,0 +1,79 @@
+$(document).ready(function () {
+        $('#datatable').DataTable({
+            "language": {
+                "url": "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Italian.json"
+            }
+        });
+            });
+
+ <div class="row">
+                        <div class="col-md-12">
+                            <table id="datatable" class="table table-striped table-bordered " cellspacing="0"
+                                   width="100%">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Categoria</th>
+                                    <th>Modifica</th>
+                                    <th>Elimina</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Categoria</th>
+                                    <th>Modifica</th>
+                                    <th>Elimina</th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                <?php
+                                $i = 0;
+                                foreach ($this->categorie as $categoria):
+                                    $i++;
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $i; ?></td>
+                                        <td style="text-transform: capitalize"><?php echo $categoria->categoria; ?></td>
+                                        <td style="font-size: 1.2em;">
+                                            <a href="<?php echo $this->url(array(
+                                                "controller" => "admin",
+                                                "action" => "modifica-categoria",
+                                                "category" => $categoria->idcategoria),
+                                                "default", true)
+                                            ?>">
+                                                <button type="button" class="btn btn-primary m-r-xs m-b-xs">Modifica
+                                                    Categoria
+                                                </button>
+                                            </a>
+                                        </td>
+                                        <td style="font-size: 1.2em;">
+                                            <a>
+                                                <button id="<?php echo $categoria->idcategoria; ?>" type="button"
+                                                        class="btn btn-danger m-r-xs m-b-xs elimina">Elimina
+                                                    Categoria
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                endforeach;
+                                ?>
+                                </tbody>
+                            </table>
+                            <div class="row">
+                                <div class="col-md-5 col-sm-5 col-lg-5"></div>
+                                <div class="col-md-4 text-center">
+                                    <a href="<?php echo $this->url(array(
+                                        "controller" => "admin",
+                                        "action" => "inserisci-categoria"),
+                                        "default", true)
+                                    ?>">
+                                        <button type="button" class="btn btn-success m-r-xs m-b-xs">Inserisci una nuova
+                                            Categoria
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
