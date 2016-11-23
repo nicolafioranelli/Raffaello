@@ -1,30 +1,29 @@
 <?php
 
-class Application_Form_Modificafaq extends Zend_Form
+class Application_Form_DatiFaq extends Zend_Form
 {
 
     public function init()
     {
-        $this->setMethod("post");
-        $this->setName("modificafaq");
 
+        $this->setMethod("post");
+        $this->setName("datifaq");
 
         $this->addElement('text', 'domanda', array(
             'filters'    => array('StringTrim'),
-            'required'   => true,
-            'label'=> 'Nome:',
-            'placeholder' => 'Inserisci il tuo nome',
+            'required'         => true,
+            'label'      => 'Domanda:',
+            'placeholder' => 'Inserisci una domanda',
             'class' =>'form-control form-register',
             'validators' => array(
                 array('StringLength', true, array(3, 64))
             ),
         ));
-
         $this->addElement('text', 'risposta', array(
             'filters'    => array('StringTrim'),
-            'required'   => true,
-            'label'=> 'Cognome:',
-            'placeholder' => 'Inserisci il cognome',
+            'required'         => true,
+            'label'      => 'risposta:',
+            'placeholder' => 'Inserisci una risposta',
             'class' =>'form-control form-register',
             'validators' => array(
                 array('StringLength', true, array(3, 64))
@@ -40,8 +39,6 @@ class Application_Form_Modificafaq extends Zend_Form
             array('Description', array('placement' => 'prepend', 'class' => 'formerror')),
             'Form',
         ));
-
-        include_once ('Lingua.php');
     }
 
 

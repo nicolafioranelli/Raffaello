@@ -16,10 +16,6 @@
           <actionMethod actionName="index"/>
           <actionMethod actionName="logout"/>
           <actionMethod actionName="visualizzaFaq"/>
-          <actionMethod actionName="modificaFaq"/>
-          <actionMethod actionName="eliminaFaq"/>
-          <actionMethod actionName="modificaFaqForm"/>
-          <actionMethod actionName="visualizzafaq"/>
           <actionMethod actionName="modificafaq"/>
           <actionMethod actionName="modificafaqpost"/>
         </controllerFile>
@@ -49,6 +45,8 @@
         <formFile formName="Login"/>
         <formFile formName="ModificaFaq"/>
         <formFile formName="Modificafaq"/>
+        <formFile formName="ModificaFaq"/>
+        <formFile formName="DatiFaq"/>
       </formsDirectory>
       <layoutsDirectory>
         <layoutScriptsDirectory>
@@ -147,6 +145,12 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Admin">
             <viewScriptFile forActionName="visualizzafaq"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="modificafaq"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="modificafaqpost"/>
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Admin">
             <viewScriptFile forActionName="modificafaq"/>

@@ -37,11 +37,10 @@
 										<td style="font-size: 1.2em;">
 											<a href="<?php echo $this->url(
 												array(
-													'controller' => 'admin',
-													'action' => 'modificafaq',
-													"idfaq" => $faq->id_faq),
-													"default", true
-											); ?>">
+													'controller'=> 'admin',
+													'action' 	=> 'modificafaq',
+													'faq' 		=> $faq->id_faq
+											)); ?>">
 												<button type="button" class="btn btn-lg btn-primary btn-block btn-signin button-blue-nic">Modifica
 												</button>
 											</a>

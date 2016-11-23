@@ -52,7 +52,7 @@ class PublicController extends Zend_Controller_Action
         $this->registratiForm->setAction($this->_helper->url->url(array(
             'controller' => "public",
             'action' => 'verifica',
-            'default'
+            'default', null
         )));
         return $this->registratiForm;
     }
