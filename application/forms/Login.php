@@ -13,6 +13,7 @@ class Application_Form_Login extends Zend_Form
             'required'         => true,
             'label'      => 'Username:',
             'placeholder' => 'Inserisci una username',
+            'autofocus' => 'true',
             'class' =>'form-control form-register',
             'validators' => array(
                 array('StringLength', true, array(3, 64))

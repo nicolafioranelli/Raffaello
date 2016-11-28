@@ -494,6 +494,13 @@ MAIN COLOR:#21DC7F; (default)
     font-family: 'Open Sans',sans-serif;
 }
 
+.optional {
+    color: #21DC7F;
+    font-size:1.4rem;
+    font-weight: 800;
+    font-family: 'Open Sans',sans-serif;
+}
+
 .font-tabella {
     color: gray;
     font-size:1.4rem;
@@ -526,7 +533,7 @@ MAIN COLOR:#21DC7F; (default)
     height: 46px;
     font-size: 1.4rem;
     font-weight: 100;
-    color: #A9B3B7;
+    color: #0a151e;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;

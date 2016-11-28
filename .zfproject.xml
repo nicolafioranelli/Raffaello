@@ -10,6 +10,7 @@
         <controllerFile controllerName="Index">
           <actionMethod actionName="index"/>
           <actionMethod actionName="visualizzafaq"/>
+          <actionMethod actionName="modificautentepost"/>
         </controllerFile>
         <controllerFile controllerName="Error"/>
         <controllerFile controllerName="Admin">
@@ -18,6 +19,13 @@
           <actionMethod actionName="visualizzaFaq"/>
           <actionMethod actionName="modificafaq"/>
           <actionMethod actionName="modificafaqpost"/>
+          <actionMethod actionName="eliminafaq"/>
+          <actionMethod actionName="inseriscifaq"/>
+          <actionMethod actionName="inseriscifaqpost"/>
+          <actionMethod actionName="visualizzautenti"/>
+          <actionMethod actionName="modificautente"/>
+          <actionMethod actionName="modificautentepost"/>
+          <actionMethod actionName="eliminautente"/>
         </controllerFile>
         <controllerFile controllerName="Public">
           <actionMethod actionName="index"/>
@@ -47,6 +55,7 @@
         <formFile formName="Modificafaq"/>
         <formFile formName="ModificaFaq"/>
         <formFile formName="DatiFaq"/>
+        <formFile formName="DatiUtente"/>
       </formsDirectory>
       <layoutsDirectory>
         <layoutScriptsDirectory>
@@ -157,6 +166,30 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Admin">
             <viewScriptFile forActionName="modificafaqpost"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="eliminafaq"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="inseriscifaq"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="inseriscifaqpost"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="visualizzautenti"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="modificautente"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Index">
+            <viewScriptFile forActionName="modificautentepost"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="modificautentepost"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="eliminautente"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

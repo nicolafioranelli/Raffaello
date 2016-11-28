@@ -71,6 +71,25 @@ if(Zend_Auth::getInstance()->hasIdentity()){
                         )
                     ); ?>" title="">Home</a></li>
 
+                <?php if($ruolo=="admin"):?>
+                <li class="menu-drop"><a class="smoothscroll" href="#" title="">Gestione <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="<?php echo $this->url(
+                                    array(
+                                        'controller' => 'admin',
+                                        'action' => 'visualizzafaq',
+                                    )
+                                ); ?>">Gestione Faq</a></li>
+                            <li><a href="<?php echo $this->url(
+                                    array(
+                                        'controller' => 'admin',
+                                        'action' => 'visualizzautenti',
+                                    )
+                                ); ?>">Gestioni Utenti</a></li>
+                        </ul>
+                    </li>
+                <?php endif; ?>
+
                 <?php if($ruolo=="guest"):?>
                 <li class="menu-drop"><a class="smoothscroll" href="#" title="">Aiuto <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                     <ul class="dropdown">

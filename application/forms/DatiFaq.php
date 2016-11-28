@@ -14,6 +14,7 @@ class Application_Form_DatiFaq extends Zend_Form
             'required'         => true,
             'label'      => 'Domanda:',
             'placeholder' => 'Inserisci una domanda',
+            'autofocus' => 'true',
             'class' =>'form-control form-register',
             'validators' => array(
                 array('StringLength', true, array(3, 64))
@@ -22,11 +23,11 @@ class Application_Form_DatiFaq extends Zend_Form
         $this->addElement('text', 'risposta', array(
             'filters'    => array('StringTrim'),
             'required'         => true,
-            'label'      => 'risposta:',
+            'label'      => 'Risposta:',
             'placeholder' => 'Inserisci una risposta',
             'class' =>'form-control form-register',
             'validators' => array(
-                array('StringLength', true, array(3, 64))
+                array('StringLength', true, array(3, 200))
             ),
         ));
 
