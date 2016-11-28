@@ -26,5 +26,22 @@ class Application_Model_Blog
         return $this->tabella->find($id);
     }
 
+    public function elencoBlogByUtente($id){
+        $sql = $this->tabella->select()->where("id_utente = ?", $id);
+        return $this->tabella->fetchAll($sql);
+    }
+
+    public function esistenzaBlog($id){
+        $sql = $this->tabella->select()->where("id_utente = ?", $id);
+        $risultato = $this->tabella->fetchAll($sql);
+        $rowCount = count($risultato);
+        if ($rowCount > 0) {
+            $controllo = true;
+        } else {
+            $controllo = false;
+        }
+        return $controllo;
+    }
+
 }
 

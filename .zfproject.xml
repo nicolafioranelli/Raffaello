@@ -42,6 +42,8 @@
         <controllerFile controllerName="User">
           <actionMethod actionName="index"/>
           <actionMethod actionName="logout"/>
+          <actionMethod actionName="inserimentoprimoblog"/>
+          <actionMethod actionName="inserimentoprimoblogpost"/>
         </controllerFile>
         <controllerFile controllerName="Staff">
           <actionMethod actionName="index"/>
@@ -56,6 +58,8 @@
         <formFile formName="ModificaFaq"/>
         <formFile formName="DatiFaq"/>
         <formFile formName="DatiUtente"/>
+        <formFile formName="NuovoBlog"/>
+        <formFile formName="NuovoPost"/>
       </formsDirectory>
       <layoutsDirectory>
         <layoutScriptsDirectory>
@@ -190,6 +194,12 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Admin">
             <viewScriptFile forActionName="eliminautente"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="inserimentoprimoblog"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="inserimentoprimoblogpost"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

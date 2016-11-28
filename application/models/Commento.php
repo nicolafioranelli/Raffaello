@@ -30,5 +30,11 @@ class Application_Model_Commento
         return $this->tabella->find($id);
     }
 
+    public function numeroCommentiByIdUtente($id){
+        $sql = $this->tabella->select()->where("id_post = ?", $id);
+        $risultato = $this->tabella->fetchAll($sql);
+        return count($risultato);
+    }
+
 }
 

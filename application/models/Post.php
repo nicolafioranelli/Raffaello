@@ -27,7 +27,20 @@ class Application_Model_Post
     }
 
     public function elencoPostById($id){
-        $this->tabella->find($id);
+        $sql = $this->tabella->select()->where("id_utente = ?", $id);
+        return $this->tabella->fetchAll($sql);
+    }
+
+    public function esistenzaPost($id){
+        $sql = $this->tabella->select()->where("id_utente = ?", $id);
+        $risultato = $this->tabella->fetchAll($sql);
+        $rowCount = count($risultato);
+        if ($rowCount > 0) {
+            $controllo = true;
+        } else {
+            $controllo = false;
+        }
+        return $controllo;
     }
 
 }

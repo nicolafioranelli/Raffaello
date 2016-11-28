@@ -123,13 +123,14 @@ if(Zend_Auth::getInstance()->hasIdentity()){
                             'action' => 'login',
                         )
                     ); ?>" title="">Accedi</a></li>
-                <?php else: ?>
+                <?php endif; ?>
+                <?php if($ruolo=="user"): ?>
                     <li class="highlight with-sep"><a href="<?php echo $this->url(
                             array(
                                 'controller' => $ruolo,
                                 'action' => 'index',
                             )
-                        ); ?>" title=""><?php echo $ruolo?></a></li>
+                        ); ?>" title=""><?php echo $this->nome?></a></li>
                 <?php endif; ?>
 
                 <?php if($ruolo=="guest"):?>
