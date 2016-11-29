@@ -4,62 +4,63 @@
 <body>
 
 <section id="hero" class="hero-faq">
-	<div id="particles-js">
-		<div class="cnt-herofaq-content">
-			<div class="hero-box">
-				<div class="container">
-					<div class="hero-text align-center">
-						<h1>Frequently Asked Questions</h1>
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 action-started">
-							<a href="<?php echo $this->url(
-								array(
-									'controller' => 'public',
-									'action' => 'index',
-								)
-							); ?>" class="btn btn-outlined">Home</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div id="particles-js">
+        <div class="cnt-herofaq-content">
+            <div class="hero-box">
+                <div class="container">
+                    <div class="hero-text align-center">
+                        <h1>Frequently Asked Questions</h1>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 action-started">
+                            <a href="<?php echo $this->url(
+                                array(
+                                    'controller' => 'public',
+                                    'action' => 'index',
+                                )
+                            ); ?>" class="btn btn-outlined">Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="faq-2">
-	<div class="cnt-faq-bg">
-		<div class="container">
-			<h1>Prova a cercare aiuto qui...</h1>
-			<div class="row-centered">
-				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-centered">
-					<div class="panel-group" id="accordion">
+    <div class="cnt-faq-bg">
+        <div class="container">
+            <h1>Prova a cercare aiuto qui...</h1>
+            <div class="row-centered">
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-centered">
+                    <div class="panel-group" id="accordion">
 
                         <!-- Blocchi Faq generati dinamicamente -->
 
                         <?php
                         foreach ($this->faqSet as $faq):
-						?>
+                            ?>
                             <div class="panel panel-default">
-							<div class="panel-heading">
-								<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#<?php echo $faq->id_faq; ?>">
-									<h4 class="panel-title"><?php echo $faq->domanda; ?></h4>
-								</a>
-							</div>
-							<div id="<?php echo $faq->id_faq; ?>" class="panel-collapse collapse">
-								<div class="panel-body">
-									<?php echo $faq->risposta; ?>
-								</div>
-							</div>
-						</div>
+                                <div class="panel-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse"
+                                       data-parent="#accordion" href="#<?php echo $faq->id_faq; ?>">
+                                        <h4 class="panel-title"><?php echo $faq->domanda; ?></h4>
+                                    </a>
+                                </div>
+                                <div id="<?php echo $faq->id_faq; ?>" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <?php echo $faq->risposta; ?>
+                                    </div>
+                                </div>
+                            </div>
 
-						<?php endforeach; ?>
+                        <?php endforeach; ?>
 
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- //.container-->
-	</div>
-	<!-- //.cnt-faq-bg -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //.container-->
+    </div>
+    <!-- //.cnt-faq-bg -->
 </section>
 
 </body>

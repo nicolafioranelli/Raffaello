@@ -28,12 +28,9 @@ class UserController extends Zend_Controller_Action
             $datiblog = $blogModel->elencoBlogByUtente($idUtente);
             $this->view->assign("blogSet", $datiblog);
             $postModel = new  Application_Model_Post();
-            $commentoModel = new Application_Model_Commento();
             if ($postModel->esistenzaPost($idUtente)) {
                 $datipost = $postModel->elencoPostById($idUtente);
                 $this->view->assign('postSet', $datipost);
-                $numcommenti = $commentoModel->numeroCommentiByIdUtente($idUtente);
-                $this->view->assign('numcom', $numcommenti);
             } else {
                 $post = true;
                 $this->view->assign('valPost', $post);
@@ -53,12 +50,15 @@ class UserController extends Zend_Controller_Action
     public function inserimentoprimoblogAction()
     {
         $this->nuovoblogForm = new Application_Form_NuovoBlog();
-
         $this->nuovoblogForm->setAction($this->_helper->url->url(array(
             'controller' => 'user',
             'action' => 'inserimentoprimoblogpost'),
             null, true
         ));
+        if ($this->hasParam("verifica")) {
+            $param = $this->getParam("verifica");
+            $this->view->assign('verifica', $param);
+        }
         return $this->nuovoblogForm;
     }
 

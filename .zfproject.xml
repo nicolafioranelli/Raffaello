@@ -70,14 +70,12 @@
         <dbTableDirectory>
           <dbTableFile dbTableName="Amici"/>
           <dbTableFile dbTableName="Blog"/>
-          <dbTableFile dbTableName="Commento"/>
           <dbTableFile dbTableName="Post"/>
           <dbTableFile dbTableName="Utente"/>
           <dbTableFile dbTableName="Faq"/>
         </dbTableDirectory>
         <modelFile modelName="Amici"/>
         <modelFile modelName="Blog"/>
-        <modelFile modelName="Commento"/>
         <modelFile modelName="Post"/>
         <modelFile modelName="Utente"/>
         <modelFile modelName="Faq"/>

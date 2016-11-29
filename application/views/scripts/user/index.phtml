@@ -31,30 +31,46 @@
                     <?php endif; ?>
 
                     <?php if (!$this->valPost): ?>
-                        <?php foreach ($this->postSet as $post): ?>
-                            <div class="col-lg-12 container-post">
-                                <!-- .featured-image -->
-                                <div class="featured-image">
-                                    <img src="assets/img/workspace.jpg" class="img-responsive" alt="">
-                                    <div class="data-post-main">
-                                        <ul class="blog-data">
-                                            <li><i class="pe-7s-date"></i> <?php echo $post->data; ?></li>
-                                            <li><i class="pe-7s-comment"></i> <?php echo $this->numcom ?> comment<?php if ($this->numcom == 1){
-                                                    echo 'o';
-                                                } else {echo 'i';} ?></li>
-                                        </ul>
+                        <section id="faq-2">
+                            <div class="cnt-faq-bg">
+                                <div class="container">
+                                    <h1>Per iniziare, seleziona un blog...</h1>
+                                    <div class="row-centered">
+                                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-centered">
+                                            <div class="panel-group" id="accordion">
+
+                                                    <?php foreach ($this->blogSet as $blog): ?>
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#">
+                                                                <h4 class="panel-title"><?php echo $blog->titolo; ?></h4>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php endforeach; ?>
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <!-- //.featured-image -->
-                                <h2> <?php echo $post->titolo; ?> </h2>
-                                <p> <?php echo $post->contenuto; ?></p>
-                                <div class="col-lg-12 action-started" style="margin-bottom: 30px; margin-top: 80px">
-                                    <a href="#" class="btn btn-outlined">Continua a leggere</a>
-                                </div>
                             </div>
+                        </section>
+                        <div class="col-lg-12 action-started" style="margin-bottom: auto; margin-top: auto">
+                            <div class="col-md-6 col-sm-6 col-xs-12" style="margin-bottom: 10px">
+                                <a href="#" class="btn btn-outlined">Crea un nuovo post</a>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
 
-                        <?php endforeach; ?>
-                        <?php endif; ?>
+                                <a href="<?php echo $this->url(
+                                    array(
+                                        'controller' => 'user',
+                                        'action' => 'inserimentoprimoblog',
+                                        'verifica' => '1'
+                                    )
+                                ); ?>" class="btn btn-outlined">Crea un nuovo blog</a>
+                            </div>
+                        </div>
+                    <?php endif; ?>
 
                 </div>
 

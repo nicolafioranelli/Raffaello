@@ -11,19 +11,19 @@ class Application_Model_Post
     }
 
     public function inserisciPost($dati){
-        $this->tabella->insert($dati);
+        return $this->tabella->insert($dati);
     }
 
     public function aggiornaPost($dati, $id){
-        $this->tabella->update($dati, "id_post = '$id'");
+        return $this->tabella->update($dati, "id_post = '$id'");
     }
 
     public function eliminaPost($id){
-        $this->tabella->delete("id_post = '$id'");
+        return $this->tabella->delete("id_post = '$id'");
     }
 
     public function elencoPost(){
-        $this->tabella->fetchAll();
+        return $this->tabella->fetchAll();
     }
 
     public function elencoPostById($id){
