@@ -1,16 +1,14 @@
 <?php
 
-class Application_Form_Registrati extends Zend_Form
+class Application_Form_DatiProfilo extends Zend_Form
 {
 
     public function init()
     {
-
         $this->setMethod("post");
-        $this->setName("registrati");
+        $this->setName("datiutente");
 
-
-        $this->addElement('text', 'Nome', array(
+        $this->addElement('text', 'nome', array(
             'filters'    => array('StringTrim'),
             'required'   => true,
             'label'=> 'Nome:',
@@ -22,7 +20,7 @@ class Application_Form_Registrati extends Zend_Form
             ),
         ));
 
-        $this->addElement('text', 'Cognome', array(
+        $this->addElement('text', 'cognome', array(
             'filters'    => array('StringTrim'),
             'required'   => true,
             'label'=> 'Cognome:',
@@ -40,7 +38,7 @@ class Application_Form_Registrati extends Zend_Form
             ),
             'required'         => true,
             'label'      => 'Nascita:',
-            'placeholder' => 'Inserisci la data GG/MM/AAAA',
+            'placeholder' => 'Inserisci la data',
             'class' =>'form-control form-register',
         ));
 
@@ -69,17 +67,13 @@ class Application_Form_Registrati extends Zend_Form
             'validators' => array(
                 array('StringLength', true, array(2, 64))
             ),
-            'required'         => true,
+            'required'         => false,
             'class' =>'form-control form-register',
-            'placeholder' => 'Inserisci la password',
+            'placeholder' => 'Compila questo campo se vuoi modificare la password.',
             'label'      => 'Password:',
-            'validators' => array(
-                array('StringLength', true, array(3, 64))
-            ),
             'label_attributes' => array(
-                'class' => 'none'
+                'class' => 'required'
             )
-
         ));
 
         $this->addElement('text', 'telefono', array(
@@ -93,7 +87,7 @@ class Application_Form_Registrati extends Zend_Form
             'class' =>'form-control form-register',
         ));
 
-        $this->addElement('text', 'Descrizione', array(
+        $this->addElement('text', 'descrizione', array(
             'filters'    => array('StringTrim'),
             'required'   => true,
             'label'=> 'Descrizione:',
@@ -104,7 +98,7 @@ class Application_Form_Registrati extends Zend_Form
             ),
         ));
 
-        $this->addElement('submit', 'invia', array(
+        $this->addElement('submit', 'modifica', array(
             'class' => 'btn btn-lg btn-primary btn-block btn-signin button-green-nic',
         ));
         $this->setDecorators(array(
@@ -113,9 +107,8 @@ class Application_Form_Registrati extends Zend_Form
             array('Description', array('placement' => 'prepend', 'class' => 'formerror')),
             'Form',
         ));
-
-        include_once ('Lingua.php');
-
     }
 
+
 }
+

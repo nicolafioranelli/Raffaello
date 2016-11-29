@@ -44,6 +44,14 @@
           <actionMethod actionName="logout"/>
           <actionMethod actionName="inserimentoprimoblog"/>
           <actionMethod actionName="inserimentoprimoblogpost"/>
+          <actionMethod actionName="gestioneblog"/>
+          <actionMethod actionName="eliminablog"/>
+          <actionMethod actionName="eliminablogpost"/>
+          <actionMethod actionName="nuovopost"/>
+          <actionMethod actionName="nuovopostverifica"/>
+          <actionMethod actionName="visualizzablog"/>
+          <actionMethod actionName="modificaprofilo"/>
+          <actionMethod actionName="modificaprofilopost"/>
         </controllerFile>
         <controllerFile controllerName="Staff">
           <actionMethod actionName="index"/>
@@ -60,6 +68,7 @@
         <formFile formName="DatiUtente"/>
         <formFile formName="NuovoBlog"/>
         <formFile formName="NuovoPost"/>
+        <formFile formName="DatiProfilo"/>
       </formsDirectory>
       <layoutsDirectory>
         <layoutScriptsDirectory>
@@ -198,6 +207,30 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="User">
             <viewScriptFile forActionName="inserimentoprimoblogpost"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="gestioneblog"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="eliminablog"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="eliminablogpost"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="nuovopost"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="nuovopostverifica"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="visualizzablog"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="modificaprofilo"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="modificaprofilopost"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

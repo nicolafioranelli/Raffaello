@@ -31,6 +31,11 @@ class Application_Model_Post
         return $this->tabella->fetchAll($sql);
     }
 
+    public function elencoPostByIdBlog($id){
+        $sql = $this->tabella->select()->where("id_blog = ?", $id)->order("data DESC");
+        return $this->tabella->fetchAll($sql);
+    }
+
     public function esistenzaPost($id){
         $sql = $this->tabella->select()->where("id_utente = ?", $id);
         $risultato = $this->tabella->fetchAll($sql);
@@ -41,6 +46,16 @@ class Application_Model_Post
             $controllo = false;
         }
         return $controllo;
+    }
+
+    public function esistenzaPostByBlog($id){
+        $sql = $this->tabella->select()->where("id_blog = ?", $id);
+        $risultato = $this->tabella->fetchAll($sql);
+        $rowCount = count($risultato);
+        if ($rowCount > 0)
+            return true;
+         else
+            return false;
     }
 
 }

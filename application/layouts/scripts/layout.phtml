@@ -90,6 +90,31 @@ if(Zend_Auth::getInstance()->hasIdentity()){
                     </li>
                 <?php endif; ?>
 
+                <?php if($ruolo=="user"):?>
+                    <li class="menu-drop"><a class="smoothscroll" href="#" title="">Gestione <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="<?php echo $this->url(
+                                    array(
+                                        'controller' => 'user',
+                                        'action' => 'gestioneblog',
+                                    )
+                                ); ?>">Gestione Blog</a></li>
+                            <li><a href="<?php echo $this->url(
+                                    array(
+                                        'controller' => 'user',
+                                        'action' => 'modificaprofilo'
+                                    )
+                                ); ?>">Modifica Profilo</a></li>
+                            <li><a href="<?php echo $this->url(
+                                    array(
+                                        'controller' => 'user',
+                                        'action' => 'index',
+                                    )
+                                ); ?>">Impostazioni privacy</a></li>
+                        </ul>
+                    </li>
+                <?php endif; ?>
+
                 <?php if($ruolo=="guest"):?>
                 <li class="menu-drop"><a class="smoothscroll" href="#" title="">Aiuto <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                     <ul class="dropdown">
@@ -128,8 +153,8 @@ if(Zend_Auth::getInstance()->hasIdentity()){
                     <li class="highlight with-sep"><a href="<?php echo $this->url(
                             array(
                                 'controller' => $ruolo,
-                                'action' => 'index',
-                            )
+                                'action' => 'index'
+                            ), null, true
                         ); ?>" title=""><?php echo $this->nome?></a></li>
                 <?php endif; ?>
 
