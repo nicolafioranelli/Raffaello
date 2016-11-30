@@ -19,6 +19,7 @@ class UserController extends Zend_Controller_Action
         $this->utenteCorrente = $this->_authService->getIdentity();
         $this->view->assign("ruolo", $this->utenteCorrente->current()->ruolo);
         $this->view->assign("nome", $this->utenteCorrente->current()->nome);
+        $this->view->assign("username", $this->utenteCorrente->current()->username);
         $this->view->assign('nuovoblogForm', $this->inserimentoprimoblogAction());
         $this->view->assign('nuovopostForm', $this->nuovopostAction());
         $this->view->assign("formUtente", $this->modificaprofiloAction());
@@ -31,6 +32,20 @@ class UserController extends Zend_Controller_Action
         if ($blogModel->esistenzaBlog($idUtente)) {
             $datiblog = $blogModel->elencoBlogByUtente($idUtente);
             $this->view->assign("blogSet", $datiblog);
+            $amiciModel = new Application_Model_Amici();
+            $utentiModel = new Application_Model_Utente();
+            $idUtente = $this->utenteCorrente->current()->id_utente;
+            $rowset = $amiciModel->elencoAmiciById($idUtente);
+            $amicidata = array();
+            $i = 0;
+            foreach ($rowset as $data) {
+                $amicidata[$i]['id_utente'] = $data->richiedente;
+                $temp = $utentiModel->elencoUtenteById($data->richiedente);
+                $amicidata[$i]['richiedente'] = $temp->current()->nome . " " . $temp->current()->cognome;
+                $amicidata[$i]['id_amici'] = $data->id_amici;
+                $i++;
+            }
+            $this->view->assign("amiciSet", $amicidata);
         } else {
             $this->_helper->redirector('inserimentoprimoblog', 'user');
         }
@@ -114,7 +129,7 @@ class UserController extends Zend_Controller_Action
 
     public function nuovopostverificaAction()
     {
-        if ($this->hasParam('blog')) {
+        if ($this->hasParam('blog') && $this->hasParam('user')) {
             $request = $this->getRequest();
             if (!$request->isPost()) {
                 return $this->_helper->redirector('nuovopost');
@@ -125,7 +140,7 @@ class UserController extends Zend_Controller_Action
                 return $this->render('nuovopost');
             }
             $datiform = $this->nuovopostForm->getValues();
-            $idUtente = $this->utenteCorrente->current()->id_utente;
+            $idUtente = $this->getParam('user');
             $datiform['data'] = date('Y-m-d H:i:s');
             $datiform['id_utente'] = $idUtente;
             $datiform['id_blog'] = $this->getParam('blog');
@@ -146,7 +161,7 @@ class UserController extends Zend_Controller_Action
             $utenteModel = new Application_Model_Utente();
             $rowpost = $postModel->elencoPostByIdBlog($idblog);
             $newdatapost = array();
-            $i=0;
+            $i = 0;
             foreach ($rowpost as $post) {
 
                 $newdatapost[$i]['id_post'] = $post->id_post;
@@ -156,6 +171,7 @@ class UserController extends Zend_Controller_Action
                 $temp = $utenteModel->elencoUtenteById($post->id_utente);
                 $newdatapost[$i]['nome_utente'] = $temp->current()->nome;
                 $newdatapost[$i]['id_utente'] = $post->id_utente;
+                $newdatapost[$i]['username'] = $temp->current()->username;
                 $i++;
             }
             $this->view->assign('postSet', $newdatapost);
@@ -164,6 +180,24 @@ class UserController extends Zend_Controller_Action
             } else {
                 $this->view->assign('valPost', 1);
             }
+            $amiciModel = new Application_Model_Amici();
+            $utentiModel = new Application_Model_Utente();
+            $idUtente = $this->utenteCorrente->current()->id_utente;
+            $rowset = $amiciModel->elencoAmiciById($idUtente);
+            $amicidata = array();
+            $i = 0;
+            foreach ($rowset as $data) {
+                $amicidata[$i]['id_utente'] = $data->richiedente;
+                $temp = $utentiModel->elencoUtenteById($data->richiedente);
+                $amicidata[$i]['richiedente'] = $temp->current()->nome . " " . $temp->current()->cognome;
+                $amicidata[$i]['id_amici'] = $data->id_amici;
+                $i++;
+            }
+            $this->view->assign("amiciSet", $amicidata);
+            $blogModel = new Application_Model_Blog();
+            $datiblog = $blogModel->elencoBlogById($idblog)->current()->toArray();
+            $this->view->assign('blogSet', $datiblog);
+            $this->view->assign('utenteCorrente', $idUtente);
         }
     }
 
@@ -197,10 +231,10 @@ class UserController extends Zend_Controller_Action
             return $this->render('modificaprofilo');
         }
         $datiform = $this->formUtente->getValues();
-        if ($datiform['password'] == ""){
+        if ($datiform['password'] == "") {
             unset($datiform['password']);
         }
-        $datiform['nascita']= substr($datiform['nascita'],6,4) ."-" .substr($datiform['nascita'],3,2)."-". substr($datiform['nascita'],0,2);
+        $datiform['nascita'] = substr($datiform['nascita'], 6, 4) . "-" . substr($datiform['nascita'], 3, 2) . "-" . substr($datiform['nascita'], 0, 2);
         $utentemodel = new Application_Model_Utente();
         $id = $this->getParam("utente"); //prendo la faq inserito nella form
 
@@ -208,16 +242,104 @@ class UserController extends Zend_Controller_Action
         $this->_helper->redirector("index", "user");
     }
 
+    public function amicipostAction()
+    {
+        if ($this->hasParam('idamici') && $this->hasParam('azione')) {
+            $action = $this->getParam('azione');
+            $id_amici = $this->getParam('idamici');
+            if ($action == 'accepted') {
+                $amiciModel = new Application_Model_Amici();
+                $dati = array();
+                $dati['stato'] = $action;
+                $amiciModel->aggiornaAmici($dati, $id_amici);
+            }
+            if ($action == 'refused') {
+                $amiciModel = new Application_Model_Amici();
+                $dati = array();
+                $dati['stato'] = $action;
+                $amiciModel->aggiornaAmici($dati, $id_amici);
+            }
+            $this->_helper->redirector("index", "user");
+        }
+    }
+
+    public function amiciAction()
+    {
+        $amiciModel = new Application_Model_Amici();
+        $utentiModel = new Application_Model_Utente();
+        $idUtente = $this->utenteCorrente->current()->id_utente;
+        $rowset = $amiciModel->elencoAmici($idUtente);
+        $amicidata = array();
+        $i = 0;
+        foreach ($rowset as $data) {
+            $temp = $utentiModel->elencoUtenteById($data->richiedente);
+            $amicidata[$i]['richiedente'] = $temp->current()->nome . " " . $temp->current()->cognome;
+            $amicidata[$i]['username'] = $temp->current()->username;
+            $amicidata[$i]['idamico'] = $temp->current()->id_utente;
+            $i++;
+        }
+        $this->view->assign("amiciSet", $amicidata );
+    }
+
+    public function profiloAction()
+    {
+        if ($this->hasParam('user')) {
+            $utenteModel = new Application_Model_Utente();
+            $username = $this->getParam('user');
+            $dati = $utenteModel->cercaUtenteByUser($username);
+            $idUtente = $this->utenteCorrente->current()->id_utente;
+            $blogModel = new Application_Model_Blog();
+            $datiBlog = $blogModel->elencoBlogByUtente($dati->current()->id_utente);
+            if ($idUtente == $dati->current()->id_utente) {
+                $this->view->assign('datiSet', $dati);
+                $temp = "modifica";
+                $this->view->assign('valBot', $temp);
+                $this->view->assign('blogSet', $datiBlog);
+                $this->view->assign('blog', "tuoi");
+            }
+            if ($idUtente != $dati->current()->id_utente) {
+                $this->view->assign('datiSet', $dati);
+                $amiciModel = new Application_Model_Amici();
+                $rowset = $amiciModel->elencoRichiestaPresente($dati->current()->id_utente, $idUtente);
+                if ($rowset) {
+                    $temp = "Richiesta Inviata";
+                    $this->view->assign('valBot', $temp);
+                } else {
+                    $temp = "aggiungi";
+                    $this->view->assign('valBot', $temp);
+                }
+                $this->view->assign('blogSet', $datiBlog);
+                $this->view->assign('blog', "suoi");
+            }
+        }
+    }
+
+    public function aggiungiprofiloAction()
+    {
+        if ($this->hasParam('idricevente')) {
+            $dati = array();
+            $dati['richiedente'] = $this->utenteCorrente->current()->id_utente;
+            $dati['ricevente'] = $this->getParam('idricevente');
+            $dati['stato'] = 'standby';
+            $dati['data'] = date('Y-m-d H:i:s');
+            $amiciModel = new Application_Model_Amici();
+            $amiciModel->inserisciAmici($dati);
+            $this->_helper->redirector("index", "user");
+        }
+    }
+
+    public function eliminaamicoAction()
+    {
+        if($this->hasParam('user')){
+            $id = $this->getParam('user');
+            $amiciModel = new Application_Model_Amici();
+            $amiciModel->eliminaAmici($id);
+            $this->_helper->redirector("amici", "user");
+        }
+    }
+
 
 }
-
-
-
-
-
-
-
-
 
 
 

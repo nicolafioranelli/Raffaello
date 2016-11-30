@@ -16,7 +16,18 @@
                     <!-- INIZIO POST -->
                     <div class="col-lg-12 container-post">
                         <!-- .featured-image -->
-
+                        <div class="row">
+                            <div class="col-md-5 col-sm-5 col-lg-5">
+                                <h2 style="font-size: 40pt; width: auto; margin-top: auto; color: #21DC7F;"><?php echo $this->blogSet['titolo']; ?></h2>
+                                <a href="<?php echo $this->url(
+                                    array(
+                                        'controller' => 'user',
+                                        'action' => 'nuovopost',
+                                        'user' => $this->utenteCorrente
+                                    )
+                                ); ?>" class="btn btn-outlined" style="margin-top: 5%; margin-bottom: 20pt;">Nuovo Post</a>
+                            </div>
+                        </div>
                         <?php
                         for ($i = 0; $i < count($this->postSet); $i++): ?>
                             <div class="featured-image">
@@ -28,9 +39,10 @@
                                         <li><i class="pe-7s-comment"></i>Da: <a href="<?php echo $this->url(
                                                 array(
                                                     'controller' => 'user',
-                                                    'action' => 'nuovopost',
+                                                    'action' => 'profilo',
                                                     'user' => $this->postSet[$i]['id_utente']
-                                                )
+                                                ),
+                                                null, true
                                             ); ?>"><?php echo $this->postSet[$i]['nome_utente']; ?></a></li>
                                     </ul>
                                 </div>
