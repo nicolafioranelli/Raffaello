@@ -52,6 +52,11 @@
           <actionMethod actionName="visualizzablog"/>
           <actionMethod actionName="modificaprofilo"/>
           <actionMethod actionName="modificaprofilopost"/>
+          <actionMethod actionName="confermaamico"/>
+          <actionMethod actionName="rifiutaamico"/>
+          <actionMethod actionName="amicipost"/>
+          <actionMethod actionName="amici"/>
+          <actionMethod actionName="profilo"/>
         </controllerFile>
         <controllerFile controllerName="Staff">
           <actionMethod actionName="index"/>
@@ -231,6 +236,21 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="User">
             <viewScriptFile forActionName="modificaprofilopost"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="confermaamico"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="rifiutaamico"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="amicipost"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="amici"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="profilo"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

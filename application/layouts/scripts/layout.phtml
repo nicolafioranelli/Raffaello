@@ -153,7 +153,8 @@ if(Zend_Auth::getInstance()->hasIdentity()){
                     <li class="highlight with-sep"><a href="<?php echo $this->url(
                             array(
                                 'controller' => $ruolo,
-                                'action' => 'index'
+                                'action' => 'profilo',
+                                'user' => $this->username
                             ), null, true
                         ); ?>" title=""><?php echo $this->nome?></a></li>
                 <?php endif; ?>

@@ -1,0 +1,47 @@
+<section id="hero" class="hero-blog">
+	<div id="particles-js">
+
+	</div>
+	</div>
+</section>
+
+<section id="hero" class="hero-features">
+	<section id="solutions">
+		<div class="cnt-solutions-bg">
+			<div class="container">
+				<div id="feature-item-01">
+					<div class="row">
+						<!-- PROFILO -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 feature-show">
+							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+								<img src="<?php echo $this->baseUrl("assets/img/01.jpg"); ?>" alt="" class="img-responsive" style="margin-bottom: 5%">
+							</div>
+							<?php foreach ($this->datiSet as $dati): ?>
+							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content-feature">
+								<h2 style="font-size: 40pt; margin-bottom: auto"><?php echo $dati->nome. ' ' .$dati->cognome; ?></h2>
+								<h2 style="font-family: 'Open Sans',sans-serif; font-size: 1.6rem; text-align: left; margin-top: 0px; margin-bottom: auto">@<?php echo $dati->username; ?> </h2>
+								<h2 style="font-family: 'Open Sans',sans-serif; font-size: 1.6rem; text-align: left; margin-top: 4px; margin-bottom: auto; color: #787878"><?php echo substr($dati->nascita,8,2) ."-" .substr($dati->nascita,5,2)."-". substr($dati->nascita,0,4). ' - '. $dati->email; ?></h2>
+
+								<p style="margin-bottom: 5%"><?php echo $dati->descrizione; ?></p>
+							</div>
+							<?php endforeach; ?>
+
+                            <div class="row">
+                                <div class="col-md-5 col-sm-5 col-lg-5"></div>
+                                <div class="col-lg-12 action-started">
+                                    <a href="<?php echo $this->url(array(
+                                        'controller' => 'user',
+                                        'action' => $this->valBot.'profilo'),
+                                        null, true);
+                                    ?>" class="btn btn-outlined" style="margin-top: 5%"><?php echo $this->valBot; ?></a>
+                                </div>
+                            </div>
+
+						</div>
+						<!-- FINE PROFILO -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>

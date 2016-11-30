@@ -48,5 +48,9 @@ class Application_Model_Utente
         return $user;
     }
 
+    public function cercaUtenteByUser($id){
+        return $this->tabella->fetchAll($this->tabella->select()->where("username = '$id'"));
+    }
+
 }
 
