@@ -57,6 +57,9 @@
           <actionMethod actionName="amicipost"/>
           <actionMethod actionName="amici"/>
           <actionMethod actionName="profilo"/>
+          <actionMethod actionName="aggiungiprofilo"/>
+          <actionMethod actionName="visualizzaprofiloamico"/>
+          <actionMethod actionName="eliminaamico"/>
         </controllerFile>
         <controllerFile controllerName="Staff">
           <actionMethod actionName="index"/>
@@ -251,6 +254,15 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="User">
             <viewScriptFile forActionName="profilo"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="aggiungiprofilo"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="visualizzaprofiloamico"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="eliminaamico"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

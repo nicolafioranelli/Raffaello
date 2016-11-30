@@ -1,47 +1,83 @@
 <section id="hero" class="hero-blog">
-	<div id="particles-js">
+    <div id="particles-js">
 
-	</div>
-	</div>
+    </div>
+    </div>
 </section>
 
 <section id="hero" class="hero-features">
-	<section id="solutions">
-		<div class="cnt-solutions-bg">
-			<div class="container">
-				<div id="feature-item-01">
-					<div class="row">
-						<!-- PROFILO -->
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 feature-show">
-							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-								<img src="<?php echo $this->baseUrl("assets/img/01.jpg"); ?>" alt="" class="img-responsive" style="margin-bottom: 5%">
-							</div>
-							<?php foreach ($this->datiSet as $dati): ?>
-							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content-feature">
-								<h2 style="font-size: 40pt; margin-bottom: auto"><?php echo $dati->nome. ' ' .$dati->cognome; ?></h2>
-								<h2 style="font-family: 'Open Sans',sans-serif; font-size: 1.6rem; text-align: left; margin-top: 0px; margin-bottom: auto">@<?php echo $dati->username; ?> </h2>
-								<h2 style="font-family: 'Open Sans',sans-serif; font-size: 1.6rem; text-align: left; margin-top: 4px; margin-bottom: auto; color: #787878"><?php echo substr($dati->nascita,8,2) ."-" .substr($dati->nascita,5,2)."-". substr($dati->nascita,0,4). ' - '. $dati->email; ?></h2>
-
-								<p style="margin-bottom: 5%"><?php echo $dati->descrizione; ?></p>
-							</div>
-							<?php endforeach; ?>
-
-                            <div class="row">
-                                <div class="col-md-5 col-sm-5 col-lg-5"></div>
-                                <div class="col-lg-12 action-started">
-                                    <a href="<?php echo $this->url(array(
-                                        'controller' => 'user',
-                                        'action' => $this->valBot.'profilo'),
-                                        null, true);
-                                    ?>" class="btn btn-outlined" style="margin-top: 5%"><?php echo $this->valBot; ?></a>
-                                </div>
+    <section id="solutions">
+        <div class="cnt-solutions-bg">
+            <div class="container">
+                <div id="feature-item-01">
+                    <div class="row">
+                        <!-- PROFILO -->
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 feature-show">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <img src="<?php echo $this->baseUrl("assets/img/01.jpg"); ?>" alt=""
+                                     class="img-responsive" style="margin-bottom: 5%">
                             </div>
+                            <?php foreach ($this->datiSet as $dati): ?>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content-feature">
+                                    <h2 style="font-size: 40pt; margin-bottom: auto"><?php echo $dati->nome . ' ' . $dati->cognome; ?></h2>
+                                    <h2 style="font-family: 'Open Sans',sans-serif; font-size: 1.6rem; text-align: left; margin-top: 0px; margin-bottom: auto">
+                                        @<?php echo $dati->username; ?> </h2>
+                                    <h2 style="font-family: 'Open Sans',sans-serif; font-size: 1.6rem; text-align: left; margin-top: 4px; margin-bottom: auto; color: #787878"><?php echo substr($dati->nascita, 8, 2) . "-" . substr($dati->nascita, 5, 2) . "-" . substr($dati->nascita, 0, 4) . ' - ' . $dati->email; ?></h2>
 
-						</div>
-						<!-- FINE PROFILO -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</section>
+                                    <p style="margin-bottom: 5%"><?php echo $dati->descrizione; ?></p>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-5 col-lg-5"></div>
+                                    <div class="col-lg-12 action-started">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'user',
+                                            'action' => $this->valBot . 'profilo',
+                                            'idricevente' => $dati->id_utente),
+                                            null, true);
+                                        ?>" class="btn btn-outlined"
+                                           <?php if ($this->valBot == "Richiesta Inviata") echo 'disabled '; ?>style="margin-top: 5%"><?php echo $this->valBot; ?></a>
+                                    </div>
+                                </div>
+
+                            <?php endforeach; ?>
+
+                        </div>
+                        <!-- FINE PROFILO -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+<section id="hiring">
+    <div class="cnt-hiring-bg">
+        <div class="container">
+            <h1>I <?php echo $this->blog; ?> blog</h1>
+            <div class="row-centered">
+                <div class="col-xs-12 col-md-12 col-lg-6 col-centered container-jobs">
+                    <?php foreach ($this->blogSet as $blg): ?>
+                        <div class="col-xs-12 col-md-12 col-lg-12 col-centered job-position">
+                            <div class="col-xs-12 col-md-12 col-lg-8 data-job">
+                                <ul>
+                                    <li class="place"><?php if(strlen($blg->titolo)>8) echo substr($blg->titolo, 0, 8).'...'; else echo $blg->titolo; ?></li>
+                                    <li class="title-job"><?php if(strlen($blg->descrizione)>23) echo substr($blg->descrizione, 0, 23).'...'; else echo $blg->descrizione; ?></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-12 col-md-4 col-lg-4">
+                                <a class="button" href="<?php echo $this->url(array(
+                                    'controller' => 'user',
+                                    'action' => 'visualizzablog',
+                                    'blog' => $blg->id_blog
+                                ),null, true);
+                                ?>">Vai</a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,50 +1,53 @@
-
 <!DOCTYPE html>
 <html lang="it" class="template-color-21DC7F">
 
 <?php
 $authService = new Application_Service_Auth();
 $ruolo = "guest";
-if(Zend_Auth::getInstance()->hasIdentity()){
+if (Zend_Auth::getInstance()->hasIdentity()) {
     $ruolo = $authService->getIdentity()->current()->ruolo;
 }
 ?>
 
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <?php echo $this->headTitle();?>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <?php echo $this->headTitle(); ?>
     <!--<title>Leonardo - Home</title>-->
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo $this->baseUrl("assets/css/bootstrap.min.css");?>" rel="stylesheet" />
+    <link href="<?php echo $this->baseUrl("assets/css/bootstrap.min.css"); ?>" rel="stylesheet"/>
 
     <!-- Custom CSS -->
-    <link href="<?php echo $this->baseUrl("assets/css/main.css");?>" rel="stylesheet" />
-    <link id="colors" href="<?php echo $this->baseUrl("assets/css/colors/default.css");?>" rel="stylesheet" />
-    <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/responsive.css");?>" />
+    <link href="<?php echo $this->baseUrl("assets/css/main.css"); ?>" rel="stylesheet"/>
+    <link id="colors" href="<?php echo $this->baseUrl("assets/css/colors/default.css"); ?>" rel="stylesheet"/>
+    <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/responsive.css"); ?>"/>
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/vendor.css");?>" />
-    <link rel="stylesheet" href="<?php echo $this->baseUrl("datatables/media/css/dataTables.bootstrap4.css");?>" />
+    <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/vendor.css"); ?>"/>
+    <link rel="stylesheet" href="<?php echo $this->baseUrl("datatables/media/css/dataTables.bootstrap4.css"); ?>"/>
 
     <!-- Custom Fonts -->
-    <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/simple-line-icons.css");?>" />
-    <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/pe-icon-7-stroke.css");?>">
-    <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/font-awesome.min.css");?>">
+    <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/simple-line-icons.css"); ?>"/>
+    <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/pe-icon-7-stroke.css"); ?>">
+    <link rel="stylesheet" href="<?php echo $this->baseUrl("assets/css/font-awesome.min.css"); ?>">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800|Montserrat:400,700">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="<?php echo $this->baseUrl("assets/js/html5shiv.js");?>"></script>
-    <script src="<?php echo $this->baseUrl("assets/js/respond.min.js");?>"></script>
+    <script src="<?php echo $this->baseUrl(" assets/js/html5shiv.js");?>"></script>
+    <
+    script
+    src = "<?php echo $this->baseUrl("
+    assets / js / respond.min.js
+    ");?>" ></script>
     <![endif]-->
-    
+
 </head>
 
 <body>
@@ -64,15 +67,68 @@ if(Zend_Auth::getInstance()->hasIdentity()){
         <nav id="main-nav-wrap">
             <ul class="main-navigation">
 
-                <li class="smoothscroll"><a href="<?php echo $this->url(
-                        array(
-                            'controller' => 'public',
-                            'action' => 'index',
-                        )
-                    ); ?>" title="">Home</a></li>
+                <!-- GUEST NAVBAR -->
+                <?php if ($ruolo == "guest"): ?>
+                    <li class="smoothscroll"><a href="<?php echo $this->url(
+                            array(
+                                'controller' => 'public',
+                                'action' => 'index',
+                            )
+                        ); ?>" title="">Home</a></li>
 
-                <?php if($ruolo=="admin"):?>
-                <li class="menu-drop"><a class="smoothscroll" href="#" title="">Gestione <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                    <li class="menu-drop"><a class="smoothscroll" href="#" title="">Aiuto <i class="fa fa-sort-desc"
+                                                                                             aria-hidden="true"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="<?php echo $this->url(
+                                    array(
+                                        'controller' => 'public',
+                                        'action' => 'faq',
+                                    )
+                                ); ?>">FAQ</a></li>
+                            <li><a href="<?php echo $this->url(
+                                    array(
+                                        'controller' => 'public',
+                                        'action' => 'terms',
+                                    )
+                                ); ?>">Termini e condizioni</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a class="smoothscroll" href="<?php echo $this->url(
+                            array(
+                                'controller' => 'public',
+                                'action' => 'contacts',
+                            )
+                        ); ?>" title="">Contatti</a></li>
+
+                    <li class="highlight with-sep"><a href="<?php echo $this->url(
+                            array(
+                                'controller' => 'public',
+                                'action' => 'login',
+                            )
+                        ); ?>" title="">Accedi</a></li>
+
+                    <li class="highlight with-sep"><a href="<?php echo $this->url(
+                            array(
+                                'controller' => 'public',
+                                'action' => 'register',
+                            )
+                        ); ?>" title="">Registrati</a></li>
+
+                <?php endif; ?>
+                <!-- END GUEST NAVBAR -->
+
+                <!-- ADMIN NAVBAR -->
+                <?php if ($ruolo == "admin"): ?>
+                    <li class="smoothscroll"><a href="<?php echo $this->url(
+                            array(
+                                'controller' => 'admin',
+                                'action' => 'index',
+                            )
+                        ); ?>" title="">Home</a></li>
+
+                    <li class="menu-drop"><a class="smoothscroll" href="#" title="">Gestione <i class="fa fa-sort-desc"
+                                                                                                aria-hidden="true"></i></a>
                         <ul class="dropdown">
                             <li><a href="<?php echo $this->url(
                                     array(
@@ -88,85 +144,61 @@ if(Zend_Auth::getInstance()->hasIdentity()){
                                 ); ?>">Gestioni Utenti</a></li>
                         </ul>
                     </li>
-                <?php endif; ?>
 
-                <?php if($ruolo=="user"):?>
-                    <li class="menu-drop"><a class="smoothscroll" href="#" title="">Gestione <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                    <li class="highlight with-sep"><a href="<?php echo $this->url(
+                            array(
+                                'controller' => $ruolo,
+                                'action' => 'logout',
+                            )
+                        ); ?>" title="">Logout</a></li>
+
+                <?php endif; ?>
+                <!-- END ADMIN NAVBAR -->
+
+                <!-- STAFF NAVBAR -->
+                <!-- END STAFF NAVBAR -->
+
+                <!-- USER NAVBAR -->
+                <?php if ($ruolo == "user"): ?>
+                    <li class="smoothscroll"><a href="<?php echo $this->url(
+                            array(
+                                'controller' => 'user',
+                                'action' => 'index'
+                            ), null, true
+                        ); ?>" title="">Home</a></li>
+
+                    <li class="menu-drop"><a class="smoothscroll" href="#" title="">Gestione <i class="fa fa-sort-desc"
+                                                                                                aria-hidden="true"></i></a>
                         <ul class="dropdown">
                             <li><a href="<?php echo $this->url(
                                     array(
                                         'controller' => 'user',
                                         'action' => 'gestioneblog',
-                                    )
+                                    ), null, true
                                 ); ?>">Gestione Blog</a></li>
                             <li><a href="<?php echo $this->url(
                                     array(
                                         'controller' => 'user',
                                         'action' => 'modificaprofilo'
-                                    )
+                                    ), null, true
                                 ); ?>">Modifica Profilo</a></li>
                             <li><a href="<?php echo $this->url(
                                     array(
                                         'controller' => 'user',
                                         'action' => 'index',
-                                    )
+                                    ), null, true
                                 ); ?>">Impostazioni privacy</a></li>
                         </ul>
                     </li>
-                <?php endif; ?>
 
-                <?php if($ruolo=="guest"):?>
-                <li class="menu-drop"><a class="smoothscroll" href="#" title="">Aiuto <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="<?php echo $this->url(
-                                array(
-                                    'controller' => 'public',
-                                    'action' => 'faq',
-                                )
-                            ); ?>">FAQ</a></li>
-                        <li><a href="<?php echo $this->url(
-                                array(
-                                    'controller' => 'public',
-                                    'action' => 'terms',
-                                )
-                            ); ?>">Termini e condizioni</a></li>
-                    </ul>
-                </li>
-                <?php endif; ?>
-
-                <li><a class="smoothscroll" href="<?php echo $this->url(
-                        array(
-                            'controller' => 'public',
-                            'action' => 'contacts',
-                        )
-                    ); ?>" title="">Contatti</a></li>
-
-                <?php if($ruolo=="guest"):?>
-                <li class="highlight with-sep"><a href="<?php echo $this->url(
-                        array(
-                            'controller' => 'public',
-                            'action' => 'login',
-                        )
-                    ); ?>" title="">Accedi</a></li>
-                <?php endif; ?>
-                <?php if($ruolo=="user"): ?>
                     <li class="highlight with-sep"><a href="<?php echo $this->url(
                             array(
                                 'controller' => $ruolo,
                                 'action' => 'profilo',
                                 'user' => $this->username
                             ), null, true
-                        ); ?>" title=""><?php echo $this->nome?></a></li>
-                <?php endif; ?>
+                        ); ?>" title=""><?php echo $this->nome ?></a></li>
 
-                <?php if($ruolo=="guest"):?>
-                <li class="highlight with-sep"><a href="<?php echo $this->url(
-                        array(
-                            'controller' => 'public',
-                            'action' => 'register',
-                        )
-                    ); ?>" title="">Registrati</a></li>
-                <?php else: ?>
                     <li class="highlight with-sep"><a href="<?php echo $this->url(
                             array(
                                 'controller' => $ruolo,
@@ -174,6 +206,7 @@ if(Zend_Auth::getInstance()->hasIdentity()){
                             )
                         ); ?>" title="">Logout</a></li>
                 <?php endif; ?>
+                <!-- END USER NAVBAR -->
             </ul>
 
             <!-- Mobile Menu -->
@@ -299,7 +332,8 @@ if(Zend_Auth::getInstance()->hasIdentity()){
             </div>
             <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 top-footer">
                 <div id="go-top">
-                    <a class="smoothscroll" title="Back to Top" href="#"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                    <a class="smoothscroll" title="Back to Top" href="#"><i class="fa fa-chevron-up"
+                                                                            aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -312,17 +346,16 @@ if(Zend_Auth::getInstance()->hasIdentity()){
 </div>
 
 <!-- jQuery -->
-<script src="<?php echo $this->baseUrl("assets/js/jquery.min.js");?>"></script>
+<script src="<?php echo $this->baseUrl("assets/js/jquery.min.js"); ?>"></script>
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo $this->baseUrl("assets/js/bootstrap.min.js");?>"></script>
+<script src="<?php echo $this->baseUrl("assets/js/bootstrap.min.js"); ?>"></script>
 <!-- Preloader -->
-<script src="<?php echo $this->baseUrl("assets/js/prealoader.js");?>"></script>
+<script src="<?php echo $this->baseUrl("assets/js/prealoader.js"); ?>"></script>
 <!-- Main -->
-<script src="<?php echo $this->baseUrl("assets/js/main.js");?>"></script>
+<script src="<?php echo $this->baseUrl("assets/js/main.js"); ?>"></script>
 <!-- Datatables -->
-<script src="<?php echo $this->baseUrl("datatables/media/js/dataTables.bootstrap4.js");?>"></script>
-<script src="<?php echo $this->baseUrl("datatables/media/js/jquery.dataTables.js");?>"></script>
-
+<script src="<?php echo $this->baseUrl("datatables/media/js/dataTables.bootstrap4.js"); ?>"></script>
+<script src="<?php echo $this->baseUrl("datatables/media/js/jquery.dataTables.js"); ?>"></script>
 
 
 </body>
