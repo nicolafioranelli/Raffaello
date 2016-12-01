@@ -57,11 +57,13 @@ if (Zend_Auth::getInstance()->hasIdentity()) {
         <div class="logo">
             <a href="<?php echo $this->url(
                 array(
-                    'controller' => 'public',
+                    'controller' => $ruolo,
                     'action' => 'index',
-                )
+                ), null, true
             ); ?>" class="logo-light"></a>
         </div>
+
+
 
         <!-- Main Menu -->
         <nav id="main-nav-wrap">
@@ -179,15 +181,21 @@ if (Zend_Auth::getInstance()->hasIdentity()) {
                             <li><a href="<?php echo $this->url(
                                     array(
                                         'controller' => 'user',
+                                        'action' => 'amici',
+                                    ), null, true
+                                ); ?>">Gestione Amici</a></li>
+                            <li><a href="<?php echo $this->url(
+                                    array(
+                                        'controller' => 'user',
                                         'action' => 'modificaprofilo'
                                     ), null, true
                                 ); ?>">Modifica Profilo</a></li>
                             <li><a href="<?php echo $this->url(
                                     array(
                                         'controller' => 'user',
-                                        'action' => 'index',
+                                        'action' => 'modificaprivacy',
                                     ), null, true
-                                ); ?>">Impostazioni privacy</a></li>
+                                ); ?>">Impostazioni Privacy</a></li>
                         </ul>
                     </li>
 

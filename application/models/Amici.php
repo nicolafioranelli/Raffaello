@@ -20,14 +20,16 @@ class Application_Model_Amici
         return $this->tabella->update($dati, "id_amici = '$id'");
     }
 
-    public function eliminaAmici($id)
+    public function eliminaAmici($id, $id2)
     {
-        return $this->tabella->delete("richiedente = '$id'");
+        $this->tabella->delete("richiedente = '$id' AND ricevente = '$id2'");
+        $this->tabella->delete("richiedente = '$id2' AND ricevente = '$id'");
     }
+
 
     public function elencoAmici($id)
     {
-        return $this->tabella->fetchAll($this->tabella->select()->where("ricevente =  ? ", $id)->where("stato = 'accepted'"));
+        return $this->tabella->fetchAll($this->tabella->select()->where("ricevente =  '$id' OR richiedente ='$id'")->where("stato = 'accepted'"));
     }
 
     public function elencoAmiciById($id)
@@ -37,12 +39,7 @@ class Application_Model_Amici
 
     public function elencoRichiestaPresente($idricevente, $idrichiedente)
     {
-        $risultato = $this->tabella->fetchAll($this->tabella->select()->where("ricevente =  ? ", $idricevente)->where("richiedente = ? ", $idrichiedente));
-        $rowCount = count($risultato);
-        if ($rowCount > 0)
-            return true;
-        else
-            return false;
+        return $risultato = $this->tabella->fetchAll($this->tabella->select()->where("ricevente =  ? ", $idricevente)->where("richiedente = ? ", $idrichiedente)->order("data DESC"));
 
     }
 

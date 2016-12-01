@@ -21,7 +21,7 @@
                                width="100%">
                             <thead>
                             <tr>
-                                <th class="font-tabella" style="text-align: center">Amici</th>
+                                <th class="font-tabella" style="text-align: center">Profili</th>
                                 <th class="font-tabella" style="text-align: center">Username</th>
                                 <th class="font-tabella" style="text-align: center">Profilo</th>
                                 <th class="font-tabella" style="text-align: center">Elimina</th>
@@ -33,7 +33,7 @@
                                 <?php for ($i = 0;
                                 $i < count($this->amiciSet);
                                 $i++): ?>
-                                <td class="font-tabella-campi"><?php echo $this->amiciSet[$i]['richiedente']; ?></td>
+                                <td class="font-tabella-campi" style="text-transform: capitalize"><?php echo $this->amiciSet[$i]['amico']; ?></td>
                                 <td class="font-tabella-campi"><?php echo $this->amiciSet[$i]['username']; ?></td>
                                 <td style="font-size: 1.2em;">
                                     <a href="<?php echo $this->url(
@@ -54,7 +54,7 @@
                                 <td style="font-size: 1.2em;">
                                     <a href="<?php echo $this->url(array(
                                         'controller' => 'user',
-                                        'action' => 'eliminaamico',
+                                        'action' => 'eliminaprofilo',
                                         'user' => $this->amiciSet[$i]['idamico']
                                     ));
                                     ?>">

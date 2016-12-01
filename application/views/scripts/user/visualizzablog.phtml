@@ -25,7 +25,8 @@
                                         'action' => 'nuovopost',
                                         'user' => $this->utenteCorrente
                                     )
-                                ); ?>" class="btn btn-outlined" style="margin-top: 5%; margin-bottom: 20pt;">Nuovo Post</a>
+                                ); ?>" class="btn btn-outlined" style="margin-top: 5%; margin-bottom: 20pt;">Nuovo
+                                    Post</a>
                             </div>
                         </div>
                         <?php
@@ -40,7 +41,7 @@
                                                 array(
                                                     'controller' => 'user',
                                                     'action' => 'profilo',
-                                                    'user' => $this->postSet[$i]['id_utente']
+                                                    'user' => $this->postSet[$i]['username']
                                                 ),
                                                 null, true
                                             ); ?>"><?php echo $this->postSet[$i]['nome_utente']; ?></a></li>
@@ -85,17 +86,23 @@
                     <br>
                     <br>
                     <span class="dotted-line"></span>
+
                     <div class="col-lg-12 cnt-form-search">
-                        <form class="searchbox-container" action="http://citruslabsthemes.com/themes/impromptu/.">
+                        <form method="post" class="searchbox-container" action="<?php echo $this->url(
+                            array(
+                                'controller' => 'user',
+                                'action' => 'cerca',
+                            )); ?>">
                             <input type="search" class="searchbox" name="search" autocomplete="off"
                                    placeholder="Cerca..."/>
                             <button type="submit" class="searchbutton fa fa-search"></button>
                         </form>
                     </div>
+
                     <span class="dotted-line"></span>
 
                     <div class="col-lg-12 cnt-about-us">
-                        <h3>Ciao, <?php echo $this->nome ?>!</h3>
+                        <h3 style="text-transform: capitalize">Ciao, <?php echo $this->nome ?>!</h3>
                         <hr class="title-sidebar"/>
                         <!-- TABELLA RICHIESTE DI AMICIZIA -->
                         <table id="datatable" class="table table-striped table-bordered " cellspacing="0"
@@ -200,19 +207,6 @@
                         </div>
                     </div>
 
-                    <span class="dotted-line"></span>
-                    <div class="col-lg-12 archives">
-                        <h3>I tuoi Blog</h3>
-                        <hr class="title-sidebar"/>
-                        <div class="cnt-sidebar">
-                            <?php foreach ($this->blogSet as $blog): ?>
-                                <div class="archive-first"><a href="#"><?php echo $blog->titolo; ?></a><span><i
-                                            class="fa fa-plus"></i></span>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                    <span class="dotted-line"></span>
 
                 </div>
             </div>

@@ -235,6 +235,8 @@ class UserController extends Zend_Controller_Action
             unset($datiform['password']);
         }
         $datiform['nascita'] = substr($datiform['nascita'], 6, 4) . "-" . substr($datiform['nascita'], 3, 2) . "-" . substr($datiform['nascita'], 0, 2);
+        $datiform['nome'] = strtolower($datiform['nome']);
+        $datiform['cognome'] = strtolower($datiform['cognome']);
         $utentemodel = new Application_Model_Utente();
         $id = $this->getParam("utente"); //prendo la faq inserito nella form
 
@@ -272,44 +274,87 @@ class UserController extends Zend_Controller_Action
         $amicidata = array();
         $i = 0;
         foreach ($rowset as $data) {
-            $temp = $utentiModel->elencoUtenteById($data->richiedente);
-            $amicidata[$i]['richiedente'] = $temp->current()->nome . " " . $temp->current()->cognome;
+            if ($idUtente == $data->ricevente):
+                $temp = $utentiModel->elencoUtenteById($data->richiedente);
+            else:
+                $temp = $utentiModel->elencoUtenteById($data->ricevente);
+            endif;
+            $amicidata[$i]['amico'] = $temp->current()->nome . " " . $temp->current()->cognome;
             $amicidata[$i]['username'] = $temp->current()->username;
             $amicidata[$i]['idamico'] = $temp->current()->id_utente;
             $i++;
+
+
         }
-        $this->view->assign("amiciSet", $amicidata );
+        $this->view->assign("amiciSet", $amicidata);
     }
 
     public function profiloAction()
     {
         if ($this->hasParam('user')) {
+            $privacy = 0;
             $utenteModel = new Application_Model_Utente();
             $username = $this->getParam('user');
             $dati = $utenteModel->cercaUtenteByUser($username);
             $idUtente = $this->utenteCorrente->current()->id_utente;
             $blogModel = new Application_Model_Blog();
             $datiBlog = $blogModel->elencoBlogByUtente($dati->current()->id_utente);
+
+            /* PROFILO PERSONALE */
             if ($idUtente == $dati->current()->id_utente) {
                 $this->view->assign('datiSet', $dati);
                 $temp = "modifica";
-                $this->view->assign('valBot', $temp);
+                $this->view->assign('varBottone', $temp);
+                $this->view->assign('azione', $temp . 'profilo');
                 $this->view->assign('blogSet', $datiBlog);
                 $this->view->assign('blog', "tuoi");
+                $this->view->assign('privacy', $privacy);
             }
+
+            /* ALTRO PROFILO */
             if ($idUtente != $dati->current()->id_utente) {
                 $this->view->assign('datiSet', $dati);
                 $amiciModel = new Application_Model_Amici();
-                $rowset = $amiciModel->elencoRichiestaPresente($dati->current()->id_utente, $idUtente);
-                if ($rowset) {
-                    $temp = "Richiesta Inviata";
-                    $this->view->assign('valBot', $temp);
-                } else {
-                    $temp = "aggiungi";
-                    $this->view->assign('valBot', $temp);
+                //Vengono gestite sia amicizie da A a B, sia da B a A
+                $amicizieRichieste = $amiciModel->elencoRichiestaPresente($dati->current()->id_utente, $idUtente);
+                $amicizieRicevute = $amiciModel->elencoRichiestaPresente($idUtente, $dati->current()->id_utente);
+
+                //Variabili di default
+                $nomeBottone = "Aggiungi agli amici";
+                $azione = "aggiungiprofilo";
+                $idAmico = 0;
+                $this->view->assign('idRicevente', $dati->current()->id_utente);
+                $privacy = $this->getParam('privacy');
+
+                //Controllo casi di amicizie
+                if (count($amicizieRichieste) > 0) {
+                    if ($amicizieRichieste->current()->stato == "standby") {
+                        $nomeBottone = "Richiesta inviata";
+                        $azione = "#";
+                    } elseif ($amicizieRichieste->current()->stato == "accepted") {
+                        $nomeBottone = "Elimina amicizia";
+                        $azione = "eliminaprofilo";
+                        $privacy = 0;
+                    }
                 }
+                if (count($amicizieRicevute) > 0) {
+                    if ($amicizieRicevute->current()->stato == "standby") {
+                        $nomeBottone = "Conferma amicizia";
+                        $azione = "amicipost";
+                        $idAmico = $amicizieRicevute->current()->richiedente;
+                    } elseif ($amicizieRicevute->current()->stato == 'accepted') {
+                        $nomeBottone = "Elimina";
+                        $azione = "eliminaprofilo";
+                        $privacy = 0;
+                    }
+                }
+                //Assegnamento variabili dinamiche alla view
+                $this->view->assign('varBottone', $nomeBottone);
+                $this->view->assign('azione', $azione);
+                $this->view->assign('idamico', $idAmico);
                 $this->view->assign('blogSet', $datiBlog);
                 $this->view->assign('blog', "suoi");
+                $this->view->assign('privacy', $privacy);
             }
         }
     }
@@ -328,18 +373,51 @@ class UserController extends Zend_Controller_Action
         }
     }
 
-    public function eliminaamicoAction()
+    public function eliminaprofiloAction()
     {
-        if($this->hasParam('user')){
+        if ($this->hasParam('user')) {
             $id = $this->getParam('user');
             $amiciModel = new Application_Model_Amici();
-            $amiciModel->eliminaAmici($id);
+            $amiciModel->eliminaAmici($id, $this->utenteCorrente->current()->id_utente);
             $this->_helper->redirector("amici", "user");
+        }
+    }
+
+    public function cercaAction()
+    {
+        if ($this->hasParam('search')) {
+            $ricerca = str_replace('*', '%', $this->getParam('search'));;
+            $cercaModel = new Application_Model_Elencoutenti();
+            $this->view->assign('amiciSet', $cercaModel->ricercaUtente($ricerca));
+        }
+    }
+
+    public function modificaprivacyAction()
+    {
+        $utenteModel = new Application_Model_Utente();
+        $idUtente = $this->utenteCorrente->current()->id_utente;
+        $this->view->assign('privacy', $utenteModel->elencoUtenteById($idUtente)->current()->privacy);
+    }
+
+    public function modificaprivacypostAction()
+    {
+        if ($this->hasParam('privacy')) {
+            $utenteModel = new Application_Model_Utente();
+            $idUtente = $this->utenteCorrente->current()->id_utente;
+            $dati['privacy'] = $this->getParam('privacy');
+            $utenteModel->aggiornaUtente($dati, $idUtente);
+            $this->_helper->redirector("index", "user");
         }
     }
 
 
 }
+
+
+
+
+
+
 
 
 

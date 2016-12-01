@@ -159,6 +159,8 @@ class AdminController extends Zend_Controller_Action
         if ($datiform['password'] == ""){
             unset($datiform['password']);
         }
+        $datiform['Nome']=strtolower($datiform['Nome']);
+        $datiform['Cognome']=strtolower($datiform['Cognome']);
         $datiform['nascita']= substr($datiform['nascita'],6,4) ."-" .substr($datiform['nascita'],3,2)."-". substr($datiform['nascita'],0,2);
         $utentemodel = new Application_Model_Utente();
         $id = $this->getParam("utente"); //prendo la faq inserito nella form

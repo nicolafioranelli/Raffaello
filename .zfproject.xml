@@ -60,6 +60,9 @@
           <actionMethod actionName="aggiungiprofilo"/>
           <actionMethod actionName="visualizzaprofiloamico"/>
           <actionMethod actionName="eliminaamico"/>
+          <actionMethod actionName="cerca"/>
+          <actionMethod actionName="modificaprivacy"/>
+          <actionMethod actionName="modificaprivacypost"/>
         </controllerFile>
         <controllerFile controllerName="Staff">
           <actionMethod actionName="index"/>
@@ -77,6 +80,7 @@
         <formFile formName="NuovoBlog"/>
         <formFile formName="NuovoPost"/>
         <formFile formName="DatiProfilo"/>
+        <formFile formName="Cerca"/>
       </formsDirectory>
       <layoutsDirectory>
         <layoutScriptsDirectory>
@@ -90,6 +94,7 @@
           <dbTableFile dbTableName="Post"/>
           <dbTableFile dbTableName="Utente"/>
           <dbTableFile dbTableName="Faq"/>
+          <dbTableFile dbTableName="Elencoutenti"/>
         </dbTableDirectory>
         <modelFile modelName="Amici"/>
         <modelFile modelName="Blog"/>
@@ -97,6 +102,7 @@
         <modelFile modelName="Utente"/>
         <modelFile modelName="Faq"/>
         <modelFile modelName="Acl"/>
+        <modelFile modelName="Elencoutenti"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
@@ -263,6 +269,15 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="User">
             <viewScriptFile forActionName="eliminaamico"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="cerca"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="modificaprivacy"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="modificaprivacypost"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

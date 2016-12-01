@@ -70,7 +70,11 @@
                     <br>
                     <span class="dotted-line"></span>
                     <div class="col-lg-12 cnt-form-search">
-                        <form class="searchbox-container" action="http://citruslabsthemes.com/themes/impromptu/.">
+                        <form method="post" class="searchbox-container" action="<?php echo $this->url(
+                            array(
+                                'controller' => 'user',
+                                'action' => 'cerca',
+                            )); ?>">
                             <input type="search" class="searchbox" name="search" autocomplete="off"
                                    placeholder="Cerca..."/>
                             <button type="submit" class="searchbutton fa fa-search"></button>
@@ -79,7 +83,7 @@
                     <span class="dotted-line"></span>
 
                     <div class="col-lg-12 cnt-about-us">
-                        <h3>Ciao, <?php echo $this->nome ?>!</h3>
+                        <h3 style="text-transform: capitalize">Ciao, <?php echo $this->nome ?>!</h3>
                         <hr class="title-sidebar"/>
 
                         <!-- TABELLA RICHIESTE DI AMICIZIA -->
@@ -87,7 +91,7 @@
                                width="100%">
                             <thead>
                             <tr>
-                                <th class="font-tabella" style="text-align: center">Nuovi Amici</th>
+                                <th class="font-tabella" style="text-align: center">Richieste di Amicizia</th>
                                 <?php if (count($this->amiciSet) != 0): ?>
                                     <th class="font-tabella" style="text-align: center">Accetta</th>
                                     <th class="font-tabella" style="text-align: center">Rifiuta</th>
@@ -101,7 +105,7 @@
                                 $i < count($this->amiciSet);
                                 $i++): ?>
                                 <td class="font-tabella-campi"
-                                    style="text-align: center"><?php echo $this->amiciSet[$i]['richiedente']; ?></td>
+                                    style="text-align: center; text-transform: capitalize"><?php echo $this->amiciSet[$i]['richiedente']; ?></td>
                                 <td style="font-size: 1.2em; text-align: center">
                                     <a href="<?php echo $this->url(
                                         array(

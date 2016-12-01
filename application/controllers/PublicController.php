@@ -71,6 +71,8 @@ class PublicController extends Zend_Controller_Action
         else
         {
             $datiform=$this->registratiForm->getValues();
+            $datiform['Nome']=strtolower($datiform['Nome']);
+            $datiform['Cognome']=strtolower($datiform['Cognome']);
             $datiform['ruolo']="utente";
             $utentemodel=new Application_Model_Utente();
             $username=$datiform['username']; //prendo l'username inserito nella form
