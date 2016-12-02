@@ -41,7 +41,7 @@ class UserController extends Zend_Controller_Action
             foreach ($rowset as $data) {
                 $amicidata[$i]['id_utente'] = $data->richiedente;
                 $temp = $utentiModel->elencoUtenteById($data->richiedente);
-                $amicidata[$i]['richiedente'] = $temp->current()->nome . " " . $temp->current()->cognome;
+                $amicidata[$i]['richiedente'] = ucwords($temp->current()->nome . " " . $temp->current()->cognome);
                 $amicidata[$i]['id_amici'] = $data->id_amici;
                 $i++;
             }
@@ -49,6 +49,58 @@ class UserController extends Zend_Controller_Action
         } else {
             $this->_helper->redirector('inserimentoprimoblog', 'user');
         }
+
+        $notificaModel = new Application_Model_Notifica();
+        $datiModel = $notificaModel->elencoNotifica($idUtente);
+        $notificadati = array();
+        $i = 0;
+        foreach ($datiModel as $data) {
+            if ($data->visibilita == 0):
+                /* CASO NOTIFICA POST */
+                if ($data->tipo == 0) {
+                    $utenteModel = new Application_Model_Utente();
+                    $notificadati[$i]['mittente'] = ucwords($utenteModel->elencoUtenteById($data->id_utente)->current()->nome . ' ' . $utenteModel->elencoUtenteById($data->id_utente)->current()->cognome);
+                    $notificadati[$i]['user'] = $utenteModel->elencoUtenteById($data->id_utente)->current()->username;
+                    $blogModel = new Application_Model_Blog();
+                    $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                    $postModel = new Application_Model_Post();
+                    $tempdata = $postModel->elencoPostByIdPost($data->id_post)->current()->data;
+                    $notificadati[$i]['data'] = substr($tempdata, 8, 2) . '-' . substr($tempdata, 5, 2) . '-' . substr($tempdata, 0, 4) . ' alle ' . substr($tempdata, 11, 5);
+                    $notificadati[$i]['idblog'] = $data->id_blog;
+                    $notificadati[$i]['tipo'] = $data->tipo;
+                    $notificadati[$i]['idnotifica'] = $data->id_notifica;
+                } /* CASO ELIMINAZIONE AMICO */
+                elseif ($data->tipo == 1) {
+                    $utenteModel = new Application_Model_Utente();
+                    $notificadati[$i]['mittente'] = ucwords($utenteModel->elencoUtenteById($data->id_utente)->current()->nome . ' ' . $utenteModel->elencoUtenteById($data->id_utente)->current()->cognome);
+                    $notificadati[$i]['tipo'] = $data->tipo;
+                    $notificadati[$i]['user'] = $utenteModel->elencoUtenteById($data->id_utente)->current()->username;
+                    $notificadati[$i]['idblog'] = $data->id_blog;
+                    $notificadati[$i]['idnotifica'] = $data->id_notifica;
+                } /* CASO ELIMINAZIONE POST (STAFF) */
+                elseif ($data->tipo == 2) {
+                    $blogModel = new Application_Model_Blog();
+                    $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                    $postModel = new Application_Model_Post();
+                    $notificadati[$i]['post'] = $postModel->elencoPostById($data->id_post)->current()->titolo;
+                    $notificadati[$i]['motivazione'] = $data->motivazione;
+                    $notificadati[$i]['tipo'] = $data->tipo;
+                    $notificadati[$i]['idnotifica'] = $data->id_notifica;
+                } /* CASO ELIMINAZIONE BLOG (STAFF) */
+                elseif ($data->tipo == 3) {
+                    $blogModel = new Application_Model_Blog();
+                    $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                    $notificadati[$i]['motivazione'] = $data->motivazione;
+                    $notificadati[$i]['tipo'] = $data->tipo;
+                    $notificadati[$i]['idnotifica'] = $data->id_notifica;
+                } /* ALTRI CASI */
+                else {
+                    //
+                }
+                $i++;
+            endif;
+        }
+        $this->view->assign('notificaSet', $notificadati);
     }
 
     public function logoutAction()
@@ -146,7 +198,31 @@ class UserController extends Zend_Controller_Action
             $datiform['id_blog'] = $this->getParam('blog');
             $postmodel = new Application_Model_Post();
 
-            $postmodel->inserisciPost($datiform);
+            $id = $postmodel->inserisciPost($datiform);
+
+            $amiciModel = new Application_Model_Amici();
+            $amicidata = $amiciModel->elencoAmiciNotifica($idUtente);
+            foreach ($amicidata as $amici) {
+                if ($amici->richiedente == $idUtente) {
+                    $dati = array();
+                    $dati['id_utente'] = $idUtente;
+                    $dati['id_blog'] = $this->getParam('blog');
+                    $dati['id_post'] = $id;
+                    $dati['id_amico'] = $amici->ricevente;
+                    $dati['tipo'] = 0;
+                    $notificaModel = new Application_Model_Notifica();
+                    $notificaModel->inserisciNotifica($dati);
+                } else {
+                    $dati = array();
+                    $dati['id_utente'] = $idUtente;
+                    $dati['id_blog'] = $this->getParam('blog');
+                    $dati['id_post'] = $id;
+                    $dati['id_amico'] = $amici->richiedente;
+                    $dati['tipo'] = 0;
+                    $notificaModel = new Application_Model_Notifica();
+                    $notificaModel->inserisciNotifica($dati);
+                }
+            }
             $this->_helper->redirector("index", "user");
         } else {
             $this->_helper->redirector("gestioneblog", "user");
@@ -169,7 +245,7 @@ class UserController extends Zend_Controller_Action
                 $newdatapost[$i]['contenuto'] = $post->contenuto;
                 $newdatapost[$i]['data'] = $post->data;
                 $temp = $utenteModel->elencoUtenteById($post->id_utente);
-                $newdatapost[$i]['nome_utente'] = $temp->current()->nome;
+                $newdatapost[$i]['nome_utente'] = ucwords($temp->current()->nome);
                 $newdatapost[$i]['id_utente'] = $post->id_utente;
                 $newdatapost[$i]['username'] = $temp->current()->username;
                 $i++;
@@ -189,7 +265,7 @@ class UserController extends Zend_Controller_Action
             foreach ($rowset as $data) {
                 $amicidata[$i]['id_utente'] = $data->richiedente;
                 $temp = $utentiModel->elencoUtenteById($data->richiedente);
-                $amicidata[$i]['richiedente'] = $temp->current()->nome . " " . $temp->current()->cognome;
+                $amicidata[$i]['richiedente'] = ucwords($temp->current()->nome . " " . $temp->current()->cognome);
                 $amicidata[$i]['id_amici'] = $data->id_amici;
                 $i++;
             }
@@ -198,6 +274,58 @@ class UserController extends Zend_Controller_Action
             $datiblog = $blogModel->elencoBlogById($idblog)->current()->toArray();
             $this->view->assign('blogSet', $datiblog);
             $this->view->assign('utenteCorrente', $idUtente);
+
+            $notificaModel = new Application_Model_Notifica();
+            $datiModel = $notificaModel->elencoNotifica($idUtente);
+            $notificadati = array();
+            $i = 0;
+            foreach ($datiModel as $data) {
+                if ($data->visibilita == 0):
+                    /* CASO NOTIFICA POST */
+                    if ($data->tipo == 0) {
+                        $utenteModel = new Application_Model_Utente();
+                        $notificadati[$i]['mittente'] = ucwords($utenteModel->elencoUtenteById($data->id_utente)->current()->nome . ' ' . $utenteModel->elencoUtenteById($data->id_utente)->current()->cognome);
+                        $notificadati[$i]['user'] = $utenteModel->elencoUtenteById($data->id_utente)->current()->username;
+                        $blogModel = new Application_Model_Blog();
+                        $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                        $postModel = new Application_Model_Post();
+                        $tempdata = $postModel->elencoPostByIdPost($data->id_post)->current()->data;
+                        $notificadati[$i]['data'] = substr($tempdata, 8, 2) . '-' . substr($tempdata, 5, 2) . '-' . substr($tempdata, 0, 4) . ' alle ' . substr($tempdata, 11, 5);
+                        $notificadati[$i]['idblog'] = $data->id_blog;
+                        $notificadati[$i]['tipo'] = $data->tipo;
+                        $notificadati[$i]['idnotifica'] = $data->id_notifica;
+                    } /* CASO ELIMINAZIONE AMICO */
+                    elseif ($data->tipo == 1) {
+                        $utenteModel = new Application_Model_Utente();
+                        $notificadati[$i]['mittente'] = ucwords($utenteModel->elencoUtenteById($data->id_utente)->current()->nome . ' ' . $utenteModel->elencoUtenteById($data->id_utente)->current()->cognome);
+                        $notificadati[$i]['tipo'] = $data->tipo;
+                        $notificadati[$i]['user'] = $utenteModel->elencoUtenteById($data->id_utente)->current()->username;
+                        $notificadati[$i]['idblog'] = $data->id_blog;
+                        $notificadati[$i]['idnotifica'] = $data->id_notifica;
+                    } /* CASO ELIMINAZIONE POST (STAFF) */
+                    elseif ($data->tipo == 2) {
+                        $blogModel = new Application_Model_Blog();
+                        $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                        $postModel = new Application_Model_Post();
+                        $notificadati[$i]['post'] = $postModel->elencoPostById($data->id_post)->current()->titolo;
+                        $notificadati[$i]['motivazione'] = $data->motivazione;
+                        $notificadati[$i]['tipo'] = $data->tipo;
+                        $notificadati[$i]['idnotifica'] = $data->id_notifica;
+                    } /* CASO ELIMINAZIONE BLOG (STAFF) */
+                    elseif ($data->tipo == 3) {
+                        $blogModel = new Application_Model_Blog();
+                        $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                        $notificadati[$i]['motivazione'] = $data->motivazione;
+                        $notificadati[$i]['tipo'] = $data->tipo;
+                        $notificadati[$i]['idnotifica'] = $data->id_notifica;
+                    } /* ALTRI CASI */
+                    else {
+                        //
+                    }
+                    $i++;
+                endif;
+            }
+            $this->view->assign('notificaSet', $notificadati);
         }
     }
 
@@ -378,6 +506,14 @@ class UserController extends Zend_Controller_Action
         if ($this->hasParam('user')) {
             $id = $this->getParam('user');
             $amiciModel = new Application_Model_Amici();
+
+            $dati = array();
+            $dati['id_utente'] = $this->utenteCorrente->current()->id_utente;
+            $dati['id_amico'] = $id;
+            $dati['tipo'] = 1;
+            $notificaModel = new Application_Model_Notifica();
+            $notificaModel->inserisciNotifica($dati);
+
             $amiciModel->eliminaAmici($id, $this->utenteCorrente->current()->id_utente);
             $this->_helper->redirector("amici", "user");
         }
@@ -410,8 +546,129 @@ class UserController extends Zend_Controller_Action
         }
     }
 
+    public function visualizzanotificheAction()
+    {
+        $idUtente = $this->utenteCorrente->current()->id_utente;
+        $notificaModel = new Application_Model_Notifica();
+        $datiModel = $notificaModel->elencoNotifica($idUtente);
+        $notificadati = array();
+        $i = 0;
+
+        foreach ($datiModel as $data) {
+            /* CASO NOTIFICA POST */
+            if ($data->tipo == 0) {
+                $utenteModel = new Application_Model_Utente();
+                $notificadati[$i]['mittente'] = ucwords($utenteModel->elencoUtenteById($data->id_utente)->current()->nome . ' ' . $utenteModel->elencoUtenteById($data->id_utente)->current()->cognome);
+                $blogModel = new Application_Model_Blog();
+                $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                $postModel = new Application_Model_Post();
+                $tempdata = $postModel->elencoPostByIdPost($data->id_post)->current()->data;
+                $notificadati[$i]['data'] = substr($tempdata, 8, 2) . '-' . substr($tempdata, 5, 2) . '-' . substr($tempdata, 0, 4) . ' alle ' . substr($tempdata, 11, 5);
+                $notificadati[$i]['idblog'] = $data->id_blog;
+                $notificadati[$i]['tipo'] = $data->tipo;
+                $notificadati[$i]['user'] = $utenteModel->elencoUtenteById($data->id_utente)->current()->username;
+            } /* CASO ELIMINAZIONE AMICO */
+            elseif ($data->tipo == 1) {
+                $utenteModel = new Application_Model_Utente();
+                $notificadati[$i]['mittente'] = ucwords($utenteModel->elencoUtenteById($data->id_utente)->current()->nome . ' ' . $utenteModel->elencoUtenteById($data->id_utente)->current()->cognome);
+                $notificadati[$i]['tipo'] = $data->tipo;
+                $notificadati[$i]['user'] = $utenteModel->elencoUtenteById($data->id_utente)->current()->username;
+                $notificadati[$i]['idblog'] = $data->id_blog;
+            } /* CASO ELIMINAZIONE POST (STAFF) */
+            elseif ($data->tipo == 2) {
+                $blogModel = new Application_Model_Blog();
+                $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                $postModel = new Application_Model_Post();
+                $notificadati[$i]['post'] = $postModel->elencoPostById($data->id_post)->current()->titolo;
+                $notificadati[$i]['motivazione'] = $data->motivazione;
+                $notificadati[$i]['tipo'] = $data->tipo;
+            } /* CASO ELIMINAZIONE BLOG (STAFF) */
+            elseif ($data->tipo == 3) {
+                $blogModel = new Application_Model_Blog();
+                $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                $notificadati[$i]['motivazione'] = $data->motivazione;
+                $notificadati[$i]['tipo'] = $data->tipo;
+            } /* ALTRI CASI */
+            else {
+                //
+            }
+            $i++;
+        }
+        $this->view->assign('notificaSet', $notificadati);
+    }
+
+    public function nascondinotificaAction()
+    {
+        if ($this->hasParam('idnot')) {
+            $id = $this->getParam('idnot');
+            $notificaModel = new Application_Model_Notifica();
+            $dati['visibilita'] = 1;
+            $notificaModel->aggiornaNotifica($dati, $id);
+            $this->_helper->redirector("index", "user");
+        }
+    }
+
+    public function sceltaprivacyAction()
+    {
+        if($this->hasParam('blog')){
+            $blog = $this->getParam('blog');
+            $amiciModel = new Application_Model_Amici();
+            $utentiModel = new Application_Model_Utente();
+            $idUtente = $this->utenteCorrente->current()->id_utente;
+            $rowset = $amiciModel->elencoAmici($idUtente);
+            $amicidata = array();
+            $i = 0;
+            foreach ($rowset as $data) {
+                if ($idUtente == $data->ricevente):
+                    $temp = $utentiModel->elencoUtenteById($data->richiedente);
+                else:
+                    $temp = $utentiModel->elencoUtenteById($data->ricevente);
+                endif;
+                $amicidata[$i]['amico'] = $temp->current()->nome . " " . $temp->current()->cognome;
+                $amicidata[$i]['idamico'] = $temp->current()->id_utente;
+                $privacyModel = new Application_Model_Privacy();
+                $privacydata = $privacyModel->elencoPrivacyUtente($temp->current()->id_utente);
+                $amicidata[$i]['stato'] = $privacydata->current()->stato;
+                $i++;
+            }
+            $this->view->assign("amiciSet", $amicidata);
+            $this->view->assign("blog", $blog);
+        }
+    }
+
+    public function sceltaprivacypostAction()
+    {
+        if($this->hasParam('stato') && $this->hasParam('user')){
+            $user = $this->getParam('user');
+            $stato = $this->getParam('stato');
+            $params = array(
+                'blog' => $this->getParam('blog')
+            );
+            if ($stato == 1){
+                $dati['stato']=0;
+                $privacyModel = new Application_Model_Privacy();
+                $privacyModel->modificaPrivacy($dati, $user);
+
+            } else {
+                $dati['stato']=1;
+                $privacyModel = new Application_Model_Privacy();
+                $privacyModel->modificaPrivacy($dati, $user);
+            }
+            $this->_helper->redirector("sceltaprivacy", "user", 0, $params);
+        }
+    }
+
 
 }
+
+
+
+
+
+
+
+
+
 
 
 

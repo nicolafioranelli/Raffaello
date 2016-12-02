@@ -63,6 +63,10 @@
           <actionMethod actionName="cerca"/>
           <actionMethod actionName="modificaprivacy"/>
           <actionMethod actionName="modificaprivacypost"/>
+          <actionMethod actionName="visualizzanotifiche"/>
+          <actionMethod actionName="nascondinotifica"/>
+          <actionMethod actionName="sceltaprivacy"/>
+          <actionMethod actionName="sceltaprivacypost"/>
         </controllerFile>
         <controllerFile controllerName="Staff">
           <actionMethod actionName="index"/>
@@ -95,6 +99,8 @@
           <dbTableFile dbTableName="Utente"/>
           <dbTableFile dbTableName="Faq"/>
           <dbTableFile dbTableName="Elencoutenti"/>
+          <dbTableFile dbTableName="Notifica"/>
+          <dbTableFile dbTableName="Privacy"/>
         </dbTableDirectory>
         <modelFile modelName="Amici"/>
         <modelFile modelName="Blog"/>
@@ -103,6 +109,8 @@
         <modelFile modelName="Faq"/>
         <modelFile modelName="Acl"/>
         <modelFile modelName="Elencoutenti"/>
+        <modelFile modelName="Notifica"/>
+        <modelFile modelName="Privacy"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
@@ -278,6 +286,18 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="User">
             <viewScriptFile forActionName="modificaprivacypost"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="visualizzanotifiche"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="nascondinotifica"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="sceltaprivacy"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="User">
+            <viewScriptFile forActionName="sceltaprivacypost"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

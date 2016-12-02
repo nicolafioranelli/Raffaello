@@ -44,11 +44,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     //impostazioni db adapter
     protected function _initDbAdapter()
     {
+        include('../../include/connect.php');
         $dbAdapter = Zend_Db::factory('PDO_mysql', array(
-            'host' => 'localhost',
-            'username' => 'root',
-            'password' => '',
-            'dbname' => 'cicero',
+            'host' => $HOST,
+            'username' => $USER,
+            'password' => $PASSWORD,
+            'dbname' => $DB,
             'charset' => 'utf8'
         ));
         Zend_Db_Table::setDefaultAdapter($dbAdapter);

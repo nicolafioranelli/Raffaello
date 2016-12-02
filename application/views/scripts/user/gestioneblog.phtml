@@ -24,19 +24,20 @@
                                 <th class="font-tabella" style="text-align: center">Descrizione</th>
                                 <th class="font-tabella" style="text-align: center">Tema</th>
                                 <th class="font-tabella" style="text-align: center">Elimina</th>
+                                <th class="font-tabella" style="text-align: center">Visibilità</th>
                             </tr>
                             </thead>
 
                             <tbody>
                             <tr>
                                 <?php foreach ($this->blogSet as $blog): ?>
-                                <td class="font-tabella-campi"><a href="<?php echo $this->url(array(
+                                <td class="font-tabella-campi" style="font-size: 1.4rem"><a href="<?php echo $this->url(array(
                                         'controller' => 'user',
                                         'action' => 'visualizzablog',
                                         'blog' => $blog->id_blog));
                                     ?>"><?php echo $blog->titolo; ?></a></td>
-                                <td class="font-tabella-campi"><?php echo $blog->descrizione; ?></td>
-                                <td class="font-tabella-campi"><?php echo $blog->tema; ?></td>
+                                <td class="font-tabella-campi" style="font-size: 1.4rem;"><?php echo $blog->descrizione; ?></td>
+                                <td class="font-tabella-campi" style="font-size: 1.4rem;"><?php echo $blog->tema; ?></td>
                                 <td style="font-size: 1.2em;">
                                     <a href="<?php echo $this->url(array(
                                         'controller' => 'user',
@@ -47,6 +48,18 @@
                                         <button type="button"
                                                 class="btn btn-lg btn-primary btn-block btn-signin button-red-nic">
                                             Elimina
+                                        </button>
+                                    </a>
+                                </td>
+                                <td style="font-size: 1.2em">
+                                    <a href="<?php echo $this->url(array(
+                                        'controller' => 'user',
+                                        'action' => 'sceltaprivacy',
+                                        "blog" => $blog->id_blog));
+                                    ?>">
+                                        <button type="button"
+                                                class="btn btn-lg btn-primary btn-block btn-signin button-blue-nic">
+                                            Privacy
                                         </button>
                                     </a>
                                 </td>

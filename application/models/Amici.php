@@ -40,8 +40,10 @@ class Application_Model_Amici
     public function elencoRichiestaPresente($idricevente, $idrichiedente)
     {
         return $risultato = $this->tabella->fetchAll($this->tabella->select()->where("ricevente =  ? ", $idricevente)->where("richiedente = ? ", $idrichiedente)->order("data DESC"));
-
     }
 
+    public function elencoAmiciNotifica($idUtente){
+        return $this->tabella->fetchAll($this->tabella->select()->where("ricevente = '$idUtente' OR richiedente = '$idUtente'")->where("stato = 'accepted'"));
+    }
 }
 

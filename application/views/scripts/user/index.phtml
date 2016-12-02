@@ -68,6 +68,7 @@
                 <div class="col-lg-4 container-right-sidebar">
                     <br>
                     <br>
+                    <!-- RICERCA -->
                     <span class="dotted-line"></span>
                     <div class="col-lg-12 cnt-form-search">
                         <form method="post" class="searchbox-container" action="<?php echo $this->url(
@@ -156,42 +157,145 @@
                                         </span></a>
                             </div>
                         </div>
-
                         <!-- FINE TABELLA -->
+
                     </div>
                     <span class="dotted-line"></span>
 
+                    <!-- TABELLA NOTIFICHE -->
                     <div class="col-lg-12 popular-posts">
-                        <h3>Ultimi Post</h3>
+                        <h3>Ultime notifiche</h3>
                         <hr class="title-sidebar"/>
-                        <div class="col-xs-12 col-lg-12 top_post_right">
-                            <h2>This amazing Blog Post Headline</h2>
-                            <p>Home to celebrities, rappers, musicians, and Al Capone's hideaway, Miami is best known
-                                for...a really good time</p>
-                            <ul class="data-post-right">
-                                <li><span class="icon-process">Posted by</span> Herbert Gonzalez</li>
-                                <li>|&nbsp;&nbsp;&nbsp;&nbsp;<i class="icon-bubble icon-process"></i> 1 reply</li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-lg-12 top_post_right">
-                            <h2>This amazing Blog Post Headline</h2>
-                            <p>Home to celebrities, rappers, musicians, and Al Capone's hideaway, Miami is best known
-                                for...a really good time</p>
-                            <ul class="data-post-right">
-                                <li><span class="icon-process">Posted by</span> Herbert Gonzalez</li>
-                                <li>|&nbsp;&nbsp;&nbsp;&nbsp;<i class="icon-bubble icon-process"></i> 1 reply</li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-lg-12 top_post_right">
-                            <h2>This amazing Blog Post Headline</h2>
-                            <p>Home to celebrities, rappers, musicians, and Al Capone's hideaway, Miami is best known
-                                for...a really good time</p>
-                            <ul class="data-post-right">
-                                <li><span class="icon-process">Posted by</span> Herbert Gonzalez</li>
-                                <li>|&nbsp;&nbsp;&nbsp;&nbsp;<i class="icon-bubble icon-process"></i> 1 reply</li>
-                            </ul>
+                        <table id="datatable" class="table table-striped table-bordered " cellspacing="0"
+                               width="100%">
+                            <tbody>
+                            <tr>
+                                <?php for ($i = 0;
+                                $i < count($this->notificaSet);
+                                $i++): ?>
+                                <?php if ($this->notificaSet[$i]['tipo'] == 0): ?>
+                                    <td class="font-tabella-campi">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'user',
+                                            'action' => 'profilo',
+                                            'user' => $this->notificaSet[$i]['user']
+                                        ));
+                                        ?>" ><?php echo $this->notificaSet[$i]['mittente']; ?></a> ha pubblicato un nuovo post
+                                        in <a href="<?php echo $this->url(array(
+                                            'controller' => 'user',
+                                            'action' => 'visualizzablog',
+                                            'blog' => $this->notificaSet[$i]['idblog']
+                                        ));
+                                        ?>" >"<?php echo $this->notificaSet[$i]['blog']; ?>"</a>
+                                        il <?php echo $this->notificaSet[$i]['data']; ?>.
+                                    </td>
+                                    <td style="font-size: 1.2em; text-align: center">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'user',
+                                            'action' => 'nascondinotifica',
+                                            'idnot' => $this->notificaSet[$i]['idnotifica'],
+                                        ));
+                                        ?>">
+                                        <span>
+                                            <i class="fa fa-times-circle" style="color: #761c19"></i>
+                                        </span>
+                                        </a>
+                                    </td>
+                                <?php elseif ($this->notificaSet[$i]['tipo'] == 1): ?>
+                                    <td class="font-tabella-campi">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'user',
+                                            'action' => 'profilo',
+                                            'user' => $this->notificaSet[$i]['user']
+                                        ));
+                                        ?>" ><?php echo $this->notificaSet[$i]['mittente']; ?></a> ti ha eliminato dai suoi
+                                        amici.
+                                    </td>
+                                    <td style="font-size: 1.2em; text-align: center">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'user',
+                                            'action' => 'nascondinotifica',
+                                            'idnot' => $this->notificaSet[$i]['idnotifica'],
+                                        ));
+                                        ?>">
+                                        <span>
+                                            <i class="fa fa-times-circle" style="color: #761c19"></i>
+                                        </span>
+                                        </a>
+                                    </td>
+                                <?php elseif ($this->notificaSet[$i]['tipo'] == 2): ?>
+                                    <td class="font-tabella-campi">
+                                        Staff ha appena eliminato il tuo
+                                        post "<?php echo $this->notificaSet[$i]['post']; ?>" dal
+                                        blog "<?php echo $this->notificaSet[$i]['blog']; ?>"
+                                        causa <?php echo $this->notificaSet[$i]['motivazione']; ?>.
+                                    </td>
+                                    <td style="font-size: 1.2em; text-align: center">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'user',
+                                            'action' => 'nascondinotifica',
+                                            'idnot' => $this->notificaSet[$i]['idnotifica'],
+                                        ));
+                                        ?>">
+                                        <span>
+                                            <i class="fa fa-times-circle" style="color: #761c19"></i>
+                                        </span>
+                                        </a>
+                                    </td>
+                                <?php elseif ($this->notificaSet[$i]['tipo'] == 3): ?>
+                                    <td class="font-tabella-campi">
+                                        Staff ha appena eliminato il tuo
+                                        blog "<?php echo $this->notificaSet[$i]['blog']; ?>"
+                                        causa <?php echo $this->notificaSet[$i]['motivazione']; ?>.
+                                    </td>
+                                    <td style="font-size: 1.2em; text-align: center">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'user',
+                                            'action' => 'nascondinotifica',
+                                            'idnot' => $this->notificaSet[$i]['idnotifica'],
+                                        ));
+                                        ?>">
+                                        <span>
+                                            <i class="fa fa-times-circle" style="color: #761c19"></i>
+                                        </span>
+                                        </a>
+                                    </td>
+                                <?php else: ?>
+                                    <td class="font-tabella-campi">
+                                        Ops... c'è qualcosa che non va in questa notifica. Contatta l'amministratore del
+                                        sito per l'aiuto!
+                                    </td>
+                                    <td style="font-size: 1.2em; text-align: center">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'user',
+                                            'action' => 'nascondinotifica',
+                                            'idnot' => $this->notificaSet[$i]['idnotifica'],
+                                        ));
+                                        ?>">
+                                        <span>
+                                            <i class="fa fa-times-circle" style="color: #761c19"></i>
+                                        </span>
+                                        </a>
+                                    </td>
+                                <?php endif; ?>
+                            </tr>
+                            <?php endfor; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-5 col-lg-5"></div>
+                        <div class="col-lg-12 action-started">
+                            <a href="<?php echo $this->url(array(
+                                'controller' => 'user',
+                                'action' => 'visualizzanotifiche'),
+                                null, true);
+                            ?>" class="btn btn-outlined">Tutte le notifiche <span>
+                                            <i class="fa fa-arrow-right"></i>
+                                        </span></a>
                         </div>
                     </div>
+                    <!-- FINE TABELLA -->
 
                     <span class="dotted-line"></span>
                     <div class="col-lg-12 archives">

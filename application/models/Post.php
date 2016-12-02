@@ -58,5 +58,10 @@ class Application_Model_Post
             return false;
     }
 
+    public function elencoPostByIdPost($id){
+        $sql = $this->tabella->select()->where("id_post = ?", $id);
+        return $this->tabella->fetchAll($sql);
+    }
+
 }
 

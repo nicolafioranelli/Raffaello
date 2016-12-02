@@ -1,0 +1,82 @@
+<section id="hero" class="hero-blog">
+    <div id="particles-js">
+        <div class="cnt-heroblog-content">
+
+        </div>
+        <!-- //.cnt-heroblog-content -->
+    </div>
+</section>
+
+
+<section id="post-blog" class="main-post">
+    <div class="cnt-post-bg">
+        <div class="container">
+            <div class="row">
+                <h3>Blog: <?php echo $this->blog; ?></h3>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 container-post">
+                    <ul class="blog-data">
+                        <div class="row" style="text-align: center; margin: auto;>
+							<div class=" col-md-12
+                        ">
+                        <table id="datatable" class="table table-striped table-bordered " cellspacing="0"
+                               width="100%">
+                            <thead>
+                            <tr>
+                                <th class="font-tabella" style="text-align: center">Amici</th>
+                                <th class="font-tabella" style="text-align: center">Visibilità</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <?php for ($i = 0;
+                                $i < count($this->amiciSet);
+                                $i++): ?>
+                                <td class="font-tabella-campi"
+                                    style="text-transform: capitalize; font-size: 1.6em"><?php echo $this->amiciSet[$i]['amico']; ?></td>
+
+                                <!-- BLOG PUBBLICO -->
+                                <?php if($this->amiciSet[$i]['stato']==0): ?>
+                                <td style="font-size: 1.8em;">
+                                    <a href="<?php echo $this->url(array(
+                                        'controller' => 'user',
+                                        'action' => 'sceltaprivacypost',
+                                        'user' => $this->amiciSet[$i]['idamico'],
+                                        'stato' => 0
+                                    ));
+                                    ?>">
+                                        <span>
+                                            <i class="fa fa-check-square" style="color: #21DC7F"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                                <?php endif; ?>
+                                <!-- BLOG PRIVATO -->
+                                <?php if($this->amiciSet[$i]['stato']==1): ?>
+                                    <td style="font-size: 1.8em;">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'user',
+                                            'action' => 'sceltaprivacypost',
+                                            'user' => $this->amiciSet[$i]['idamico'],
+                                            'stato' => 1
+                                        ));
+                                        ?>">
+                                        <span>
+                                            <i class="fa fa-times-circle" style="color: #761c19"></i>
+                                        </span>
+                                        </a>
+                                    </td>
+                                <?php endif; ?>
+
+                            </tr>
+                            <?php endfor; ?>
+
+                            </tbody>
+                        </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
