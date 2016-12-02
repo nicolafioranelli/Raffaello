@@ -30,28 +30,30 @@
                             </div>
                         </div>
                         <?php
-                        for ($i = 0; $i < count($this->postSet); $i++): ?>
+                        foreach($this->postSet as $post): ?>
                             <div class="featured-image">
                                 <img src="http://eship.dyson.cornell.edu/wp-eship/wp-content/uploads/idea-lightbulb.jpg"
                                      class="img-responsive" alt="">
                                 <div class="data-post-main">
                                     <ul class="blog-data">
-                                        <li><i class="pe-7s-date"></i> <?php echo $this->postSet[$i]['data']; ?></li>
+                                        <li><i class="pe-7s-date"></i> <?php
+
+                                            echo $post['data']; ?></li>
                                         <li><i class="pe-7s-comment"></i>Da: <a href="<?php echo $this->url(
                                                 array(
                                                     'controller' => 'user',
                                                     'action' => 'profilo',
-                                                    'user' => $this->postSet[$i]['username']
+                                                    'user' => $post['username']
                                                 ),
                                                 null, true
-                                            ); ?>"><?php echo $this->postSet[$i]['nome_utente']; ?></a></li>
+                                            ); ?>"><?php echo $post['nome_utente']; ?></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <!-- //.featured-image -->
-                            <h2><?php echo $this->postSet[$i]['titolo']; ?></h2>
-                            <p style="margin-bottom: 20%"><?php echo $this->postSet[$i]['contenuto']; ?></p>
-                        <?php endfor; ?>
+                            <h2><?php echo $post['titolo']; ?></h2>
+                            <p style="margin-bottom: 20%"><?php echo $post['contenuto']; ?></p>
+                        <?php endforeach; ?>
 
                         <?php if ($this->valPost == 0):
                             echo $this->valPost;
@@ -80,6 +82,7 @@
 
                     </div>
                     <!-- FINE POST -->
+                    <?php echo $this->paginationControl($this->postSet, "Sliding", "paginatore.phtml"); ?>
                 </div>
 
                 <div class="col-lg-4 container-right-sidebar">

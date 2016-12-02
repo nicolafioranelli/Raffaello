@@ -139,7 +139,6 @@ class UserController extends Zend_Controller_Action
         $idUtente = $this->utenteCorrente->current()->id_utente;
         $datiform['id_utente'] = $idUtente;
         $blogmodel = new Application_Model_Blog();
-
         $blogmodel->inserisciBlog($datiform);
         $this->_helper->redirector("index", "user");
     }
@@ -197,7 +196,6 @@ class UserController extends Zend_Controller_Action
             $datiform['id_utente'] = $idUtente;
             $datiform['id_blog'] = $this->getParam('blog');
             $postmodel = new Application_Model_Post();
-
             $id = $postmodel->inserisciPost($datiform);
 
             $amiciModel = new Application_Model_Amici();
@@ -239,7 +237,6 @@ class UserController extends Zend_Controller_Action
             $newdatapost = array();
             $i = 0;
             foreach ($rowpost as $post) {
-
                 $newdatapost[$i]['id_post'] = $post->id_post;
                 $newdatapost[$i]['titolo'] = $post->titolo;
                 $newdatapost[$i]['contenuto'] = $post->contenuto;
@@ -250,7 +247,11 @@ class UserController extends Zend_Controller_Action
                 $newdatapost[$i]['username'] = $temp->current()->username;
                 $i++;
             }
-            $this->view->assign('postSet', $newdatapost);
+            $paginator = new Zend_Paginator(new Zend_Paginator_Adapter_Array($newdatapost));
+            $paginator->setItemCountPerPage(5);
+            $paginator->setCurrentPageNumber($this->getParam('pagina',1));
+
+            $this->view->assign('postSet', $paginator);
             if (false === $postModel->esistenzaPostByBlog($idblog)) {
                 $this->view->assign('valPost', 0);
             } else {
@@ -367,7 +368,6 @@ class UserController extends Zend_Controller_Action
         $datiform['cognome'] = strtolower($datiform['cognome']);
         $utentemodel = new Application_Model_Utente();
         $id = $this->getParam("utente"); //prendo la faq inserito nella form
-
         $utentemodel->aggiornaUtente($datiform, $id);
         $this->_helper->redirector("index", "user");
     }
@@ -411,8 +411,6 @@ class UserController extends Zend_Controller_Action
             $amicidata[$i]['username'] = $temp->current()->username;
             $amicidata[$i]['idamico'] = $temp->current()->id_utente;
             $i++;
-
-
         }
         $this->view->assign("amiciSet", $amicidata);
     }
@@ -506,14 +504,12 @@ class UserController extends Zend_Controller_Action
         if ($this->hasParam('user')) {
             $id = $this->getParam('user');
             $amiciModel = new Application_Model_Amici();
-
             $dati = array();
             $dati['id_utente'] = $this->utenteCorrente->current()->id_utente;
             $dati['id_amico'] = $id;
             $dati['tipo'] = 1;
             $notificaModel = new Application_Model_Notifica();
             $notificaModel->inserisciNotifica($dati);
-
             $amiciModel->eliminaAmici($id, $this->utenteCorrente->current()->id_utente);
             $this->_helper->redirector("amici", "user");
         }
@@ -553,7 +549,6 @@ class UserController extends Zend_Controller_Action
         $datiModel = $notificaModel->elencoNotifica($idUtente);
         $notificadati = array();
         $i = 0;
-
         foreach ($datiModel as $data) {
             /* CASO NOTIFICA POST */
             if ($data->tipo == 0) {
@@ -648,7 +643,6 @@ class UserController extends Zend_Controller_Action
                 $dati['stato']=0;
                 $privacyModel = new Application_Model_Privacy();
                 $privacyModel->modificaPrivacy($dati, $user);
-
             } else {
                 $dati['stato']=1;
                 $privacyModel = new Application_Model_Privacy();
@@ -657,38 +651,4 @@ class UserController extends Zend_Controller_Action
             $this->_helper->redirector("sceltaprivacy", "user", 0, $params);
         }
     }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

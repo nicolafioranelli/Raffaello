@@ -1,0 +1,22 @@
+<div class="text-center">
+    <?php
+    $i = 0;
+    foreach ($this->pagesInRange as $page):
+        $i++;
+        if ($this->current == $page):
+
+            ?>
+            <a>
+               <?php echo $page; ?>
+            </a>
+            <?php
+        else:
+            ?>
+            <a href="<?php echo $this->url(array("pagina" => $page)); ?>">
+                <?php echo $page; ?>
+            </a>
+            <?php
+        endif;
+    endforeach;
+    ?>
+</div>
