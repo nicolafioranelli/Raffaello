@@ -71,6 +71,11 @@
         <controllerFile controllerName="Staff">
           <actionMethod actionName="index"/>
           <actionMethod actionName="logout"/>
+          <actionMethod actionName="contenutoblog"/>
+          <actionMethod actionName="eliminablog"/>
+          <actionMethod actionName="eliminapost"/>
+          <actionMethod actionName="eliminapostverifica"/>
+          <actionMethod actionName="eliminablogverifica"/>
         </controllerFile>
       </controllersDirectory>
       <formsDirectory>
@@ -85,6 +90,8 @@
         <formFile formName="NuovoPost"/>
         <formFile formName="DatiProfilo"/>
         <formFile formName="Cerca"/>
+        <formFile formName="DelblogForm"/>
+        <formFile formName="DelpostForm"/>
       </formsDirectory>
       <layoutsDirectory>
         <layoutScriptsDirectory>
@@ -298,6 +305,21 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="User">
             <viewScriptFile forActionName="sceltaprivacypost"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Staff">
+            <viewScriptFile forActionName="contenutoblog"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Staff">
+            <viewScriptFile forActionName="eliminablog"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Staff">
+            <viewScriptFile forActionName="eliminapost"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Staff">
+            <viewScriptFile forActionName="eliminapostverifica"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Staff">
+            <viewScriptFile forActionName="eliminablogverifica"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

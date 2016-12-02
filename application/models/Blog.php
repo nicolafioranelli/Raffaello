@@ -43,5 +43,9 @@ class Application_Model_Blog
         return $controllo;
     }
 
+    public function elencoBlog(){
+        return $this->tabella->fetchAll();
+    }
+
 }
 
