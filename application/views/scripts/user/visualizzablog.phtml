@@ -241,9 +241,8 @@
                                     </td>
                                 <?php elseif ($this->notificaSet[$i]['tipo'] == 2): ?>
                                     <td class="font-tabella-campi">
-                                        Staff ha appena eliminato il tuo
-                                        post "<?php echo $this->notificaSet[$i]['post']; ?>" dal
-                                        blog "<?php echo $this->notificaSet[$i]['blog']; ?>"
+                                        Staff ha appena eliminato un tuo
+                                        post dal blog "<?php echo $this->notificaSet[$i]['nome']; ?>"
                                         causa <?php echo $this->notificaSet[$i]['motivazione']; ?>.
                                     </td>
                                     <td style="font-size: 1.2em; text-align: center">
@@ -261,7 +260,7 @@
                                 <?php elseif ($this->notificaSet[$i]['tipo'] == 3): ?>
                                     <td class="font-tabella-campi">
                                         Staff ha appena eliminato il tuo
-                                        blog "<?php echo $this->notificaSet[$i]['blog']; ?>"
+                                        blog "<?php echo $this->notificaSet[$i]['nome']; ?>"
                                         causa <?php echo $this->notificaSet[$i]['motivazione']; ?>.
                                     </td>
                                     <td style="font-size: 1.2em; text-align: center">

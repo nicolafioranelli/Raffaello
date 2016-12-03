@@ -80,16 +80,15 @@ class UserController extends Zend_Controller_Action
                 } /* CASO ELIMINAZIONE POST (STAFF) */
                 elseif ($data->tipo == 2) {
                     $blogModel = new Application_Model_Blog();
-                    $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                    $notificadati[$i]['nome'] = $data->nome;
                     $postModel = new Application_Model_Post();
-                    $notificadati[$i]['post'] = $postModel->elencoPostById($data->id_post)->current()->titolo;
                     $notificadati[$i]['motivazione'] = $data->motivazione;
                     $notificadati[$i]['tipo'] = $data->tipo;
                     $notificadati[$i]['idnotifica'] = $data->id_notifica;
                 } /* CASO ELIMINAZIONE BLOG (STAFF) */
                 elseif ($data->tipo == 3) {
                     $blogModel = new Application_Model_Blog();
-                    $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                    $notificadati[$i]['nome'] = $data->nome;
                     $notificadati[$i]['motivazione'] = $data->motivazione;
                     $notificadati[$i]['tipo'] = $data->tipo;
                     $notificadati[$i]['idnotifica'] = $data->id_notifica;
@@ -306,16 +305,15 @@ class UserController extends Zend_Controller_Action
                     } /* CASO ELIMINAZIONE POST (STAFF) */
                     elseif ($data->tipo == 2) {
                         $blogModel = new Application_Model_Blog();
-                        $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                        $notificadati[$i]['nome'] = $data->nome;
                         $postModel = new Application_Model_Post();
-                        $notificadati[$i]['post'] = $postModel->elencoPostById($data->id_post)->current()->titolo;
                         $notificadati[$i]['motivazione'] = $data->motivazione;
                         $notificadati[$i]['tipo'] = $data->tipo;
                         $notificadati[$i]['idnotifica'] = $data->id_notifica;
                     } /* CASO ELIMINAZIONE BLOG (STAFF) */
                     elseif ($data->tipo == 3) {
                         $blogModel = new Application_Model_Blog();
-                        $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                        $notificadati[$i]['blog'] = $data->nome;
                         $notificadati[$i]['motivazione'] = $data->motivazione;
                         $notificadati[$i]['tipo'] = $data->tipo;
                         $notificadati[$i]['idnotifica'] = $data->id_notifica;
@@ -572,15 +570,14 @@ class UserController extends Zend_Controller_Action
             } /* CASO ELIMINAZIONE POST (STAFF) */
             elseif ($data->tipo == 2) {
                 $blogModel = new Application_Model_Blog();
-                $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                $notificadati[$i]['nome'] = $data->nome;
                 $postModel = new Application_Model_Post();
-                $notificadati[$i]['post'] = $postModel->elencoPostById($data->id_post)->current()->titolo;
                 $notificadati[$i]['motivazione'] = $data->motivazione;
                 $notificadati[$i]['tipo'] = $data->tipo;
             } /* CASO ELIMINAZIONE BLOG (STAFF) */
             elseif ($data->tipo == 3) {
                 $blogModel = new Application_Model_Blog();
-                $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                $notificadati[$i]['nome'] = $data->nome;
                 $notificadati[$i]['motivazione'] = $data->motivazione;
                 $notificadati[$i]['tipo'] = $data->tipo;
             } /* ALTRI CASI */

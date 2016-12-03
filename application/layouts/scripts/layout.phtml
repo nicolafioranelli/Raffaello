@@ -158,6 +158,22 @@ if (Zend_Auth::getInstance()->hasIdentity()) {
                 <!-- END ADMIN NAVBAR -->
 
                 <!-- STAFF NAVBAR -->
+                <?php if ($ruolo == "staff"): ?>
+                    <li class="smoothscroll"><a href="<?php echo $this->url(
+                            array(
+                                'controller' => 'staff',
+                                'action' => 'index',
+                            )
+                        ); ?>" title="">Home</a></li>
+
+                    <li class="highlight with-sep"><a href="<?php echo $this->url(
+                            array(
+                                'controller' => $ruolo,
+                                'action' => 'logout',
+                            )
+                        ); ?>" title="">Logout</a></li>
+
+                <?php endif; ?>
                 <!-- END STAFF NAVBAR -->
 
                 <!-- USER NAVBAR -->

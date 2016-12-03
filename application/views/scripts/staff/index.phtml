@@ -24,17 +24,27 @@
                                 <thead>
                                 <tr>
                                     <th class="font-tabella" style="text-align: center">Utente</th>
-                                    <th class="font-tabella" style="text-align: center">Blog</th>
-                                    <th class="font-tabella" style="text-align: center">Tema</th>
-                                    <th class="font-tabella" style="text-align: center">Apri</th>
-                                    <th class="font-tabella" style="text-align: center">Elimina</th>
+                                    <?php if (count($this->blogSet) > 0): ?>
+                                        <th class="font-tabella" style="text-align: center">Blog</th>
+                                        <th class="font-tabella" style="text-align: center">Tema</th>
+                                        <th class="font-tabella" style="text-align: center">Apri</th>
+                                        <th class="font-tabella" style="text-align: center">Elimina</th>
+                                    <?php endif; ?>
                                 </tr>
                                 </thead>
 
                                 <tbody>
                                 <tr>
-                                    <?php for($i = 0; $i<count($this->blogSet); $i++): ?>
-                                    <td class="font-tabella-campi" style="font-size: 1.4rem"><?php echo $this->blogSet[$i]['utente']; ?></td>
+                                    <?php if (count($this->blogSet) == 0): ?>
+                                        <td class="font-tabella-campi"
+                                            style="font-size: 1.4rem;">Non ci sono blog da visualizzare.
+                                        </td>
+                                    <?php else: ?>
+                                    <?php for ($i = 0;
+                                    $i < count($this->blogSet);
+                                    $i++): ?>
+                                    <td class="font-tabella-campi"
+                                        style="font-size: 1.4rem"><?php echo $this->blogSet[$i]['utente']; ?></td>
                                     <td class="font-tabella-campi"
                                         style="font-size: 1.4rem;"><?php echo $this->blogSet[$i]['titolo']; ?></td>
                                     <td class="font-tabella-campi"
@@ -46,7 +56,8 @@
                                             "blog" => $this->blogSet[$i]['idblog']));
                                         ?>">
                                             <span>
-                                                <i class="fa fa-arrow-right" style="color: #21DC7F; font-size: 1.4em"></i>
+                                                <i class="fa fa-arrow-right"
+                                                   style="color: #21DC7F; font-size: 1.4em"></i>
                                             </span>
                                         </a>
                                     </td>
@@ -57,12 +68,15 @@
                                             'blog' => $this->blogSet[$i]['idblog']));
                                         ?>">
                                             <span>
-                                                <i class="fa fa-times-circle" style="color: #761c19; font-size: 1.4em"></i>
+                                                <i class="fa fa-times-circle"
+                                                   style="color: #761c19; font-size: 1.4em"></i>
                                             </span>
                                         </a>
                                     </td>
                                 </tr>
                                 <?php endfor; ?>
+                                <?php endif;
+                                ?>
 
                                 </tbody>
                             </table>

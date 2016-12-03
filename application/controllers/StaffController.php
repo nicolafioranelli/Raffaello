@@ -103,9 +103,12 @@ class StaffController extends Zend_Controller_Action
             $idPost = $this->getParam('post');
             $postModel = new Application_Model_Post();
             $rowset = $postModel->elencoPostByIdPost($idPost);
+            $blogModel = new Application_Model_Blog();
+            $row = $blogModel->elencoBlogById($rowset->current()->id_blog);
             $dati = array();
             $dati['id_utente'] = $this->utenteCorrente->current()->id_utente;
             $dati['id_post'] = $idPost;
+            $dati['nome'] = $row->current()->titolo;
             $dati['id_amico'] = $rowset->current()->id_utente;
             $dati['tipo'] = 2;
             $dati['motivazione'] = $this->delblogForm->getValues()['motivazione'];
