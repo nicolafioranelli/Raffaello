@@ -20,19 +20,26 @@
                                        width="100%">
                                     <thead>
                                     <tr>
+                                        <?php if(count($this->utentiSet->toArray())==0): ?>
+                                        <th class="font-tabella" style="text-align: center">Nome</th>
+                                        <?php else: ?>
                                         <th class="font-tabella" style="text-align: center">Nome</th>
                                         <th class="font-tabella" style="text-align: center">Cognome</th>
                                         <th class="font-tabella" style="text-align: center">E-mail</th>
                                         <th class="font-tabella" style="text-align: center">Username</th>
                                         <th class="font-tabella" style="text-align: center">Ruolo</th>
-                                        <th class="font-tabella" style="text-align: center">Profilo</th>
                                         <th class="font-tabella" style="text-align: center">Modifica</th>
                                         <th class="font-tabella" style="text-align: center">Elimina</th>
+                                        <?php endif; ?>
                                     </tr>
                                     </thead>
 
                                     <tbody>
                                     <tr>
+                                        <?php if(count($this->utentiSet->toArray())==0): ?>
+                                            <td class="font-tabella-campi">
+                                                Non ci sono utenti dello staff da visualizzare, aggiungine uno!</td>
+                                        <?php else: ?>
                                         <?php foreach ($this->utentiSet as $utente): ?>
                                         <td class="font-tabella-campi"
                                             style="text-transform: capitalize"><?php echo $utente->nome; ?></td>
@@ -41,53 +48,46 @@
                                         <td class="font-tabella-campi"><?php echo $utente->email; ?></td>
                                         <td class="font-tabella-campi"><?php echo $utente->username; ?></td>
                                         <td class="font-tabella-campi"><?php echo $utente->ruolo; ?></td>
-                                        <td style="font-size: 1.4em;">
-                                            <a href="<?php echo $this->url(
-                                                array(
-                                                    'controller' => 'admin',
-                                                    'action' => 'profilo',
-                                                    'id' => $utente->id_utente,
-                                                    'user' => $utente->username
-                                                )); ?>">
-												<span>
-                                                    <i class="fa fa-arrow-right" style="color: #21DC7F"></i>
-                                                </span>
-                                            </a>
-                                        </td>
-                                        <td style="font-size: 1.4em;">
+                                        <td style="font-size: 1.2em;">
                                             <a href="<?php echo $this->url(
                                                 array(
                                                     'controller' => 'admin',
                                                     'action' => 'modificautente',
                                                     'utente' => $utente->id_utente
                                                 )); ?>">
-												<span>
+                                                <span>
                                                     <i class="fa fa-pencil" style="color: #3a579e"></i>
                                                 </span>
                                             </a>
                                         </td>
-                                        <td style="font-size: 1.4em;">
+                                        <td style="font-size: 1.2em;">
                                             <a href="<?php echo $this->url(array(
                                                 'controller' => 'admin',
                                                 'action' => 'eliminautente',
                                                 'utente' => $utente->id_utente,
-                                                'ruolo' => 'user'));
+                                                'ruolo' => 'staff'));
                                             ?>">
-												<span>
+                                                <span>
                                                     <i class="fa fa-trash" style="color: #c0392b"></i>
                                                 </span>
                                             </a>
                                         </td>
                                     </tr>
                                     <?php endforeach; ?>
-
+                                    <?php endif; ?>
                                     </tbody>
                                 </table>
-
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-5 col-lg-5"></div>
+                                    <div class="col-lg-12 action-started">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'admin',
+                                            'action' => 'inseriscistaff'));
+                                        ?>" class="btn btn-outlined">Inserisci un nuovo utente</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-
                     </ul>
                 </div>
             </div>

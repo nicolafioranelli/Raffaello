@@ -45,5 +45,9 @@ class Application_Model_Amici
     public function elencoAmiciNotifica($idUtente){
         return $this->tabella->fetchAll($this->tabella->select()->where("ricevente = '$idUtente' OR richiedente = '$idUtente'")->where("stato = 'accepted'"));
     }
+
+    public function elencoAdmin($idUtente){
+        return $this->tabella->fetchAll($this->tabella->select()->where("ricevente = '$idUtente'")->where("stato = 'accepted' OR stato = 'standby' OR stato = 'refused'"));
+    }
 }
 

@@ -10,27 +10,33 @@ class Application_Model_Utente
         $this->tabella = new Application_Model_DbTable_Utente();
     }
 
-    public function inserisciUtente($dati){
+    public function inserisciUtente($dati)
+    {
         return $this->tabella->insert($dati);
     }
 
-    public function aggiornaUtente($dati, $id){
-        return $this->tabella->update($dati,"id_utente = '$id'");
+    public function aggiornaUtente($dati, $id)
+    {
+        return $this->tabella->update($dati, "id_utente = '$id'");
     }
 
-    public function eliminaUtente($id){
+    public function eliminaUtente($id)
+    {
         return $this->tabella->delete("id_utente = '$id'");
     }
 
-    public function elencoUtente(){
+    public function elencoUtente()
+    {
         return $this->tabella->fetchAll();
     }
 
-    public function elencoUtenteById($id){
+    public function elencoUtenteById($id)
+    {
         return $this->tabella->find($id);
     }
 
-    public function esistenzaUsername($user){
+    public function esistenzaUsername($user)
+    {
         $risultato = $this->tabella->fetchAll($this->tabella->select()->where("username = '$user'"));
         $rowCount = count($risultato);
         if ($rowCount > 0) {
@@ -41,15 +47,27 @@ class Application_Model_Utente
         return $controllo;
     }
 
-    public function verificaLogin($username, $password){
+    public function verificaLogin($username, $password)
+    {
         $sql = $this->tabella->select()
-                             ->where("username = '$username' AND password = '$password'");
-        $user =$this->tabella->fetchAll($sql);
+            ->where("username = '$username' AND password = '$password'");
+        $user = $this->tabella->fetchAll($sql);
         return $user;
     }
 
-    public function cercaUtenteByUser($id){
+    public function cercaUtenteByUser($id)
+    {
         return $this->tabella->fetchAll($this->tabella->select()->where("username = '$id'"));
+    }
+
+    public function elencoUtenteAdmin()
+    {
+        return $this->tabella->fetchAll($this->tabella->select()->where("ruolo = 'user'"));
+    }
+
+    public function elencoStaffAdmin()
+    {
+        return $this->tabella->fetchAll($this->tabella->select()->where("ruolo = 'staff'"));
     }
 
 }

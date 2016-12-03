@@ -147,14 +147,11 @@ class StaffController extends Zend_Controller_Action
 
             $notificaModel = new Application_Model_Notifica();
             $notificaModel->inserisciNotifica($dati);
-
             $blogModel->eliminaBlog($idBlog);
 
             $this->_helper->redirector("index", "staff");
         }
     }
-
-
 }
 
 

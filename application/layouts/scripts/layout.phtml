@@ -63,12 +63,9 @@ if (Zend_Auth::getInstance()->hasIdentity()) {
             ); ?>" class="logo-light"></a>
         </div>
 
-
-
         <!-- Main Menu -->
         <nav id="main-nav-wrap">
             <ul class="main-navigation">
-
                 <!-- GUEST NAVBAR -->
                 <?php if ($ruolo == "guest"): ?>
                     <li class="smoothscroll"><a href="<?php echo $this->url(
@@ -129,23 +126,37 @@ if (Zend_Auth::getInstance()->hasIdentity()) {
                             )
                         ); ?>" title="">Home</a></li>
 
-                    <li class="menu-drop"><a class="smoothscroll" href="#" title="">Gestione <i class="fa fa-sort-desc"
-                                                                                                aria-hidden="true"></i></a>
+                    <li class="menu-drop"><a class="smoothscroll" href="#" title="">Gestione utenti<i
+                                class="fa fa-sort-desc" aria-hidden="true"></i></a>
                         <ul class="dropdown">
-                            <li><a href="<?php echo $this->url(
-                                    array(
-                                        'controller' => 'admin',
-                                        'action' => 'visualizzafaq',
-                                    )
-                                ); ?>">Gestione Faq</a></li>
                             <li><a href="<?php echo $this->url(
                                     array(
                                         'controller' => 'admin',
                                         'action' => 'visualizzautenti',
                                     )
-                                ); ?>">Gestioni Utenti</a></li>
+                                ); ?>">Utenti</a></li>
+                            <li><a href="<?php echo $this->url(
+                                    array(
+                                        'controller' => 'admin',
+                                        'action' => 'visualizzastaff',
+                                    )
+                                ); ?>">Staff</a></li>
                         </ul>
                     </li>
+
+                    <li class="smoothscroll"><a href="<?php echo $this->url(
+                            array(
+                                'controller' => 'admin',
+                                'action' => 'gestioneblog',
+                            )
+                        ); ?>" title="">Gestione Blog</a></li>
+
+                    <li class="smoothscroll"><a href="<?php echo $this->url(
+                            array(
+                                'controller' => 'admin',
+                                'action' => 'visualizzafaq',
+                            )
+                        ); ?>" title="">Gestione FAQ</a></li>
 
                     <li class="highlight with-sep"><a href="<?php echo $this->url(
                             array(

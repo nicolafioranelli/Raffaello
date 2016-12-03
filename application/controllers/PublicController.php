@@ -12,8 +12,8 @@ class PublicController extends Zend_Controller_Action
 
     public function init()
     {
-        $this->view->assign("registratiForm",$this->registerAction());
-        $this->view->assign("loginForm",$this->loginAction());
+        $this->view->assign("registratiForm", $this->registerAction());
+        $this->view->assign("loginForm", $this->loginAction());
         $this->_authService = new Application_Service_Auth();
     }
 
@@ -24,7 +24,7 @@ class PublicController extends Zend_Controller_Action
     public function faqAction()
     {
         $faqModel = new Application_Model_Faq();
-        $this->view->assign("faqSet",$faqModel->elencoFaq());
+        $this->view->assign("faqSet", $faqModel->elencoFaq());
     }
 
     public function termsAction()
@@ -67,21 +67,18 @@ class PublicController extends Zend_Controller_Action
         if (!$form->isValid($request->getPost())) {
             $form->setDescription('Attenzione: alcuni dati inseriti sono errati.');
             return $this->render('register');
-        }
-        else
-        {
-            $datiform=$this->registratiForm->getValues();
-            $datiform['Nome']=strtolower($datiform['Nome']);
-            $datiform['Cognome']=strtolower($datiform['Cognome']);
-            $datiform['ruolo']="utente";
-            $utentemodel=new Application_Model_Utente();
-            $username=$datiform['username']; //prendo l'username inserito nella form
-            if($utentemodel->esistenzaUsername($username)) //controllo se l'username inserito esiste già nel db
+        } else {
+            $datiform = $this->registratiForm->getValues();
+            $datiform['Nome'] = strtolower($datiform['Nome']);
+            $datiform['Cognome'] = strtolower($datiform['Cognome']);
+            $datiform['ruolo'] = "user";
+            $utentemodel = new Application_Model_Utente();
+            $username = $datiform['username']; //prendo l'username inserito nella form
+            if ($utentemodel->esistenzaUsername($username)) //controllo se l'username inserito esiste già nel db
             {
                 $form->setDescription('Attenzione: l\'username che hai scelto non è disponibile.');
                 return $this->render('register');
-            }
-            else{
+            } else {
                 $utentemodel->inserisciUtente($datiform);
                 $this->render('index');
             }
@@ -96,7 +93,7 @@ class PublicController extends Zend_Controller_Action
             return $this->_helper->redirector('login');
         }
         $form = $this->loginForm;
-        if(!$form->isValid($request->getPost())) {
+        if (!$form->isValid($request->getPost())) {
 
             $form->setDescription('Attenzione: alcuni dati inseriti sono errati.');
             return $this->render('login');
@@ -108,7 +105,7 @@ class PublicController extends Zend_Controller_Action
             return $this->render('login');
         }
 
-        return $this->_helper->redirector('index',$this->_authService->getIdentity()->current()->ruolo);
+        return $this->_helper->redirector('index', $this->_authService->getIdentity()->current()->ruolo);
 
     }
 

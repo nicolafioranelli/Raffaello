@@ -1,0 +1,85 @@
+<section id="hero" class="hero-blog">
+    <div id="particles-js">
+        <div class="cnt-heroblog-content">
+        </div>
+    </div>
+</section>
+
+<section id="post-blog" class="main-post">
+    <div class="cnt-post-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 container-post">
+                    <ul class="blog-data">
+                        <div class="row" style="text-align: center; margin: auto;>
+							<div class=">
+                            <h4 style="color: #21DC7F; font-family: 'Montserrat',sans-serif; letter-spacing: 1px; font-size: 2.5rem; padding-bottom: 1.2rem; margin-bottom: 1.2rem;">
+                                Benvenuto, ecco la lista dei blog degli iscritti!</h4>
+                            <table id="datatable" class="table table-striped table-bordered " cellspacing="0"
+                                   width="100%">
+                                <thead>
+                                <tr>
+                                    <th class="font-tabella" style="text-align: center">Utente</th>
+                                    <?php if (count($this->blogSet) > 0): ?>
+                                        <th class="font-tabella" style="text-align: center">Blog</th>
+                                        <th class="font-tabella" style="text-align: center">Tema</th>
+                                        <th class="font-tabella" style="text-align: center">Apri</th>
+                                        <th class="font-tabella" style="text-align: center">Elimina</th>
+                                    <?php endif; ?>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                    <?php if (count($this->blogSet) == 0): ?>
+                                        <td class="font-tabella-campi"
+                                            style="font-size: 1.4rem;">Non ci sono blog da visualizzare.
+                                        </td>
+                                    <?php else: ?>
+                                    <?php for ($i = 0;
+                                    $i < count($this->blogSet);
+                                    $i++): ?>
+                                    <td class="font-tabella-campi"
+                                        style="font-size: 1.4rem"><?php echo $this->blogSet[$i]['utente']; ?></td>
+                                    <td class="font-tabella-campi"
+                                        style="font-size: 1.4rem;"><?php echo $this->blogSet[$i]['titolo']; ?></td>
+                                    <td class="font-tabella-campi"
+                                        style="font-size: 1.4rem;"><?php echo $this->blogSet[$i]['tema']; ?></td>
+                                    <td style="font-size: 1.2em;">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'admin',
+                                            'action' => 'contenutoblog',
+                                            "blog" => $this->blogSet[$i]['idblog']));
+                                        ?>">
+                                            <span>
+                                                <i class="fa fa-arrow-right"
+                                                   style="color: #21DC7F; font-size: 1.4em"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td style="font-size: 1.2em;">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'admin',
+                                            'action' => 'eliminablog',
+                                            'blog' => $this->blogSet[$i]['idblog']));
+                                        ?>">
+                                            <span>
+                                                <i class="fa fa-times-circle"
+                                                   style="color: #761c19; font-size: 1.4em"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <?php endfor; ?>
+                                <?php endif;
+                                ?>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>

@@ -26,6 +26,17 @@
           <actionMethod actionName="modificautente"/>
           <actionMethod actionName="modificautentepost"/>
           <actionMethod actionName="eliminautente"/>
+          <actionMethod actionName="visualizzaStaff"/>
+          <actionMethod actionName="visualizzastaff"/>
+          <actionMethod actionName="inseriscistaff"/>
+          <actionMethod actionName="inseriscistaffpost"/>
+          <actionMethod actionName="profilo"/>
+          <actionMethod actionName="gestioneblog"/>
+          <actionMethod actionName="contenutoblog"/>
+          <actionMethod actionName="eliminablog"/>
+          <actionMethod actionName="eliminapost"/>
+          <actionMethod actionName="eliminablogverifica"/>
+          <actionMethod actionName="eliminapostverifica"/>
         </controllerFile>
         <controllerFile controllerName="Public">
           <actionMethod actionName="index"/>
@@ -320,6 +331,39 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Staff">
             <viewScriptFile forActionName="eliminablogverifica"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="visualizzaStaff"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="visualizzastaff"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="inseriscistaff"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="inseriscistaffpost"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="profilo"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="gestioneblog"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="contenutoblog"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="eliminablog"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="eliminapost"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="eliminablogverifica"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Admin">
+            <viewScriptFile forActionName="eliminapostverifica"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
