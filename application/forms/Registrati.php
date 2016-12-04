@@ -5,10 +5,12 @@ class Application_Form_Registrati extends Zend_Form
 
     public function init()
     {
+        $path=APPLICATION_PATH;
+        $path.="/../public/assets/profilo/";
 
         $this->setMethod("post");
+        $this->setAttrib('enctype', 'multipart/form-data');
         $this->setName("registrati");
-
 
         $this->addElement('text', 'Nome', array(
             'filters'    => array('StringTrim'),
@@ -103,6 +105,15 @@ class Application_Form_Registrati extends Zend_Form
                 array('StringLength', true, array(3, 200))
             ),
         ));
+
+        $this->addElement('file', 'image', array(
+            'label' => 'Inserisci la tua immagine del profilo',
+            'destination' => $path,
+            'validators' => array(
+                array('Count', false, 1),
+                array('Size', false, 2048000),
+                array('Extension', false, array('jpg', 'png', 'gif'))),
+            'class' =>'form-control form-register'));
 
         $this->addElement('submit', 'invia', array(
             'class' => 'btn btn-lg btn-primary btn-block btn-signin button-green-nic',

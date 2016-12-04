@@ -72,6 +72,9 @@ class PublicController extends Zend_Controller_Action
             $datiform['Nome'] = strtolower($datiform['Nome']);
             $datiform['Cognome'] = strtolower($datiform['Cognome']);
             $datiform['ruolo'] = "user";
+            $generic='01.jpg';
+            if ($datiform['image']=='')
+                $datiform['image']=$generic;
             $utentemodel = new Application_Model_Utente();
             $username = $datiform['username']; //prendo l'username inserito nella form
             if ($utentemodel->esistenzaUsername($username)) //controllo se l'username inserito esiste già nel db
@@ -80,7 +83,7 @@ class PublicController extends Zend_Controller_Action
                 return $this->render('register');
             } else {
                 $utentemodel->inserisciUtente($datiform);
-                $this->render('index');
+                $this->redirector('index', 'public');
             }
         }
     }

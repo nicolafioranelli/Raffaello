@@ -51,13 +51,13 @@ if ($this->azione == "#") {
                         <!-- PROFILO -->
 
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 feature-show">
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <img src="<?php echo $this->baseUrl("assets/img/01.jpg"); ?>" alt=""
-                                     class="img-responsive" style="margin-bottom: 5%">
-                            </div>
 
                             <?php if ($this->privacy == 1): ?>
                                 <?php foreach ($this->datiSet as $dati): ?>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <img src="<?php echo $this->baseUrl("assets/profilo/$dati->image"); ?>" alt=""
+                                             class="img-responsive" style="margin-bottom: 5%">
+                                    </div>
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content-feature">
                                         <h2 style="font-size: 40pt; margin-bottom: auto; text-transform: capitalize"><?php echo $dati->nome . ' ' . $dati->cognome; ?></h2>
                                     </div>
@@ -74,6 +74,10 @@ if ($this->azione == "#") {
 
                             <?php if ($this->privacy == 0): ?>
                                 <?php foreach ($this->datiSet as $dati): ?>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <img src="<?php echo $this->baseUrl("assets/profilo/$dati->image"); ?>" alt=""
+                                             class="img-responsive" style="margin-bottom: 5%">
+                                    </div>
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content-feature">
                                         <h2 style="font-size: 40pt; margin-bottom: auto; text-transform: capitalize"><?php echo $dati->nome . ' ' . $dati->cognome; ?></h2>
                                         <h2 style="font-family: 'Open Sans',sans-serif; font-size: 1.6rem; text-align: left; margin-top: 0px; margin-bottom: auto">

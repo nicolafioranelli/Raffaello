@@ -364,6 +364,9 @@ class UserController extends Zend_Controller_Action
         $datiform['nascita'] = substr($datiform['nascita'], 6, 4) . "-" . substr($datiform['nascita'], 3, 2) . "-" . substr($datiform['nascita'], 0, 2);
         $datiform['nome'] = strtolower($datiform['nome']);
         $datiform['cognome'] = strtolower($datiform['cognome']);
+        if ($datiform['image'] == "") {
+            unset($datiform['image']);
+        }
         $utentemodel = new Application_Model_Utente();
         $id = $this->getParam("utente"); //prendo la faq inserito nella form
         $utentemodel->aggiornaUtente($datiform, $id);
