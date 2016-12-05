@@ -19,13 +19,18 @@
                             <thead>
                             <tr>
                                 <th class="font-tabella" style="text-align: center">Profili</th>
+                                <?php if(count($this->amiciSet)>0): ?>
                                 <th class="font-tabella" style="text-align: center">Username</th>
                                 <th class="font-tabella" style="text-align: center">Profilo</th>
                                 <th class="font-tabella" style="text-align: center">Elimina</th>
+                                <?php endif; ?>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
+                                <?php if(count($this->amiciSet)==0): ?>
+                                <td class="font-tabella-campi">Ops... non hai ancora amici, cerca qualcuno per iniziare!</td>
+                                <?php endif; ?>
                                 <?php for ($i = 0;
                                 $i < count($this->amiciSet);
                                 $i++): ?>
@@ -69,6 +74,15 @@
                             <?php endfor; ?>
                             </tbody>
                         </table>
+                        <div class="row" style="margin-top: 10px">
+                            <div class="col-md-5 col-sm-5 col-lg-5"></div>
+                            <div class="col-lg-12 action-started">
+                                <a href="<?php echo $this->url(array(
+                                    'controller' => 'user',
+                                    'action' => 'index'));
+                                ?>" class="btn btn-outlined">Indietro</a>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>

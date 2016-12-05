@@ -127,12 +127,12 @@ class UserController extends Zend_Controller_Action
     {
         $request = $this->getRequest();
         if (!$request->isPost()) {
-            return $this->_helper->redirector('inserimentonuovoblog');
+            return $this->_helper->redirector('inserimentonuovoblog', 'user');
         }
         $form = $this->nuovoblogForm;
         if (!$form->isValid($request->getPost())) {
             $form->setDescription('Attenzione: alcuni dati inseriti sono errati.');
-            return $this->render('inserimentonuovoblog');
+            return $this->render('inserimentoprimoblog');
         }
         $datiform = $this->nuovoblogForm->getValues();
         $idUtente = $this->utenteCorrente->current()->id_utente;
@@ -222,6 +222,9 @@ class UserController extends Zend_Controller_Action
                     $dati['id_post'] = $id;
                     $dati['id_amico'] = $amici->ricevente;
                     $dati['tipo'] = 0;
+                    $generic = '01.jpg';
+                    if ($datiform['image'] == '')
+                        $datiform['image'] = $generic;
                     $notificaModel = new Application_Model_Notifica();
                     $notificaModel->inserisciNotifica($dati);
                 } else {
@@ -231,6 +234,9 @@ class UserController extends Zend_Controller_Action
                     $dati['id_post'] = $id;
                     $dati['id_amico'] = $amici->richiedente;
                     $dati['tipo'] = 0;
+                    $generic = '01.jpg';
+                    if ($datiform['image'] == '')
+                        $datiform['image'] = $generic;
                     $notificaModel = new Application_Model_Notifica();
                     $notificaModel->inserisciNotifica($dati);
                 }
@@ -259,6 +265,7 @@ class UserController extends Zend_Controller_Action
                 $newdatapost[$i]['nome_utente'] = ucwords($temp->current()->nome);
                 $newdatapost[$i]['id_utente'] = $post->id_utente;
                 $newdatapost[$i]['username'] = $temp->current()->username;
+                $newdatapost[$i]['image'] = $post->image;
                 $i++;
             }
             $paginator = new Zend_Paginator(new Zend_Paginator_Adapter_Array($newdatapost));

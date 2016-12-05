@@ -118,6 +118,7 @@ class Application_Form_Registrati extends Zend_Form
         $this->addElement('submit', 'invia', array(
             'class' => 'btn btn-lg btn-primary btn-block btn-signin button-green-nic',
         ));
+
         $this->setDecorators(array(
             'FormElements',
             array('HtmlTag', array('tag' => 'a', 'class' => 'zend_form')),

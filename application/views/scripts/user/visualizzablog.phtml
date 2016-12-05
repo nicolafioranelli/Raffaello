@@ -32,7 +32,7 @@
                         <?php
                         foreach ($this->postSet as $post): ?>
                             <div class="featured-image">
-                                <img src="http://eship.dyson.cornell.edu/wp-eship/wp-content/uploads/idea-lightbulb.jpg"
+                                <img src="<?php echo $this->baseUrl("image/post/".$post['image']); ?>"
                                      class="img-responsive" alt="">
                                 <div class="data-post-main">
                                     <ul class="blog-data">
