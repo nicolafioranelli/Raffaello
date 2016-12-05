@@ -4,37 +4,34 @@
 <body>
 
 <body class="black-background">
-
-<div class="logo-login" >
+<div class="logo-login">
 </div>
 
 <div class="row">
     <div class="container" id="register">
         <div class="main-login main-center">
 
-
-                <h2 style="font-size:1.4em; color:#8d9496;">Crea il tuo account</h2>
-
-                    <br>
-                        <?php echo $this->registratiForm; ?>
-
-                    <hr class="separator-login">
-
-                    <h4>Hai già un account? <span><a href="login.html" class="no-decoration">Accedi</a></span></h4>
-
-                </div>
-
+            <h2 style="font-size:1.4em; color:#8d9496;">Crea il tuo account</h2>
+            <br>
+            <?php echo $this->registratiForm; ?>
+            <hr class="separator-login">
+            <h4>Hai già un account? <span><a href="<?php echo $this->url(
+                        array(
+                            'controller' => 'public',
+                            'action' => 'login',
+                        )
+                    ); ?>" class="no-decoration">Accedi</a></span></h4>
 
         </div>
-        <h2 class="sign-now">Registrandoti accetti i nostri <span><a href="<?php echo $this->url(
-                    array(
-                        'controller' => 'admin',
-                        'action' => 'modificafaq',
-                    )
-                ); ?>" class="no-decoration">Termini d'utilizzo.</a></span></h2>
+
     </div>
+    <h2 class="sign-now">Registrandoti accetti i nostri <span><a href="<?php echo $this->url(
+                array(
+                    'controller' => 'public',
+                    'action' => 'terms',
+                )
+            ); ?>" class="no-decoration">Termini d'utilizzo.</a></span></h2>
 </div>
-
-
+</div>
 
 </body>

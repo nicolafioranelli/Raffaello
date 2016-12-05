@@ -10,22 +10,22 @@ class Application_Form_DatiFaq extends Zend_Form
         $this->setName("datifaq");
 
         $this->addElement('text', 'domanda', array(
-            'filters'    => array('StringTrim'),
-            'required'         => true,
-            'label'      => 'Domanda:',
+            'filters' => array('StringTrim'),
+            'required' => true,
+            'label' => 'Domanda:',
             'placeholder' => 'Inserisci una domanda',
             'autofocus' => 'true',
-            'class' =>'form-control form-register',
+            'class' => 'form-control form-register',
             'validators' => array(
                 array('StringLength', true, array(3, 64))
             ),
         ));
         $this->addElement('text', 'risposta', array(
-            'filters'    => array('StringTrim'),
-            'required'         => true,
-            'label'      => 'Risposta:',
+            'filters' => array('StringTrim'),
+            'required' => true,
+            'label' => 'Risposta:',
             'placeholder' => 'Inserisci una risposta',
-            'class' =>'form-control form-register',
+            'class' => 'form-control form-register',
             'validators' => array(
                 array('StringLength', true, array(3, 200))
             ),

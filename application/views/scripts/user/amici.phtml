@@ -1,12 +1,9 @@
 <section id="hero" class="hero-blog">
     <div id="particles-js">
         <div class="cnt-heroblog-content">
-
         </div>
-        <!-- //.cnt-heroblog-content -->
     </div>
 </section>
-
 
 <section id="post-blog" class="main-post">
     <div class="cnt-post-bg">
@@ -27,13 +24,13 @@
                                 <th class="font-tabella" style="text-align: center">Elimina</th>
                             </tr>
                             </thead>
-
                             <tbody>
                             <tr>
                                 <?php for ($i = 0;
                                 $i < count($this->amiciSet);
                                 $i++): ?>
-                                <td class="font-tabella-campi" style="text-transform: capitalize"><?php echo $this->amiciSet[$i]['amico']; ?></td>
+                                <td class="font-tabella-campi"
+                                    style="text-transform: capitalize"><?php echo $this->amiciSet[$i]['amico']; ?></td>
                                 <td class="font-tabella-campi"><?php echo $this->amiciSet[$i]['username']; ?></td>
                                 <td style="font-size: 1.2em;">
                                     <a href="<?php echo $this->url(
@@ -70,13 +67,10 @@
                                 </td>
                             </tr>
                             <?php endfor; ?>
-
                             </tbody>
                         </table>
-
                 </div>
             </div>
-
         </div>
     </div>
 </section>

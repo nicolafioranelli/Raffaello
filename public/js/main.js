@@ -2353,7 +2353,7 @@
         var e = this;
         e.$slides = e.$slider.children(e.options.slide + ":not(.slick-cloned)").addClass("slick-slide"), e.slideCount = e.$slides.length, e.$slides.each(function (e, t) {
             i(t).attr("data-slick-index", e).data("originalStyling", i(t).attr("style") || "")
-        }), e.$slider.addClass("slick-slider"), e.$slideTrack = 0 === e.slideCount ? i('<div class="slick-track"/>').appendTo(e.$slider) : e.$slides.wrapAll('<div class="slick-track"/>').parent(), e.$list = e.$slideTrack.wrap('<div aria-live="polite" class="slick-list"/>').parent(), e.$slideTrack.css("opacity", 0), (e.options.centerMode === !0 || e.options.swipeToSlide === !0) && (e.options.slidesToScroll = 1), i("img[data-lazy]", e.$slider).not("[src]").addClass("slick-loading"), e.setupInfinite(), e.buildArrows(), e.buildDots(), e.updateDots(), e.setSlideClasses("number" == typeof e.currentSlide ? e.currentSlide : 0), e.options.draggable === !0 && e.$list.addClass("draggable")
+        }), e.$slider.addClass("slick-slider"), e.$slideTrack = 0 === e.slideCount ? i('<div class="slick-track"/>').appendTo(e.$slider) : e.$slides.wrapAll('<div class="slick-track"/>').parent(), e.$list = e.$slideTrack.wrap('<div aria-live="polite" class="slick-list"/>').parent(), e.$slideTrack.css("opacity", 0), (e.options.centerMode === !0 || e.options.swipeToSlide === !0) && (e.options.slidesToScroll = 1), i("image[data-lazy]", e.$slider).not("[src]").addClass("slick-loading"), e.setupInfinite(), e.buildArrows(), e.buildDots(), e.updateDots(), e.setSlideClasses("number" == typeof e.currentSlide ? e.currentSlide : 0), e.options.draggable === !0 && e.$list.addClass("draggable")
     }, e.prototype.buildRows = function () {
         var i, e, t, o, s, n, r, l = this;
         if (o = document.createDocumentFragment(), n = l.$slider.children(), l.options.rows > 1) {
@@ -2521,7 +2521,7 @@
         i.target.tagName.match("TEXTAREA|INPUT|SELECT") || (37 === i.keyCode && e.options.accessibility === !0 ? e.changeSlide({data: {message: e.options.rtl === !0 ? "next" : "previous"}}) : 39 === i.keyCode && e.options.accessibility === !0 && e.changeSlide({data: {message: e.options.rtl === !0 ? "previous" : "next"}}))
     }, e.prototype.lazyLoad = function () {
         function e(e) {
-            i("img[data-lazy]", e).each(function () {
+            i("image[data-lazy]", e).each(function () {
                 var e = i(this), t = i(this).attr("data-lazy"), o = document.createElement("img");
                 o.onload = function () {
                     e.animate({opacity: 0}, 100, function () {
@@ -2562,7 +2562,7 @@
         i.preventDefault()
     }, e.prototype.progressiveLazyLoad = function (e) {
         e = e || 1;
-        var t, o, s, n = this, r = i("img[data-lazy]", n.$slider);
+        var t, o, s, n = this, r = i("image[data-lazy]", n.$slider);
         r.length ? (t = r.first(), o = t.attr("data-lazy"), s = document.createElement("img"), s.onload = function () {
             t.attr("src", o).removeAttr("data-lazy").removeClass("slick-loading"), n.options.adaptiveHeight === !0 && n.setPosition(), n.$slider.trigger("lazyLoaded", [n, t, o]), n.progressiveLazyLoad()
         }, s.onerror = function () {

@@ -9,23 +9,23 @@ class Application_Form_NuovoPost extends Zend_Form
         $this->setName("nuovopost");
 
         $this->addElement('text', 'titolo', array(
-            'filters'    => array('StringTrim'),
-            'required'   => true,
-            'label'=> 'Titolo:',
+            'filters' => array('StringTrim'),
+            'required' => true,
+            'label' => 'Titolo:',
             'placeholder' => 'Inserisci il titolo',
             'autofocus' => 'true',
-            'class' =>'form-control form-register',
+            'class' => 'form-control form-register',
             'validators' => array(
                 array('StringLength', true, array(3, 64))
             ),
         ));
 
         $this->addElement('textarea', 'contenuto', array(
-            'filters'    => array('StringTrim'),
-            'required'   => true,
-            'label'=> 'Descrizione:',
+            'filters' => array('StringTrim'),
+            'required' => true,
+            'label' => 'Descrizione:',
             'placeholder' => 'A cosa stai pensando...',
-            'class' =>'form-control form-register',
+            'class' => 'form-control form-register',
             'style' => 'height:200px',
             'validators' => array(
                 array('StringLength', true, array(3, 200))

@@ -1,12 +1,9 @@
 <section id="hero" class="hero-blog">
     <div id="particles-js">
         <div class="cnt-heroblog-content">
-
         </div>
-        <!-- //.cnt-heroblog-content -->
     </div>
 </section>
-
 
 <section id="post-blog" class="main-post">
     <div class="cnt-post-bg">
@@ -16,68 +13,69 @@
                     <ul class="blog-data">
                         <div class="row" style="text-align: center; margin: auto;>
 							<div class=">
-                        <table id="datatable" class="table table-striped table-bordered " cellspacing="0"
-                               width="100%">
-                            <thead>
-                            <tr>
-                                <th class="font-tabella" style="text-align: center">Titolo</th>
-                                <th class="font-tabella" style="text-align: center">Descrizione</th>
-                                <th class="font-tabella" style="text-align: center">Tema</th>
-                                <th class="font-tabella" style="text-align: center">Elimina</th>
-                                <th class="font-tabella" style="text-align: center">Visibilità</th>
-                            </tr>
-                            </thead>
+                            <table id="datatable" class="table table-striped table-bordered " cellspacing="0"
+                                   width="100%">
+                                <thead>
+                                <tr>
+                                    <th class="font-tabella" style="text-align: center">Titolo</th>
+                                    <th class="font-tabella" style="text-align: center">Descrizione</th>
+                                    <th class="font-tabella" style="text-align: center">Tema</th>
+                                    <th class="font-tabella" style="text-align: center">Elimina</th>
+                                    <th class="font-tabella" style="text-align: center">Visibilità</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <?php foreach ($this->blogSet as $blog): ?>
+                                    <td class="font-tabella-campi" style="font-size: 1.4rem"><a
+                                            href="<?php echo $this->url(array(
+                                                'controller' => 'user',
+                                                'action' => 'visualizzablog',
+                                                'blog' => $blog->id_blog));
+                                            ?>"><?php echo $blog->titolo; ?></a></td>
+                                    <td class="font-tabella-campi"
+                                        style="font-size: 1.4rem;"><?php echo $blog->descrizione; ?></td>
+                                    <td class="font-tabella-campi"
+                                        style="font-size: 1.4rem;"><?php echo $blog->tema; ?></td>
+                                    <td style="font-size: 1.2em;">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'user',
+                                            'action' => 'eliminablog',
+                                            "blog" => $blog->id_blog,
+                                            "titolo" => $blog->titolo));
+                                        ?>">
+                                            <button type="button"
+                                                    class="btn btn-lg btn-primary btn-block btn-signin button-red-nic">
+                                                Elimina
+                                            </button>
+                                        </a>
+                                    </td>
+                                    <td style="font-size: 1.2em">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'user',
+                                            'action' => 'sceltaprivacy',
+                                            "blog" => $blog->id_blog));
+                                        ?>">
+                                            <button type="button"
+                                                    class="btn btn-lg btn-primary btn-block btn-signin button-blue-nic">
+                                                Privacy
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
 
-                            <tbody>
-                            <tr>
-                                <?php foreach ($this->blogSet as $blog): ?>
-                                <td class="font-tabella-campi" style="font-size: 1.4rem"><a href="<?php echo $this->url(array(
-                                        'controller' => 'user',
-                                        'action' => 'visualizzablog',
-                                        'blog' => $blog->id_blog));
-                                    ?>"><?php echo $blog->titolo; ?></a></td>
-                                <td class="font-tabella-campi" style="font-size: 1.4rem;"><?php echo $blog->descrizione; ?></td>
-                                <td class="font-tabella-campi" style="font-size: 1.4rem;"><?php echo $blog->tema; ?></td>
-                                <td style="font-size: 1.2em;">
-                                    <a href="<?php echo $this->url(array(
-                                        'controller' => 'user',
-                                        'action' => 'eliminablog',
-                                        "blog" => $blog->id_blog,
-                                        "titolo" => $blog->titolo));
-                                    ?>">
-                                        <button type="button"
-                                                class="btn btn-lg btn-primary btn-block btn-signin button-red-nic">
-                                            Elimina
-                                        </button>
-                                    </a>
-                                </td>
-                                <td style="font-size: 1.2em">
-                                    <a href="<?php echo $this->url(array(
-                                        'controller' => 'user',
-                                        'action' => 'sceltaprivacy',
-                                        "blog" => $blog->id_blog));
-                                    ?>">
-                                        <button type="button"
-                                                class="btn btn-lg btn-primary btn-block btn-signin button-blue-nic">
-                                            Privacy
-                                        </button>
-                                    </a>
-                                </td>
-                            </tr>
-                            <?php endforeach; ?>
-
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
                             <div>
-                                <h3 style="color: gray; font-size: 1.4rem; font-weight: 600; font-family: 'Open Sans',sans-serif;">Premi sul titolo del tuo blog per aprirlo...</h3>
-                                </div>
+                                <h3 style="color: gray; font-size: 1.4rem; font-weight: 600; font-family: 'Open Sans',sans-serif;">
+                                    Premi sul titolo del tuo blog per aprirlo...</h3>
+                            </div>
+                        </div>
                 </div>
+                </ul>
             </div>
-
-
-            </ul>
         </div>
-    </div>
     </div>
     </div>
 </section>

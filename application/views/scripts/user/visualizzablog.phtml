@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <?php
-                        foreach($this->postSet as $post): ?>
+                        foreach ($this->postSet as $post): ?>
                             <div class="featured-image">
                                 <img src="http://eship.dyson.cornell.edu/wp-eship/wp-content/uploads/idea-lightbulb.jpg"
                                      class="img-responsive" alt="">
@@ -195,13 +195,14 @@
                                             'action' => 'profilo',
                                             'user' => $this->notificaSet[$i]['user']
                                         ));
-                                        ?>" ><?php echo $this->notificaSet[$i]['mittente']; ?></a> ha pubblicato un nuovo post
+                                        ?>"><?php echo $this->notificaSet[$i]['mittente']; ?></a> ha pubblicato un nuovo
+                                        post
                                         in <a href="<?php echo $this->url(array(
                                             'controller' => 'user',
                                             'action' => 'visualizzablog',
                                             'blog' => $this->notificaSet[$i]['idblog']
                                         ));
-                                        ?>" >"<?php echo $this->notificaSet[$i]['blog']; ?>"</a>
+                                        ?>">"<?php echo $this->notificaSet[$i]['blog']; ?>"</a>
                                         il <?php echo $this->notificaSet[$i]['data']; ?>.
                                     </td>
                                     <td style="font-size: 1.2em; text-align: center">
@@ -223,7 +224,8 @@
                                             'action' => 'profilo',
                                             'user' => $this->notificaSet[$i]['user']
                                         ));
-                                        ?>" ><?php echo $this->notificaSet[$i]['mittente']; ?></a> ti ha eliminato dai suoi
+                                        ?>"><?php echo $this->notificaSet[$i]['mittente']; ?></a> ti ha eliminato dai
+                                        suoi
                                         amici.
                                     </td>
                                     <td style="font-size: 1.2em; text-align: center">
@@ -314,9 +316,6 @@
 
                 </div>
             </div>
-            <!-- //.row -->
         </div>
-        <!-- //.container-->
     </div>
-    <!-- //.cnt-post-bg -->
 </section>

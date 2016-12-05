@@ -1,9 +1,7 @@
 <section id="hero" class="hero-blog">
     <div id="particles-js">
         <div class="cnt-heroblog-content">
-
         </div>
-        <!-- //.cnt-heroblog-content -->
     </div>
 </section>
 
@@ -26,7 +24,6 @@
                                 <th class="font-tabella" style="text-align: center">Visibilità</th>
                             </tr>
                             </thead>
-
                             <tbody>
                             <tr>
                                 <?php for ($i = 0;
@@ -36,23 +33,23 @@
                                     style="text-transform: capitalize; font-size: 1.6em"><?php echo $this->amiciSet[$i]['amico']; ?></td>
 
                                 <!-- BLOG PUBBLICO -->
-                                <?php if($this->amiciSet[$i]['stato']==0): ?>
-                                <td style="font-size: 1.8em;">
-                                    <a href="<?php echo $this->url(array(
-                                        'controller' => 'user',
-                                        'action' => 'sceltaprivacypost',
-                                        'user' => $this->amiciSet[$i]['idamico'],
-                                        'stato' => 0
-                                    ));
-                                    ?>">
+                                <?php if ($this->amiciSet[$i]['stato'] == 0): ?>
+                                    <td style="font-size: 1.8em;">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'user',
+                                            'action' => 'sceltaprivacypost',
+                                            'user' => $this->amiciSet[$i]['idamico'],
+                                            'stato' => 0
+                                        ));
+                                        ?>">
                                         <span>
                                             <i class="fa fa-check-square" style="color: #21DC7F"></i>
                                         </span>
-                                    </a>
-                                </td>
+                                        </a>
+                                    </td>
                                 <?php endif; ?>
                                 <!-- BLOG PRIVATO -->
-                                <?php if($this->amiciSet[$i]['stato']==1): ?>
+                                <?php if ($this->amiciSet[$i]['stato'] == 1): ?>
                                     <td style="font-size: 1.8em;">
                                         <a href="<?php echo $this->url(array(
                                             'controller' => 'user',
@@ -70,13 +67,10 @@
 
                             </tr>
                             <?php endfor; ?>
-
                             </tbody>
                         </table>
-
                 </div>
             </div>
-
         </div>
     </div>
 </section>

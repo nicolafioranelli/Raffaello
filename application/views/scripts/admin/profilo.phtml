@@ -6,9 +6,7 @@
 <section id="hero" class="hero-blog">
     <div id="particles-js">
         <div class="cnt-heroblog-content">
-
         </div>
-        <!-- //.cnt-heroblog-content -->
     </div>
 </section>
 
@@ -37,40 +35,41 @@
                     <div class="col-lg-12 cnt-about-us" style="margin-top: 5px">
                         <h3 style="text-transform: capitalize">I suoi amici</h3>
                         <hr class="title-sidebar"/>
-                    <table id="datatable" class="table table-striped table-bordered " cellspacing="0"
-                           width="100%">
-                        <thead>
-                        <tr>
-                            <th class="font-tabella" style="text-align: center">Nome</th>
-                            <th class="font-tabella" style="text-align: center">Profilo</th>
-                        </tr>
-                        </thead>
+                        <table id="datatable" class="table table-striped table-bordered " cellspacing="0"
+                               width="100%">
+                            <thead>
+                            <tr>
+                                <th class="font-tabella" style="text-align: center">Nome</th>
+                                <th class="font-tabella" style="text-align: center">Profilo</th>
+                            </tr>
+                            </thead>
 
-                        <tbody>
-                        <tr>
-                            <?php for ($i = 0;
-                            $i < count($this->amiciSet);
-                            $i++): ?>
-                            <td class="font-tabella-campi" style="font-size: larger; text-transform: capitalize"><?php echo $this->amiciSet[$i]['amico']; ?></td>
-                            <td style="font-size: 1.2em;">
-                                <a href="<?php echo $this->url(
-                                    array(
-                                        'controller' => 'admin',
-                                        'action' => 'profilo',
-                                        'user' => $this->amiciSet[$i]['username'],
-                                        'id' => $this->amiciSet[$i]['idamico']
-                                    )); ?>">
+                            <tbody>
+                            <tr>
+                                <?php for ($i = 0;
+                                $i < count($this->amiciSet);
+                                $i++): ?>
+                                <td class="font-tabella-campi"
+                                    style="font-size: larger; text-transform: capitalize"><?php echo $this->amiciSet[$i]['amico']; ?></td>
+                                <td style="font-size: 1.2em;">
+                                    <a href="<?php echo $this->url(
+                                        array(
+                                            'controller' => 'admin',
+                                            'action' => 'profilo',
+                                            'user' => $this->amiciSet[$i]['username'],
+                                            'id' => $this->amiciSet[$i]['idamico']
+                                        )); ?>">
 											<span>
                                                 <i class="fa fa-arrow-right" style="color: #21DC7F"></i>
                                             </span>
-                                </a>
-                            </td>
-                        </tr>
-                        <?php endfor; ?>
+                                    </a>
+                                </td>
+                            </tr>
+                            <?php endfor; ?>
 
-                        </tbody>
-                    </table>
-                        </div>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <!-- RICHIESTE D'AMICIZIA -->
                     <span class="dotted-line"></span>
@@ -79,7 +78,7 @@
                         <hr class="title-sidebar"/>
                         <h2 style="font-family: 'Open Sans', sans-serif; font-size: 1.5rem; margin-top: 5px; margin-bottom: 10px; width: 100%; line-height: 25px; color: #9f9f9f;">
                             L'utente ha ricevuto in totale <?php echo $this->amicizie ?> richieste d'amicizia.</h2>
-                        </div>
+                    </div>
                 </div>
 
                 <!-- VISUALIZZAZIONE PROFILO E ANAGRAFICA -->
@@ -88,7 +87,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 feature-show">
                             <?php foreach ($this->datiSet as $dati): ?>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                    <img src="<?php echo $this->baseUrl("assets/profilo/$dati->image"); ?>" alt=""
+                                    <img src="<?php echo $this->baseUrl("image/profilo/$dati->image"); ?>" alt=""
                                          class="img-responsive" style="margin-bottom: 5%">
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content-feature">
@@ -120,7 +119,9 @@
                                                     <div class="col-xs-12 col-md-12 col-lg-8 data-job" style="font-family: 'Open Sans', sans-serif; font-size: 1.6rem;
                                                     color: #787878; font-weight: 400; width: 80%; position: relative; top: 40px; text-align: left;">
                                                         <ul>
-                                                            <li class="place" style="padding-left: 0px">Nessun blog presente!</li>
+                                                            <li class="place" style="padding-left: 0px">Nessun blog
+                                                                presente!
+                                                            </li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -130,8 +131,10 @@
                                                         class="col-xs-12 col-md-12 col-lg-12 col-centered job-position">
                                                         <div class="col-xs-12 col-md-12 col-lg-8 data-job">
                                                             <ul>
-                                                                <li class="place" style="padding-left: 0px"><?php if (strlen($blg->titolo) > 8) echo substr($blg->titolo, 0, 8) . '...'; else echo $blg->titolo; ?></li>
-                                                                <li class="title-job" style="padding-left: 0px"><?php if (strlen($blg->descrizione) > 8) echo substr($blg->descrizione, 0, 8) . '...'; else echo $blg->descrizione; ?></li>
+                                                                <li class="place"
+                                                                    style="padding-left: 0px"><?php if (strlen($blg->titolo) > 8) echo substr($blg->titolo, 0, 8) . '...'; else echo $blg->titolo; ?></li>
+                                                                <li class="title-job"
+                                                                    style="padding-left: 0px"><?php if (strlen($blg->descrizione) > 8) echo substr($blg->descrizione, 0, 8) . '...'; else echo $blg->descrizione; ?></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -148,7 +151,6 @@
             </div>
         </div>
 </section>
-
 
 </body>
 </html>

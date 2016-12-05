@@ -1,9 +1,7 @@
 <section id="hero" class="hero-blog">
     <div id="particles-js">
         <div class="cnt-heroblog-content">
-
         </div>
-        <!-- //.cnt-heroblog-content -->
     </div>
 </section>
 
@@ -20,25 +18,26 @@
                                        width="100%">
                                     <thead>
                                     <tr>
-                                        <?php if(count($this->utentiSet->toArray())==0): ?>
-                                        <th class="font-tabella" style="text-align: center">Nome</th>
+                                        <?php if (count($this->utentiSet->toArray()) == 0): ?>
+                                            <th class="font-tabella" style="text-align: center">Nome</th>
                                         <?php else: ?>
-                                        <th class="font-tabella" style="text-align: center">Nome</th>
-                                        <th class="font-tabella" style="text-align: center">Cognome</th>
-                                        <th class="font-tabella" style="text-align: center">E-mail</th>
-                                        <th class="font-tabella" style="text-align: center">Username</th>
-                                        <th class="font-tabella" style="text-align: center">Ruolo</th>
-                                        <th class="font-tabella" style="text-align: center">Modifica</th>
-                                        <th class="font-tabella" style="text-align: center">Elimina</th>
+                                            <th class="font-tabella" style="text-align: center">Nome</th>
+                                            <th class="font-tabella" style="text-align: center">Cognome</th>
+                                            <th class="font-tabella" style="text-align: center">E-mail</th>
+                                            <th class="font-tabella" style="text-align: center">Username</th>
+                                            <th class="font-tabella" style="text-align: center">Ruolo</th>
+                                            <th class="font-tabella" style="text-align: center">Modifica</th>
+                                            <th class="font-tabella" style="text-align: center">Elimina</th>
                                         <?php endif; ?>
                                     </tr>
                                     </thead>
 
                                     <tbody>
                                     <tr>
-                                        <?php if(count($this->utentiSet->toArray())==0): ?>
+                                        <?php if (count($this->utentiSet->toArray()) == 0): ?>
                                             <td class="font-tabella-campi">
-                                                Non ci sono utenti dello staff da visualizzare, aggiungine uno!</td>
+                                                Non ci sono utenti dello staff da visualizzare, aggiungine uno!
+                                            </td>
                                         <?php else: ?>
                                         <?php foreach ($this->utentiSet as $utente): ?>
                                         <td class="font-tabella-campi"

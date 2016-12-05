@@ -1,66 +1,63 @@
 <section id="hero" class="hero-blog">
-	<div id="particles-js">
-		<div class="cnt-heroblog-content">
-
-		</div>
-		<!-- //.cnt-heroblog-content -->
-	</div>
+    <div id="particles-js">
+        <div class="cnt-heroblog-content">
+        </div>
+    </div>
 </section>
 
 
 <section id="post-blog" class="main-post">
-	<div class="cnt-post-bg">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 container-post">
-					<ul class="blog-data">
-						<div class="row" style="text-align: center; margin: auto;>
+    <div class="cnt-post-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 container-post">
+                    <ul class="blog-data">
+                        <div class="row" style="text-align: center; margin: auto;>
 							<div class=">
-							<h4 style="color: #21DC7F; font-family: 'Montserrat',sans-serif; letter-spacing: 1px; font-size: 2.5rem; padding-bottom: 1.2rem; margin-bottom: 1.2rem;">
-								Blog: <?php echo $this->titoloblog; ?></h4>
-							<table id="datatable" class="table table-striped table-bordered " cellspacing="0"
-								   width="100%">
-								<thead>
-								<tr>
-									<th class="font-tabella" style="text-align: center">Titolo</th>
-									<th class="font-tabella" style="text-align: center">Contenuto</th>
-									<th class="font-tabella" style="text-align: center">Data</th>
-									<th class="font-tabella" style="text-align: center">Elimina</th>
-								</tr>
-								</thead>
+                            <h4 style="color: #21DC7F; font-family: 'Montserrat',sans-serif; letter-spacing: 1px; font-size: 2.5rem; padding-bottom: 1.2rem; margin-bottom: 1.2rem;">
+                                Blog: <?php echo $this->titoloblog; ?></h4>
+                            <table id="datatable" class="table table-striped table-bordered " cellspacing="0"
+                                   width="100%">
+                                <thead>
+                                <tr>
+                                    <th class="font-tabella" style="text-align: center">Titolo</th>
+                                    <th class="font-tabella" style="text-align: center">Contenuto</th>
+                                    <th class="font-tabella" style="text-align: center">Data</th>
+                                    <th class="font-tabella" style="text-align: center">Elimina</th>
+                                </tr>
+                                </thead>
 
-								<tbody>
-								<tr>
-									<?php foreach($this->postSet as $post): ?>
-									<td class="font-tabella-campi" style="font-size: 1.4rem"><?php echo $post->titolo; ?></td>
-									<td class="font-tabella-campi"
-										style="font-size: 1.3rem;"><?php echo $post->contenuto; ?></td>
-									<td class="font-tabella-campi"
-										style="font-size: 1.2rem;"><?php echo $post->data; ?></td>
-									<td style="font-size: 1.2em;">
-										<a href="<?php echo $this->url(array(
-											'controller' => 'staff',
-											'action' => 'eliminapost',
-											'post' => $post->id_post));
-										?>">
+                                <tbody>
+                                <tr>
+                                    <?php foreach ($this->postSet as $post): ?>
+                                    <td class="font-tabella-campi"
+                                        style="font-size: 1.4rem"><?php echo $post->titolo; ?></td>
+                                    <td class="font-tabella-campi"
+                                        style="font-size: 1.3rem;"><?php echo $post->contenuto; ?></td>
+                                    <td class="font-tabella-campi"
+                                        style="font-size: 1.2rem;"><?php echo $post->data; ?></td>
+                                    <td style="font-size: 1.2em;">
+                                        <a href="<?php echo $this->url(array(
+                                            'controller' => 'staff',
+                                            'action' => 'eliminapost',
+                                            'post' => $post->id_post));
+                                        ?>">
                                             <span>
-                                                <i class="fa fa-times-circle" style="color: #761c19; font-size: 1.4em"></i>
+                                                <i class="fa fa-times-circle"
+                                                   style="color: #761c19; font-size: 1.4em"></i>
                                             </span>
-										</a>
-									</td>
-								</tr>
-								<?php endforeach; ?>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
 
-								</tbody>
-							</table>
-						</div>
-				</div>
-
-
-				</ul>
-			</div>
-		</div>
-	</div>
-	</div>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
 </section>

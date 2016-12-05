@@ -1,6 +1,5 @@
 <section id="hero" class="hero-blog">
     <div id="particles-js">
-
     </div>
     </div>
 </section>
@@ -49,13 +48,11 @@ if ($this->azione == "#") {
                 <div id="feature-item-01">
                     <div class="row">
                         <!-- PROFILO -->
-
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 feature-show">
-
                             <?php if ($this->privacy == 1): ?>
                                 <?php foreach ($this->datiSet as $dati): ?>
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                        <img src="<?php echo $this->baseUrl("assets/profilo/$dati->image"); ?>" alt=""
+                                        <img src="<?php echo $this->baseUrl("image/profilo/$dati->image"); ?>" alt=""
                                              class="img-responsive" style="margin-bottom: 5%">
                                     </div>
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content-feature">
@@ -75,7 +72,7 @@ if ($this->azione == "#") {
                             <?php if ($this->privacy == 0): ?>
                                 <?php foreach ($this->datiSet as $dati): ?>
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                        <img src="<?php echo $this->baseUrl("assets/profilo/$dati->image"); ?>" alt=""
+                                        <img src="<?php echo $this->baseUrl("image/profilo/$dati->image"); ?>" alt=""
                                              class="img-responsive" style="margin-bottom: 5%">
                                     </div>
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content-feature">
@@ -96,7 +93,6 @@ if ($this->azione == "#") {
                                     </div>
                                 <?php endforeach; ?>
                             <?php endif; ?>
-
                         </div>
                         <!-- FINE PROFILO -->
                     </div>

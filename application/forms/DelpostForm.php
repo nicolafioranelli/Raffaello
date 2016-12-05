@@ -9,12 +9,12 @@ class Application_Form_DelpostForm extends Zend_Form
         $this->setName("delblog");
 
         $this->addElement('text', 'motivazione', array(
-            'filters'    => array('StringTrim'),
-            'required'         => true,
-            'label'      => 'Motivazione:',
+            'filters' => array('StringTrim'),
+            'required' => true,
+            'label' => 'Motivazione:',
             'placeholder' => 'Inserisci una motivazione',
             'autofocus' => 'true',
-            'class' =>'form-control form-register',
+            'class' => 'form-control form-register',
             'validators' => array(
                 array('StringLength', true, array(3, 64))
             ),

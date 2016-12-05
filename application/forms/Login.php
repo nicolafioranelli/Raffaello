@@ -9,26 +9,26 @@ class Application_Form_Login extends Zend_Form
         $this->setName("login");
 
         $this->addElement('text', 'username', array(
-            'filters'    => array('StringTrim'),
-            'required'         => true,
-            'label'      => 'Username:',
+            'filters' => array('StringTrim'),
+            'required' => true,
+            'label' => 'Username:',
             'placeholder' => 'Inserisci una username',
             'autofocus' => 'true',
-            'class' =>'form-control form-register',
+            'class' => 'form-control form-register',
             'validators' => array(
                 array('StringLength', true, array(3, 64))
             ),
         ));
 
         $this->addElement('password', 'password', array(
-            'filters'    => array('StringTrim'),
+            'filters' => array('StringTrim'),
             'validators' => array(
                 array('StringLength', true, array(2, 64))
             ),
-            'required'         => true,
-            'class' =>'form-control form-login',
+            'required' => true,
+            'class' => 'form-control form-login',
             'placeholder' => 'Inserisci la password',
-            'label'      => 'Password:',
+            'label' => 'Password:',
             'label_attributes' => array(
                 'class' => 'none'
             )
@@ -44,7 +44,7 @@ class Application_Form_Login extends Zend_Form
             'Form'
         ));
 
-        include_once ('Lingua.php');
+        include_once('Lingua.php');
     }
 
 

@@ -1,9 +1,7 @@
 <section id="hero" class="hero-blog">
     <div id="particles-js">
         <div class="cnt-heroblog-content">
-
         </div>
-        <!-- //.cnt-heroblog-content -->
     </div>
 </section>
 
@@ -38,13 +36,14 @@
                                             'action' => 'profilo',
                                             'user' => $this->notificaSet[$i]['user']
                                         ));
-                                        ?>" ><?php echo $this->notificaSet[$i]['mittente']; ?></a> ha pubblicato un nuovo post
+                                        ?>"><?php echo $this->notificaSet[$i]['mittente']; ?></a> ha pubblicato un nuovo
+                                        post
                                         in <a href="<?php echo $this->url(array(
                                             'controller' => 'user',
                                             'action' => 'visualizzablog',
                                             'blog' => $this->notificaSet[$i]['idblog']
                                         ));
-                                        ?>" >"<?php echo $this->notificaSet[$i]['blog']; ?>"</a>
+                                        ?>">"<?php echo $this->notificaSet[$i]['blog']; ?>"</a>
                                         il <?php echo $this->notificaSet[$i]['data']; ?>.
                                     </td>
                                 <?php elseif ($this->notificaSet[$i]['tipo'] == 1): ?>
@@ -54,7 +53,8 @@
                                             'action' => 'profilo',
                                             'user' => $this->notificaSet[$i]['user']
                                         ));
-                                        ?>" ><?php echo $this->notificaSet[$i]['mittente']; ?></a> ti ha eliminato dai suoi
+                                        ?>"><?php echo $this->notificaSet[$i]['mittente']; ?></a> ti ha eliminato dai
+                                        suoi
                                         amici.
                                     </td>
                                 <?php elseif ($this->notificaSet[$i]['tipo'] == 2): ?>

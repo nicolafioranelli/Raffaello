@@ -237,7 +237,7 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    background-image: url('../img/ripple.gif');
+    background-image: url('../image/ripple.gif');
     background-repeat: no-repeat;
     background-position: center;
     margin: -85px 0 0 -80px;
@@ -319,11 +319,11 @@ header .logo a {
 }
 
 .logo-light {
-    background: url("../img/logo-light-02.png") no-repeat center;
+    background: url("../image/logo-light-02.png") no-repeat center;
 }
 
 .logo-dark {
-    background: url("../img/logo-dark-02.png") no-repeat center;
+    background: url("../image/logo-dark-02.png") no-repeat center;
 }
 
 .sticky {
@@ -747,7 +747,7 @@ a.menu-toggle {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: url('../img/business.jpg');
+    background: url('../image/business.jpg');
     background-size: cover;
     background-attachment: fixed;
 }
@@ -1197,7 +1197,7 @@ a.menu-toggle {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: url('../img/bg-pattern-1.svg');
+    background-image: url('../image/bg-pattern-1.svg');
     background-repeat: no-repeat;
     background-position: 50% 0;
     -ms-background-size: cover;
@@ -1361,7 +1361,7 @@ div.testimonial cite {
 }
 
 .video:before {
-    background: url("../img/business.jpg");
+    background: url("../image/business.jpg");
 }
 
 .featured-bg-image {
@@ -2154,7 +2154,7 @@ footer ul li {
 .footer-main .footer-logo {
     width: 200px;
     height: 40px;
-    background: url("../img/logo-light.png") no-repeat center;
+    background: url("../image/logo-light.png") no-repeat center;
     background-size: 200px 35px;
     margin: -.6rem 0 2.1rem -.3rem;
     display: block;
@@ -2283,7 +2283,7 @@ footer ul li {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: url('../img/business.jpg');
+    background-image: url('../image/business.jpg');
     background-repeat: no-repeat;
     background-position: 50% 0;
     -ms-background-size: cover;
@@ -2674,7 +2674,7 @@ hr.question {
 }
 
 .get-quote:before {
-    background: url("../img/quote.jpg");
+    background: url("../image/quote.jpg");
 }
 
 .img-bg-quote {
@@ -2782,7 +2782,7 @@ hr.question {
 
 .hero-about .cnt-header-bg {
     padding: 0px 0px 450px 0px;
-    background: url('../img/business.jpg');
+    background: url('../image/business.jpg');
     background-size: cover;
     background-attachment: fixed;
     top: 0;
@@ -7358,7 +7358,7 @@ canvas {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: url('../img/quote.jpg');
+    background-image: url('../image/quote.jpg');
     background-repeat: no-repeat;
     background-position: 50% 0;
     -ms-background-size: cover;
@@ -7686,7 +7686,7 @@ canvas {
     cursor: pointer;
     z-index: 2;
     content: "";
-    background: url(../img/play-btn.svg);
+    background: url(../image/play-btn.svg);
     position: absolute;
     top: 0;
     right: 0;
@@ -7979,7 +7979,7 @@ canvas {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: url('../img/bg.jpg');
+    background-image: url('../image/bg.jpg');
     background-repeat: no-repeat;
     background-position: 50% 0;
     -ms-background-size: cover;
@@ -8194,7 +8194,7 @@ canvas {
 .hero-careers .cnt-header-bg {
     padding: 0px 0px 400px 0px;
     background-size: cover;
-    background-image: url('../img/business.jpg');
+    background-image: url('../image/business.jpg');
     -ms-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;

@@ -1,12 +1,9 @@
 <section id="hero" class="hero-blog">
     <div id="particles-js">
         <div class="cnt-heroblog-content">
-
         </div>
-        <!-- //.cnt-heroblog-content -->
     </div>
 </section>
-
 
 <section id="post-blog" class="main-post">
     <div class="cnt-post-bg">
@@ -21,22 +18,24 @@
                                    width="100%">
                                 <thead>
                                 <tr>
-                                    <?php if(count($this->amiciSet)>0): ?>
-                                    <th class="font-tabella" style="text-align: center">Nome e Cognome</th>
-                                    <th class="font-tabella" style="text-align: center">Vai al profilo</th>
+                                    <?php if (count($this->amiciSet) > 0): ?>
+                                        <th class="font-tabella" style="text-align: center">Nome e Cognome</th>
+                                        <th class="font-tabella" style="text-align: center">Vai al profilo</th>
                                     <?php else: ?>
-                                    <th class="font-tabella" style="text-align: center">Nome e Cognome</th>
+                                        <th class="font-tabella" style="text-align: center">Nome e Cognome</th>
                                     <?php endif; ?>
                                 </tr>
                                 </thead>
-
                                 <tbody>
                                 <tr>
-                                    <?php if(count($this->amiciSet)==0): ?>
-                                    <td class="font-tabella-campi" style="font-size: 15pt">Ops... la ricerca non ha prodotto risultati! Verifica i dati inseriti...</td>
+                                    <?php if (count($this->amiciSet) == 0): ?>
+                                        <td class="font-tabella-campi" style="font-size: 15pt">Ops... la ricerca non ha
+                                            prodotto risultati! Verifica i dati inseriti...
+                                        </td>
                                     <?php endif; ?>
-                                    <?php foreach($this->amiciSet as $amici): ?>
-                                    <td class="font-tabella-campi" style="text-transform: capitalize"><?php echo $amici['nomecompleto']; ?></td>
+                                    <?php foreach ($this->amiciSet as $amici): ?>
+                                    <td class="font-tabella-campi"
+                                        style="text-transform: capitalize"><?php echo $amici['nomecompleto']; ?></td>
                                     <td style="font-size: 1.2em;">
                                         <a href="<?php echo $this->url(
                                             array(

@@ -4,26 +4,21 @@
 <body>
 
 <body class="black-background">
-
-<div class="logo-login" >
+<div class="logo-login">
 </div>
 
 <div class="row">
-	<div class="container" id="register">
+    <div class="container" id="register">
 
-		<div class="main-login main-center">
+        <div class="main-login main-center">
+            <h2 style="font-size:1.4em; color:#8d9496; text-transform: capitalize">
+                Modifica: <?php echo $this->utentiSet['nome']; ?> <?php echo $this->utentiSet['cognome']; ?> </h2>
+            <br>
+            <?php echo $this->formUtente; ?>
+        </div>
 
-			<h2 style="font-size:1.4em; color:#8d9496; text-transform: capitalize">Modifica: <?php echo $this->utentiSet['nome'];?> <?php echo $this->utentiSet['cognome'];?> </h2>
-			<br>
-			<?php echo $this->formUtente; ?>
-
-		</div>
-
-	</div>
-
+    </div>
 </div>
 </div>
-
-
 
 </body>
