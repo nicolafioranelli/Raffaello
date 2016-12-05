@@ -24,7 +24,13 @@
                         <h3>Benvenuto,</h3>
                         <hr class="title-sidebar"/>
                         <h2 style="font-family: 'Open Sans', sans-serif; font-size: 1.5rem; margin-top: 5px; margin-bottom: 10px; width: 100%; line-height: 25px; color: #9f9f9f;">
-                            sei in HOME->GESTIONE UTENTI</h2>
+                            sei in <a href="<?php echo $this->url(array(
+                                'controller' => 'admin',
+                                'action' => 'index'));
+                            ?>">HOME</a>-><a href="<?php echo $this->url(array(
+                                'controller' => 'admin',
+                                'action' => 'visualizzautenti'));
+                            ?>">GESTIONE UTENTI</a></h2>
                     </div>
                     <!-- AMICI -->
                     <span class="dotted-line"></span>

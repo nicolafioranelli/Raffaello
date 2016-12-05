@@ -138,7 +138,21 @@ class UserController extends Zend_Controller_Action
         $idUtente = $this->utenteCorrente->current()->id_utente;
         $datiform['id_utente'] = $idUtente;
         $blogmodel = new Application_Model_Blog();
-        $blogmodel->inserisciBlog($datiform);
+        $idblog = $blogmodel->inserisciBlog($datiform);
+        $amiciModel = new Application_Model_Amici();
+        $rowset = $amiciModel->elencoAmici($this->utenteCorrente->current()->id_utente);
+        $privacyModel = new Application_Model_Privacy();
+        $dati = array();
+        foreach ($rowset as $amici):
+            $dati['id_blog'] = $idblog;
+            if ($this->utenteCorrente->current()->id_utente == $amici->richiedente):
+                $dati['id_amico'] = $amici->ricevente;
+            else:
+                $dati['id_amico'] = $amici->richiedente;
+            endif;
+            $dati['stato'] = 0;
+            $privacyModel->inserisciPrivacy($dati);
+        endforeach;
         $this->_helper->redirector("index", "user");
     }
 
@@ -172,7 +186,8 @@ class UserController extends Zend_Controller_Action
         $this->nuovopostForm = new Application_Form_NuovoPost();
         $this->nuovopostForm->setAction($this->_helper->url->url(array(
             'controller' => 'user',
-            'action' => 'nuovopostverifica'
+            'action' => 'nuovopostverifica',
+            'user' => $this->utenteCorrente->current()->id_utente
         )));
         return $this->nuovopostForm;
     }
@@ -248,7 +263,7 @@ class UserController extends Zend_Controller_Action
             }
             $paginator = new Zend_Paginator(new Zend_Paginator_Adapter_Array($newdatapost));
             $paginator->setItemCountPerPage(5);
-            $paginator->setCurrentPageNumber($this->getParam('pagina',1));
+            $paginator->setCurrentPageNumber($this->getParam('pagina', 1));
 
             $this->view->assign('postSet', $paginator);
             if (false === $postModel->esistenzaPostByBlog($idblog)) {
@@ -383,6 +398,27 @@ class UserController extends Zend_Controller_Action
                 $dati = array();
                 $dati['stato'] = $action;
                 $amiciModel->aggiornaAmici($dati, $id_amici);
+                $amici = $amiciModel->elencoByIdAmici($id_amici);
+                $privacy = array();
+                $id_ricevente = $amici->current()->ricevente;
+                $id_richiedente = $amici->current()->richiedente;
+                $blogModel = new Application_Model_Blog();
+                $row_ricevente = $blogModel->elencoBlogByUtente($id_ricevente);
+                $row_richiedente = $blogModel->elencoBlogByUtente($id_richiedente);
+                $privacyModel = new Application_Model_Privacy();
+
+                foreach ($row_ricevente as $blog_ricevente):
+                    $privacy['id_blog'] = $blog_ricevente->id_blog;
+                    $privacy['id_amico'] = $amici->current()->richiedente;
+                    $privacy['stato'] = 0;
+                    $privacyModel->inserisciPrivacy($privacy);
+                endforeach;
+                foreach ($row_richiedente as $blog_richiedente):
+                    $privacy['id_blog'] = $blog_richiedente->id_blog;
+                    $privacy['id_amico'] = $amici->current()->ricevente;
+                    $privacy['stato'] = 0;
+                    $privacyModel->inserisciPrivacy($privacy);
+                endforeach;
             }
             if ($action == 'refused') {
                 $amiciModel = new Application_Model_Amici();
@@ -605,7 +641,7 @@ class UserController extends Zend_Controller_Action
 
     public function sceltaprivacyAction()
     {
-        if($this->hasParam('blog')){
+        if ($this->hasParam('blog')) {
             $blog = $this->getParam('blog');
             $amiciModel = new Application_Model_Amici();
             $utentiModel = new Application_Model_Utente();
@@ -633,18 +669,18 @@ class UserController extends Zend_Controller_Action
 
     public function sceltaprivacypostAction()
     {
-        if($this->hasParam('stato') && $this->hasParam('user')){
+        if ($this->hasParam('stato') && $this->hasParam('user')) {
             $user = $this->getParam('user');
             $stato = $this->getParam('stato');
             $params = array(
                 'blog' => $this->getParam('blog')
             );
-            if ($stato == 1){
-                $dati['stato']=0;
+            if ($stato == 1) {
+                $dati['stato'] = 0;
                 $privacyModel = new Application_Model_Privacy();
                 $privacyModel->modificaPrivacy($dati, $user);
             } else {
-                $dati['stato']=1;
+                $dati['stato'] = 1;
                 $privacyModel = new Application_Model_Privacy();
                 $privacyModel->modificaPrivacy($dati, $user);
             }

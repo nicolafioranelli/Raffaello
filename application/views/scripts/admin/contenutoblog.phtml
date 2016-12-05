@@ -20,14 +20,21 @@
                                 <thead>
                                 <tr>
                                     <th class="font-tabella" style="text-align: center">Titolo</th>
+                                    <?php if (count($this->postSet)>0): ?>
                                     <th class="font-tabella" style="text-align: center">Contenuto</th>
                                     <th class="font-tabella" style="text-align: center">Data</th>
                                     <th class="font-tabella" style="text-align: center">Elimina</th>
+                                    <?php endif; ?>
                                 </tr>
                                 </thead>
 
                                 <tbody>
                                 <tr>
+                                    <?php if (count($this->postSet)==0): ?>
+                                    <td class="font-tabella-campi"
+                                        style="font-size: 1.4rem">Non ci sono post da visualizzare.</td>
+                                    <?php endif; ?>
+
                                     <?php foreach ($this->postSet as $post): ?>
                                     <td class="font-tabella-campi"
                                         style="font-size: 1.4rem"><?php echo $post->titolo; ?></td>
@@ -51,6 +58,15 @@
                                 <?php endforeach; ?>
                                 </tbody>
                             </table>
+                            <div class="row">
+                                <div class="col-md-5 col-sm-5 col-lg-5"></div>
+                                <div class="col-lg-12 action-started">
+                                    <a href="<?php echo $this->url(array(
+                                        'controller' => 'admin',
+                                        'action' => 'gestioneblog'));
+                                    ?>" class="btn btn-outlined">Indietro</a>
+                                </div>
+                            </div>
                         </div>
                 </div>
                 </ul>

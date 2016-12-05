@@ -26,6 +26,10 @@ class Application_Model_Amici
         $this->tabella->delete("richiedente = '$id2' AND ricevente = '$id'");
     }
 
+    public function elencoByIdAmici($idamici)
+    {
+        return $this->tabella->fetchAll($this->tabella->select()->where("id_amici = ?", $idamici));
+    }
 
     public function elencoAmici($id)
     {
@@ -42,12 +46,14 @@ class Application_Model_Amici
         return $risultato = $this->tabella->fetchAll($this->tabella->select()->where("ricevente =  ? ", $idricevente)->where("richiedente = ? ", $idrichiedente)->order("data DESC"));
     }
 
-    public function elencoAmiciNotifica($idUtente){
+    public function elencoAmiciNotifica($idUtente)
+    {
         return $this->tabella->fetchAll($this->tabella->select()->where("ricevente = '$idUtente' OR richiedente = '$idUtente'")->where("stato = 'accepted'"));
     }
 
-    public function elencoAdmin($idUtente){
-        return $this->tabella->fetchAll($this->tabella->select()->where("ricevente = '$idUtente'")->where("stato = 'accepted' OR stato = 'standby' OR stato = 'refused'"));
+    public function elencoAdmin($idUtente)
+    {
+        return $this->tabella->fetchAll($this->tabella->select()->where("ricevente = '$idUtente' OR richiedente = '$idUtente'")->where("stato = 'accepted' OR stato = 'standby' OR stato = 'refused'"));
     }
 }
 

@@ -56,7 +56,6 @@
                         <?php endforeach; ?>
 
                         <?php if ($this->valPost == 0):
-                            echo $this->valPost;
                             ?>
                             <div class="col-lg-12 container-post">
                                 <div class="featured-image">
@@ -69,7 +68,7 @@
                                 <br>
                                 <br>
                                 <br>
-                                <div class="col-lg-12 action-started">
+                                <div class="col-lg-12 action-started" style="margin-bottom: 20%">
                                     <a href="<?php echo $this->url(
                                         array(
                                             'controller' => 'user',

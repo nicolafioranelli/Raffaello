@@ -22,42 +22,46 @@
                             <thead>
                             <tr>
                                 <th class="font-tabella" style="text-align: center">#</th>
+                                <?php if (count($this->faqSet)>0): ?>
                                 <th class="font-tabella" style="text-align: center">Domanda</th>
                                 <th class="font-tabella" style="text-align: center">Risposta</th>
                                 <th class="font-tabella" style="text-align: center">Modifica</th>
                                 <th class="font-tabella" style="text-align: center">Elimina</th>
+                                <?php endif; ?>
                             </tr>
                             </thead>
 
                             <tbody>
                             <tr>
+                                <?php if (count($this->postSet)==0): ?>
+                                    <td class="font-tabella-campi">Non ci sono FAQ da visualizzare.</td>
+                                <?php endif; ?>
+
                                 <?php foreach ($this->faqSet as $faq): ?>
                                 <td class="font-tabella-campi"><?php echo $faq->id_faq; ?></td>
                                 <td class="font-tabella-campi"><?php echo $faq->domanda; ?></td>
                                 <td class="font-tabella-campi"><?php echo $faq->risposta; ?></td>
-                                <td style="font-size: 1.2em;">
+                                <td style="font-size: 1.6em;">
                                     <a href="<?php echo $this->url(
                                         array(
                                             'controller' => 'admin',
                                             'action' => 'modificafaq',
                                             'faq' => $faq->id_faq
                                         )); ?>">
-                                        <button type="button"
-                                                class="btn btn-lg btn-primary btn-block btn-signin button-blue-nic">
-                                            Modifica
-                                        </button>
+                                        <span>
+                                            <i class="fa fa-pencil" style="color: #3a579e"></i>
+                                        </span>
                                     </a>
                                 </td>
-                                <td style="font-size: 1.2em;">
+                                <td style="font-size: 1.6em;">
                                     <a href="<?php echo $this->url(array(
                                         'controller' => 'admin',
                                         'action' => 'eliminafaq',
                                         'faq' => $faq->id_faq));
                                     ?>">
-                                        <button type="button"
-                                                class="btn btn-lg btn-primary btn-block btn-signin button-red-nic">
-                                            Elimina
-                                        </button>
+                                        <span>
+                                            <i class="fa fa-trash" style="color: #c0392b"></i>
+                                        </span>
                                     </a>
                                 </td>
                             </tr>

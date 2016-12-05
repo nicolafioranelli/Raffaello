@@ -83,7 +83,7 @@ class PublicController extends Zend_Controller_Action
                 return $this->render('register');
             } else {
                 $utentemodel->inserisciUtente($datiform);
-                $this->redirector('index', 'public');
+                $this->render('index');
             }
         }
     }
