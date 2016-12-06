@@ -1,4 +1,4 @@
-<div class="text-center">
+<div class="col-lg-12 action-started" style="margin-bottom: auto; margin-top: auto">
     <?php
     $i = 0;
     foreach ($this->pagesInRange as $page):
@@ -6,13 +6,15 @@
         if ($this->current == $page):
 
             ?>
-            <a>
-               <?php echo $page; ?>
+            <a style="text-decoration: none; background-color: #21DC7F; color: #FFF; display: inline-block; width: 34px; line-height: 34px;
+                    font-size: 15px; text-align: center; border-radius: 50%; cursor: pointer; font-family: 'Montserrat', sans-serif;">
+                <?php echo $page; ?>
             </a>
             <?php
         else:
             ?>
-            <a href="<?php echo $this->url(array("pagina" => $page)); ?>">
+            <a href="<?php echo $this->url(array("pagina" => $page)); ?>" style=" display: inline-block; width: 34px; line-height: 34px; font-family: 'Montserrat', sans-serif;
+                    font-size: 15px; color: #777; text-align: center; background: #EEE; border-radius: 50%; text-decoration: none; cursor: pointer;">
                 <?php echo $page; ?>
             </a>
             <?php

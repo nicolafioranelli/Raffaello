@@ -153,7 +153,7 @@ class UserController extends Zend_Controller_Action
             $dati['stato'] = 0;
             $privacyModel->inserisciPrivacy($dati);
         endforeach;
-        $this->_helper->redirector("index", "user");
+        $this->_helper->redirector("nuovopost", "user");
     }
 
     public function gestioneblogAction()
@@ -209,6 +209,9 @@ class UserController extends Zend_Controller_Action
             $datiform['data'] = date('Y-m-d H:i:s');
             $datiform['id_utente'] = $idUtente;
             $datiform['id_blog'] = $this->getParam('blog');
+            $generic = '01.jpg';
+            if ($datiform['image'] == '')
+                $datiform['image'] = $generic;
             $postmodel = new Application_Model_Post();
             $id = $postmodel->inserisciPost($datiform);
 
@@ -222,9 +225,6 @@ class UserController extends Zend_Controller_Action
                     $dati['id_post'] = $id;
                     $dati['id_amico'] = $amici->ricevente;
                     $dati['tipo'] = 0;
-                    $generic = '01.jpg';
-                    if ($datiform['image'] == '')
-                        $datiform['image'] = $generic;
                     $notificaModel = new Application_Model_Notifica();
                     $notificaModel->inserisciNotifica($dati);
                 } else {
@@ -234,9 +234,6 @@ class UserController extends Zend_Controller_Action
                     $dati['id_post'] = $id;
                     $dati['id_amico'] = $amici->richiedente;
                     $dati['tipo'] = 0;
-                    $generic = '01.jpg';
-                    if ($datiform['image'] == '')
-                        $datiform['image'] = $generic;
                     $notificaModel = new Application_Model_Notifica();
                     $notificaModel->inserisciNotifica($dati);
                 }

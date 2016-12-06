@@ -22,7 +22,6 @@ class Application_Form_NuovoBlog extends Zend_Form
 
         $this->addElement('textarea', 'descrizione', array(
             'filters' => array('StringTrim'),
-            'required' => true,
             'label' => 'Descrizione:',
             'placeholder' => 'Di cosa parla il tuo blog...',
             'class' => 'form-control form-register',
