@@ -3,12 +3,6 @@
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
 
-    /*protected function _initSetupBaseUrl() {
-        $this->bootstrap('frontcontroller');
-        $controller = Zend_Controller_Front::getInstance();
-        $controller->setBaseUrl('myweb/public');
-    }*/
-
     // Aggiunge un'istanza di Zend_Controller_Request_Http nel Front_Controller
     // che permette di utilizzare l'helper baseUrl() nel Bootstrap.php
     // Necessario solo se la Document-root di Apache non è la cartella public/
@@ -29,16 +23,11 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $this->getResourceLoader()
             ->addResourceType('modelResource','models/resources','Resource');
     }
-    /*protected function _initFrontControllerPlugin()
-    {
-        $front = Zend_Controller_Front::getInstance();
-        $front->registerPlugin(new App_Controller_Plugin_Acl());
-    }*/
+
     protected function _initViewSettings()
     {
         $view = new Zend_View();
         $view->headTitle('Raffaello');
-
     }
 
     //impostazioni db adapter

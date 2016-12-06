@@ -28,6 +28,7 @@ if (Zend_Auth::getInstance()->hasIdentity()) {
 
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="<?php echo $this->baseUrl("css/vendor.css"); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl("css/sweetalert.css"); ?>"/>
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="<?php echo $this->baseUrl("css/simple-line-icons.css"); ?>"/>
@@ -37,10 +38,16 @@ if (Zend_Auth::getInstance()->hasIdentity()) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800|Montserrat:400,700">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]-->
-    <script src="<?php echo $this->baseUrl("js/html5shiv.js");?>"></script>
-    <script src="<?php echo $this->baseUrl("js/respond.min.js");?>"></script>
-    <!--[endif]-->
+
+    <!-- jQuery -->
+    <script src="<?php echo $this->baseUrl("js/jquery.min.js"); ?>"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo $this->baseUrl("js/bootstrap.min.js"); ?>"></script>
+    <!-- Preloader -->
+    <script src="<?php echo $this->baseUrl("js/prealoader.js"); ?>"></script>
+    <!-- Main -->
+    <script src="<?php echo $this->baseUrl("js/main.js"); ?>"></script>
+    <script src="<?php echo $this->baseUrl("js/sweetalert.min.js"); ?>"></script>
 </head>
 
 <body>
@@ -373,14 +380,6 @@ if (Zend_Auth::getInstance()->hasIdentity()) {
     <div id="loader"></div>
 </div>
 
-<!-- jQuery -->
-<script src="<?php echo $this->baseUrl("js/jquery.min.js"); ?>"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="<?php echo $this->baseUrl("js/bootstrap.min.js"); ?>"></script>
-<!-- Preloader -->
-<script src="<?php echo $this->baseUrl("js/prealoader.js"); ?>"></script>
-<!-- Main -->
-<script src="<?php echo $this->baseUrl("js/main.js"); ?>"></script>
 
 </body>
 

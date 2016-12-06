@@ -4,7 +4,6 @@ class PublicController extends Zend_Controller_Action
 {
 
     protected $registratiForm = null;
-
     protected $loginForm = null;
     protected $_authService;
     protected $utenteCorrente;
@@ -111,8 +110,6 @@ class PublicController extends Zend_Controller_Action
         return $this->_helper->redirector('index', $this->_authService->getIdentity()->current()->ruolo);
 
     }
-
-
 }
 
 

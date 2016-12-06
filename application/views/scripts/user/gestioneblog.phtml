@@ -44,17 +44,10 @@
                                     <td class="font-tabella-campi"
                                         style="font-size: 1.4rem;"><?php echo $blog->tema; ?></td>
                                     <td style="font-size: 1.2em;">
-                                        <a href="<?php echo $this->url(array(
-                                            'controller' => 'user',
-                                            'action' => 'eliminablog',
-                                            "blog" => $blog->id_blog,
-                                            "titolo" => $blog->titolo));
-                                        ?>">
-                                            <button type="button"
-                                                    class="btn btn-lg btn-primary btn-block btn-signin button-red-nic">
+                                            <button type="button" id="<?php echo $blog->id_blog; ?>"
+                                                    class="btn btn-lg btn-primary btn-block btn-signin button-red-nic elimina">
                                                 Elimina
                                             </button>
-                                        </a>
                                     </td>
                                     <td style="font-size: 1.2em">
                                         <a href="<?php echo $this->url(array(
@@ -95,3 +88,46 @@
     </div>
     </div>
 </section>
+
+<script>
+    $(".elimina").click(function (event) {
+        event.preventDefault();
+        id = event.target.id;
+        swal({
+                title: "Sei sicuro?",
+                text: "Non sarai più in grado di recuperare il tuo blog!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Ok, elimina!",
+                closeOnConfirm: false
+            },
+            function(){
+                $.ajax({
+                    type: 'POST',
+                    url: eliminaUrl(id),
+                    data: id,
+                    dataType: 'json',
+                    success: messaggioSuccesso(),
+                    error: function (xhr) {
+                        console.log(xhr.responseText);
+                    }
+                })
+            });
+        function eliminaUrl(id) {
+            title = "<?php echo $this->url(array(
+                'controller' => 'user',
+                'action' => 'eliminablog'
+            )); ?>";
+            params = '/blog/'.concat(id);
+            return title.concat(params);
+        }
+        function messaggioSuccesso() {
+            swal("Cancellato!", "Il tuo blog è stato cancellato.", "success");
+            setTimeout(location.reload.bind(location),1000);
+        }
+        function messaggioErrore() {
+            swal("Oops...", "Qualcosa è andato storto!", "error");
+        }
+    });
+</script>

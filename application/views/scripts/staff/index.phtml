@@ -47,11 +47,11 @@
                                     <td class="font-tabella-campi"
                                         style="font-size: 1.4rem;"><?php echo $this->blogSet[$i]['tema']; ?></td>
                                     <td style="font-size: 1.2em;">
-                                        <a href="<?php echo $this->url(array(
+                                        <a href="#<?php /*echo $this->url(array(
                                             'controller' => 'staff',
                                             'action' => 'contenutoblog',
-                                            "blog" => $this->blogSet[$i]['idblog']));
-                                        ?>">
+                                            "blog" => $this->blogSet[$i]['idblog']));*/
+                                        ?>" class="elimina" id="<?php echo $this->blogSet[$i]['idblog'];?>" >
                                             <span>
                                                 <i class="fa fa-arrow-right"
                                                    style="color: #21DC7F; font-size: 1.4em"></i>
@@ -82,5 +82,56 @@
             </div>
         </div>
     </div>
-    </div>
 </section>
+
+<script>
+    $(".elimina").click(function (event) {
+        event.preventDefault();
+        id = event.target.id;
+        swal({
+                title: "Stai eliminando un blog!",
+                text: "Inserisci una motivazione che verrà recapitata all'utente:",
+                type: "input",
+                showCancelButton: true,
+                closeOnConfirm: false,
+                animation: "slide-from-top",
+                inputPlaceholder: "Scrivi qui la motivazione..."
+            },
+            function(inputValue){
+                if (inputValue === false) return false;
+
+                if (inputValue === "") {
+                    swal.showInputError("Questo campo non può restare vuoto!");
+                    return false
+                }
+                swal("Cancellazione completata!", "Blog eliminato causa " + inputValue + ".", "success");
+            },
+            function(){
+                $.ajax({
+                    type: 'POST',
+                    url: eliminaUrl(id),
+                    data: id,
+                    dataType: 'json',
+                    success: messaggioSuccesso(),
+                    error: function (xhr) {
+                        console.log(xhr.responseText);
+                    }
+                })
+            });
+        function eliminaUrl(id) {
+            title = "<?php echo $this->url(array(
+                'controller' => 'user',
+                'action' => 'eliminablog'
+            )); ?>";
+            params = '/blog/'.concat(id);
+            return title.concat(params);
+        }
+        function messaggioSuccesso() {
+            swal("Cancellato!", "Il tuo blog è stato cancellato.", "success");
+            setTimeout(location.reload.bind(location),1000);
+        }
+        function messaggioErrore() {
+            swal("Oops...", "Qualcosa è andato storto!", "error");
+        }
+    });
+</script>

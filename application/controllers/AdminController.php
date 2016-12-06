@@ -126,7 +126,7 @@ class AdminController extends Zend_Controller_Action
         $faqmodel->inserisciFaq($datiform);
         $this->_helper->redirector("visualizzafaq", "admin");
     }
-    /* //GESTIONE FAQ */
+    /* FINE GESTIONE FAQ */
 
     /* GESTIONE UTENTI */
     public function visualizzautentiAction()
@@ -273,7 +273,7 @@ class AdminController extends Zend_Controller_Action
         }
     }
 
-    /* //GESTIONE UTENTI */
+    /* FINE GESTIONE UTENTI */
 
     /* GESTIONE BLOG */
     public function gestioneblogAction()
@@ -401,7 +401,7 @@ class AdminController extends Zend_Controller_Action
             $this->_helper->redirector("index", "staff");
         }
     }
-    /* //GESTIONE BLOG */
+    /* FINE GESTIONE BLOG */
 }
 
 

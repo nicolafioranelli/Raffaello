@@ -4,11 +4,8 @@ class StaffController extends Zend_Controller_Action
 {
 
     protected $_authService = null;
-
     protected $utenteCorrente = null;
-
     protected $delblogForm = null;
-
     protected $delpostForm = null;
 
     public function init()

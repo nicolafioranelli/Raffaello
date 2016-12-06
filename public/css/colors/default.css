@@ -404,13 +404,14 @@ MAIN COLOR:#21DC7F; (default)
 .template-color-21DC7F .cnt-contact-bg .data-contact {
     border-bottom: 15px solid #21DC7F;
 }
+
 .button-green-nic {
     background: #21DC7F;
     font-size: 1.5rem;
     height: 52px;
     padding: 0px;
     text-transform: uppercase;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 800;
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
@@ -424,7 +425,8 @@ MAIN COLOR:#21DC7F; (default)
     transition: all 0.218s;
     cursor: pointer;
 }
-.button-green-nic:hover{
+
+.button-green-nic:hover {
     border: 1px solid #21DC7F;
     background-color: transparent;
     color: #21DC7F;
@@ -438,7 +440,7 @@ MAIN COLOR:#21DC7F; (default)
     width: 120px;
     padding: 0px;
     text-transform: uppercase;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
@@ -452,20 +454,22 @@ MAIN COLOR:#21DC7F; (default)
     transition: all 0.218s;
     cursor: pointer;
 }
-.button-blue-nic:hover{
+
+.button-blue-nic:hover {
     border: 1px solid #3a579e;
     background-color: transparent;
     color: #3a579e;
     text-transform: uppercase;
 }
-.button-red-nic{
+
+.button-red-nic {
     background: #c0392b;
     font-size: 1.5rem;
     height: 25px;
     width: 120px;
     padding: 0px;
     text-transform: uppercase;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
@@ -479,56 +483,59 @@ MAIN COLOR:#21DC7F; (default)
     transition: all 0.218s;
     cursor: pointer;
 }
-.button-red-nic:hover{
+
+.button-red-nic:hover {
     border: 1px solid #c0392b;
     background-color: transparent;
     color: #c0392b;
     text-transform: uppercase;
 }
 
-
 .required {
     color: #21DC7F;
-    font-size:1.4rem;
+    font-size: 1.4rem;
     font-weight: 800;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .optional {
     color: #21DC7F;
-    font-size:1.4rem;
+    font-size: 1.4rem;
     font-weight: 800;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .font-tabella {
     color: gray;
-    font-size:1.4rem;
+    font-size: 1.4rem;
     font-weight: 800;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
+
 .font-tabella-campi {
     color: gray;
-    font-size:1.2rem;
+    font-size: 1.2rem;
     font-weight: 500;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
-.form-login{
+
+.form-login {
     direction: ltr;
     height: 46px;
     font-size: 1.4rem;
     font-weight: 100;
     color: #A9B3B7;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
-.form-register{
+
+.form-register {
     width: 100%;
     display: block;
     margin-bottom: 10px;
     z-index: 1;
     position: relative;
     border: 2px solid #E3E7E9;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Open Sans', sans-serif;
     direction: ltr;
     height: 46px;
     font-size: 1.4rem;

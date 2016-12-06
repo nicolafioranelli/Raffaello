@@ -4,13 +4,9 @@ class UserController extends Zend_Controller_Action
 {
 
     protected $_authService = null;
-
     protected $utenteCorrente = null;
-
     protected $nuovoblogForm = null;
-
     protected $nuovopostForm = null;
-
     protected $formUtente = null;
 
     public function init()
@@ -165,19 +161,16 @@ class UserController extends Zend_Controller_Action
 
     public function eliminablogAction()
     {
-        if ($this->hasParam('titolo')) {
-            $titoloblog = $this->getParam('titolo');
-            $this->view->assign('titolo', $titoloblog);
-        }
-    }
-
-    public function eliminablogpostAction()
-    {
         if ($this->hasParam('blog')) {
-            $idblog = $this->getParam('blog');
+            $this->_helper->getHelper('layout')->disableLayout();
+            $this->_helper->viewRenderer->setNoRender();
+            $id = $this->getParam('blog');
             $blogModel = new Application_Model_Blog();
-            $blogModel->eliminaBlog($idblog);
-            $this->_helper->redirector("gestioneblog", "user");
+            $result = $blogModel->eliminaBlog($id);
+            $response = $this->_helper->json($id);
+            if($response !== null){
+                $this->getResponse()->setHeader('Content-type', 'application/json')->setBody($response);
+            }
         }
     }
 
