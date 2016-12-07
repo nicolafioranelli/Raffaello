@@ -81,8 +81,7 @@ class Application_Form_DatiProfilo extends Zend_Form
 
         $this->addElement('text', 'telefono', array(
             'filters' => array('StringTrim'),
-            'validators' => array(array('Digits'),
-                array('StringLength', true, array(10, 10))
+            'validators' => array(array('Digits')
             ),
             'required' => true,
             'label' => 'Telefono:',

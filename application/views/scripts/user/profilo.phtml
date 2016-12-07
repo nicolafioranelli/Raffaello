@@ -67,9 +67,7 @@ if ($this->azione == "#") {
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
-                            <?php endif; ?>
-
-                            <?php if ($this->privacy == 0): ?>
+                            <?php else: ?>
                                 <?php foreach ($this->datiSet as $dati): ?>
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                         <img src="<?php echo $this->baseUrl("image/profilo/$dati->image"); ?>" alt=""
@@ -102,33 +100,41 @@ if ($this->azione == "#") {
     </section>
 </section>
 
-
-<section id="hiring">
-    <div class="cnt-hiring-bg">
-        <div class="container">
-            <h1>I <?php echo $this->blog; ?> blog</h1>
-            <div class="row-centered">
-                <div class="col-xs-12 col-md-12 col-lg-6 col-centered container-jobs">
-                    <?php foreach ($this->blogSet as $blg): ?>
-                        <div class="col-xs-12 col-md-12 col-lg-12 col-centered job-position">
-                            <div class="col-xs-12 col-md-12 col-lg-8 data-job">
-                                <ul>
-                                    <li class="place"><?php if (strlen($blg->titolo) > 8) echo substr($blg->titolo, 0, 8) . '...'; else echo $blg->titolo; ?></li>
-                                    <li class="title-job"><?php if (strlen($blg->descrizione) > 23) echo substr($blg->descrizione, 0, 23) . '...'; else echo $blg->descrizione; ?></li>
-                                </ul>
-                            </div>
-                            <div class="col-xs-12 col-md-4 col-lg-4">
-                                <a class="button" href="<?php echo $this->url(array(
-                                    'controller' => 'user',
-                                    'action' => 'visualizzablog',
-                                    'blog' => $blg->id_blog
-                                ), null, true);
-                                ?>">Vai</a>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
+<?php if ($this->privacy == 0) : ?>
+    <section id="hiring">
+        <div class="cnt-hiring-bg">
+            <div class="container">
+                <h1>I <?php echo $this->blog; ?> blog</h1>
+                <div class="row-centered">
+                    <div class="col-xs-12 col-md-12 col-lg-6 col-centered container-jobs">
+                        <?php
+                        $i = 0;
+                        foreach ($this->blogSet as $blg):
+                            if ($this->privacyBlog[$i] == 0):
+                                ?>
+                                <div class="col-xs-12 col-md-12 col-lg-12 col-centered job-position">
+                                    <div class="col-xs-12 col-md-12 col-lg-8 data-job">
+                                        <ul>
+                                            <li class="place"><?php if (strlen($blg->titolo) > 8) echo substr($blg->titolo, 0, 8) . '...'; else echo $blg->titolo; ?></li>
+                                            <li class="title-job"><?php if (strlen($blg->descrizione) > 23) echo substr($blg->descrizione, 0, 23) . '...'; else echo $blg->descrizione; ?></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-md-4 col-lg-4">
+                                        <a class="button" href="<?php echo $this->url(array(
+                                            'controller' => 'user',
+                                            'action' => 'visualizzablog',
+                                            'blog' => $blg->id_blog
+                                        ), null, true);
+                                        ?>">Vai</a>
+                                    </div>
+                                </div>
+                                <?php
+                            endif;
+                            $i++;
+                        endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif; ?>

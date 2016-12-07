@@ -28,7 +28,7 @@ class AdminController extends Zend_Controller_Action
     {
         $utenteModel = new Application_Model_Utente();
         $blogModel = new Application_Model_Blog();
-        $this->view->assign('numutenti', count($utenteModel->elencoUtente()->toArray()));
+        $this->view->assign('numutenti', count($utenteModel->elencoUtenteAdmin()->toArray()));
         $this->view->assign('blogutenti', count($blogModel->elencoBlog()->toArray()));
     }
 

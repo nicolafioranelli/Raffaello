@@ -30,10 +30,7 @@ class Application_Form_NuovoPost extends Zend_Form
             'label' => 'Descrizione:',
             'placeholder' => 'A cosa stai pensando...',
             'class' => 'form-control form-register',
-            'style' => 'height:200px',
-            'validators' => array(
-                array('StringLength', true, array(3, 200))
-            ),
+            'style' => 'height:200px'
         ));
 
         $this->addElement('file', 'image', array(

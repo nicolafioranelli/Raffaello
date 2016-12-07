@@ -58,7 +58,7 @@ class UserController extends Zend_Controller_Action
                     $notificadati[$i]['mittente'] = ucwords($utenteModel->elencoUtenteById($data->id_utente)->current()->nome . ' ' . $utenteModel->elencoUtenteById($data->id_utente)->current()->cognome);
                     $notificadati[$i]['user'] = $utenteModel->elencoUtenteById($data->id_utente)->current()->username;
                     $blogModel = new Application_Model_Blog();
-                    $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                    $notificadati[$i]['blog'] = $blogModel->elencoBlog($data->id_blog)->current()->titolo;
                     $postModel = new Application_Model_Post();
                     $tempdata = $postModel->elencoPostByIdPost($data->id_post)->current()->data;
                     $notificadati[$i]['data'] = substr($tempdata, 8, 2) . '-' . substr($tempdata, 5, 2) . '-' . substr($tempdata, 0, 4) . ' alle ' . substr($tempdata, 11, 5);
@@ -151,7 +151,10 @@ class UserController extends Zend_Controller_Action
             $dati['stato'] = 0;
             $privacyModel->inserisciPrivacy($dati);
         endforeach;
-        $this->_helper->redirector("nuovopost", "user");
+        $params = array('blog' => $idblog,
+            'user' => $idUtente
+        );
+        $this->_helper->redirector("nuovopost", "user", 0, $params);
     }
 
     public function gestioneblogAction()
@@ -170,7 +173,7 @@ class UserController extends Zend_Controller_Action
             $blogModel = new Application_Model_Blog();
             $result = $blogModel->eliminaBlog($id);
             $response = $this->_helper->json($id);
-            if($response !== null){
+            if ($response !== null) {
                 $this->getResponse()->setHeader('Content-type', 'application/json')->setBody($response);
             }
         }
@@ -301,7 +304,7 @@ class UserController extends Zend_Controller_Action
                         $notificadati[$i]['mittente'] = ucwords($utenteModel->elencoUtenteById($data->id_utente)->current()->nome . ' ' . $utenteModel->elencoUtenteById($data->id_utente)->current()->cognome);
                         $notificadati[$i]['user'] = $utenteModel->elencoUtenteById($data->id_utente)->current()->username;
                         $blogModel = new Application_Model_Blog();
-                        $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                        $notificadati[$i]['blog'] = $blogModel->elencoBlogById($data->id_blog)->current()->titolo;
                         $postModel = new Application_Model_Post();
                         $tempdata = $postModel->elencoPostByIdPost($data->id_post)->current()->data;
                         $notificadati[$i]['data'] = substr($tempdata, 8, 2) . '-' . substr($tempdata, 5, 2) . '-' . substr($tempdata, 0, 4) . ' alle ' . substr($tempdata, 11, 5);
@@ -488,7 +491,16 @@ class UserController extends Zend_Controller_Action
                 $azione = "aggiungiprofilo";
                 $idAmico = 0;
                 $this->view->assign('idRicevente', $dati->current()->id_utente);
-                $privacy = $this->getParam('privacy');
+                $privacy = $dati->current()->privacy;
+
+                $i = 0;
+                $privacyBlog = array();
+                foreach ($datiBlog as $blog):
+                    $privacyModel = new Application_Model_Privacy();
+                    $rowset = $privacyModel->elencoPrivacyProfilo($blog->id_blog, $idUtente)->current();
+                    $privacyBlog[$i] = $rowset->stato;
+                    $i++;
+                endforeach;
 
                 //Controllo casi di amicizie
                 if (count($amicizieRichieste) > 0) {
@@ -519,6 +531,7 @@ class UserController extends Zend_Controller_Action
                 $this->view->assign('blogSet', $datiBlog);
                 $this->view->assign('blog', "suoi");
                 $this->view->assign('privacy', $privacy);
+                $this->view->assign('privacyBlog', $privacyBlog);
             }
         }
     }
@@ -556,9 +569,9 @@ class UserController extends Zend_Controller_Action
     public function cercaAction()
     {
         if ($this->hasParam('search')) {
-            $ricerca = str_replace('*', '%', $this->getParam('search'));;
+            $ricerca = str_replace('*', '%', $this->getParam('search'));
             $cercaModel = new Application_Model_Elencoutenti();
-            $this->view->assign('amiciSet', $cercaModel->ricercaUtente($ricerca));
+            $this->view->assign('amiciSet', $cercaModel->ricercaUtente(strtolower($ricerca)));
         }
     }
 
@@ -593,7 +606,7 @@ class UserController extends Zend_Controller_Action
                 $utenteModel = new Application_Model_Utente();
                 $notificadati[$i]['mittente'] = ucwords($utenteModel->elencoUtenteById($data->id_utente)->current()->nome . ' ' . $utenteModel->elencoUtenteById($data->id_utente)->current()->cognome);
                 $blogModel = new Application_Model_Blog();
-                $notificadati[$i]['blog'] = $blogModel->elencoBlogByUtente($data->id_blog)->current()->titolo;
+                $notificadati[$i]['blog'] = $blogModel->elencoBlogById($data->id_blog)->current()->titolo;
                 $postModel = new Application_Model_Post();
                 $tempdata = $postModel->elencoPostByIdPost($data->id_post)->current()->data;
                 $notificadati[$i]['data'] = substr($tempdata, 8, 2) . '-' . substr($tempdata, 5, 2) . '-' . substr($tempdata, 0, 4) . ' alle ' . substr($tempdata, 11, 5);

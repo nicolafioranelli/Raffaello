@@ -28,15 +28,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/scripts/public/faq.phtml" />
         <option value="$PROJECT_DIR$/.zfproject.xml" />
         <option value="$PROJECT_DIR$/application/views/scripts/user/eliminablog.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/user/nuovopost.phtml" />
-        <option value="$PROJECT_DIR$/application/forms/Registrati.php" />
-        <option value="$PROJECT_DIR$/application/forms/DatiUtente.php" />
-        <option value="$PROJECT_DIR$/application/forms/NuovoPost.php" />
-        <option value="$PROJECT_DIR$/application/forms/DatiProfilo.php" />
-        <option value="$PROJECT_DIR$/application/models/Utente.php" />
         <option value="$PROJECT_DIR$/application/models/DbTable/Elencoutenti.php" />
         <option value="$PROJECT_DIR$/public/assets/css/main.css" />
         <option value="$PROJECT_DIR$/application/forms/Cerca.php" />
@@ -49,17 +43,14 @@
         <option value="$PROJECT_DIR$/application/views/scripts/admin/modificautente.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/admin/visualizzautenti.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/user/amici.phtml" />
-        <option value="$PROJECT_DIR$/application/views/scripts/user/profilo.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/user/modificaprivacy.phtml" />
         <option value="$PROJECT_DIR$/application/models/DbTable/Notifica.php" />
         <option value="$PROJECT_DIR$/application/models/DbTable/Privacy.php" />
-        <option value="$PROJECT_DIR$/application/models/Privacy.php" />
         <option value="$PROJECT_DIR$/application/models/Notifica.php" />
         <option value="$PROJECT_DIR$/application/models/Amici.php" />
         <option value="$PROJECT_DIR$/application/views/scripts/public/index.phtml" />
         <option value="$PROJECT_DIR$/application/forms/NuovoBlog.php" />
         <option value="$PROJECT_DIR$/application/views/scripts/paginatore.phtml" />
-        <option value="$PROJECT_DIR$/application/controllers/PublicController.php" />
         <option value="$PROJECT_DIR$/public/js/jquery.min.js" />
         <option value="$PROJECT_DIR$/public/css/colors/default.css" />
         <option value="$PROJECT_DIR$/application/views/scripts/user/gestioneblog.phtml" />
@@ -71,14 +62,23 @@
         <option value="$PROJECT_DIR$/application/controllers/StaffController.php" />
         <option value="$PROJECT_DIR$/application/views/scripts/admin/gestioneblog.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/staff/contenutoblog.phtml" />
-        <option value="$PROJECT_DIR$/application/views/scripts/admin/contenutoblog.phtml" />
-        <option value="$PROJECT_DIR$/application/controllers/AdminController.php" />
-        <option value="$PROJECT_DIR$/application/models/Blog.php" />
         <option value="$PROJECT_DIR$/application/models/Post.php" />
-        <option value="$PROJECT_DIR$/application/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/application/views/scripts/user/visualizzanotifiche.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/user/index.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/user/visualizzablog.phtml" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/application/forms/NuovoPost.php" />
+        <option value="$PROJECT_DIR$/application/controllers/AdminController.php" />
+        <option value="$PROJECT_DIR$/application/views/scripts/admin/contenutoblog.phtml" />
+        <option value="$PROJECT_DIR$/application/controllers/PublicController.php" />
+        <option value="$PROJECT_DIR$/application/forms/Registrati.php" />
+        <option value="$PROJECT_DIR$/application/forms/DatiProfilo.php" />
+        <option value="$PROJECT_DIR$/application/forms/DatiUtente.php" />
+        <option value="$PROJECT_DIR$/application/models/Blog.php" />
+        <option value="$PROJECT_DIR$/application/models/Privacy.php" />
+        <option value="$PROJECT_DIR$/application/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/application/views/scripts/user/profilo.phtml" />
+        <option value="$PROJECT_DIR$/application/models/Utente.php" />
       </list>
     </option>
   </component>
@@ -125,7 +125,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -158,158 +157,9 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raffaello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raffaello" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raffaello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raffaello" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raffaello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raffaello" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raffaello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raffaello" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raffaello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raffaello" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raffaello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raffaello" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raffaello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raffaello" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -413,15 +263,17 @@
       <workItem from="1480583161235" duration="20283000" />
       <workItem from="1480674722298" duration="15818000" />
       <workItem from="1481016986308" duration="12795000" />
-      <workItem from="1481097874809" duration="9624000" />
+      <workItem from="1481097874809" duration="10218000" />
+      <workItem from="1481116967540" duration="10679000" />
+      <workItem from="1481132210703" duration="414000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220070000" />
+    <option name="totallyTimeSpent" value="231757000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21815519" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -456,43 +308,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/eliminablog.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/modificaprofilo.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="15" column="112" selection-start-line="15" selection-start-column="111" selection-end-line="15" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Elencoutenti.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="117" selection-start-line="13" selection-start-column="117" selection-end-line="13" selection-end-column="117" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/admin/eliminautente.phtml" />
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/admin/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3157">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/admin/inseriscifaq.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -528,14 +348,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/profilo.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/DbTable/Privacy.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -557,39 +369,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Privacy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="94" selection-start-line="34" selection-start-column="94" selection-end-line="34" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Utente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/user/modificaprivacy.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="21" column="184" selection-start-line="21" selection-start-column="184" selection-end-line="21" selection-end-column="184" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/user/modificaprivacypost.phtml" />
-    <entry file="file://$PROJECT_DIR$/application/models/Notifica.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="29" column="117" selection-start-line="29" selection-start-column="117" selection-end-line="29" selection-end-column="117" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/user/amici.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -605,14 +392,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Amici.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="45" column="125" selection-start-line="45" selection-start-column="125" selection-end-line="45" selection-end-column="125" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/public/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
@@ -624,7 +403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -639,32 +417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/forms/NuovoPost.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/PublicController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-          <folding>
-            <element signature="n#init#0;n#PublicController#0;n#!!top" expanded="false" />
-            <element signature="n#indexAction#0;n#PublicController#0;n#!!top" expanded="false" />
-            <element signature="n#faqAction#0;n#PublicController#0;n#!!top" expanded="false" />
-            <element signature="n#termsAction#0;n#PublicController#0;n#!!top" expanded="false" />
-            <element signature="n#contactsAction#0;n#PublicController#0;n#!!top" expanded="false" />
-            <element signature="n#loginAction#0;n#PublicController#0;n#!!top" expanded="false" />
-            <element signature="n#registerAction#0;n#PublicController#0;n#!!top" expanded="false" />
-            <element signature="n#verificaAction#0;n#PublicController#0;n#!!top" expanded="false" />
-            <element signature="n#autenticazioneAction#0;n#PublicController#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -694,7 +446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="256" column="53" selection-start-line="256" selection-start-column="53" selection-end-line="256" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -702,28 +453,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="733" column="90" selection-start-line="733" selection-start-column="82" selection-end-line="733" selection-end-column="90" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/staff/eliminapost.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/staff/eliminablog.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/staff/eliminapost.phtml" />
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/staff/eliminablog.phtml" />
     <entry file="file://$PROJECT_DIR$/application/Bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -752,24 +486,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1190">
           <caret line="100" column="46" selection-start-line="100" selection-start-column="46" selection-end-line="100" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/admin/eliminafaq.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/admin/eliminafaq.phtml" />
     <entry file="file://$PROJECT_DIR$/application/views/scripts/admin/gestioneblog.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
           <folding>
-            <element signature="n#style#0;n#i#0;n#span#0;n#a#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
             <element signature="e#5837#6085#0#HTML" expanded="false" />
             <element signature="e#5882#5985#1#PHP" expanded="false" />
             <element signature="e#6340#6418#0#HTML" expanded="false" />
@@ -781,43 +506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
-          <folding>
-            <element signature="e#4780#4858#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="241" column="42" selection-start-line="241" selection-start-column="42" selection-end-line="241" selection-end-column="42" />
-          <folding>
-            <element signature="n#init#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#indexAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#logoutAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#inserimentoprimoblogAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#inserimentoprimoblogpostAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#gestioneblogAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#eliminablogAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#nuovopostAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#nuovopostverificaAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#visualizzablogAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#modificaprofiloAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#modificaprofilopostAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#amicipostAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#amiciAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#profiloAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#aggiungiprofiloAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#eliminaprofiloAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="e#26315#26893#0#PHP" expanded="false" />
-            <element signature="n#cercaAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#modificaprivacyAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#modificaprivacypostAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#visualizzanotificheAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#nascondinotificaAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#sceltaprivacyAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#sceltaprivacypostAction#0;n#UserController#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -825,7 +513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="34" column="50" selection-start-line="32" selection-start-column="36" selection-end-line="34" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -833,7 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
           <caret line="199" column="51" selection-start-line="199" selection-start-column="51" selection-end-line="199" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -841,37 +527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
           <caret line="210" column="45" selection-start-line="210" selection-start-column="45" selection-end-line="210" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Blog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/StaffController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="99" column="9" selection-start-line="78" selection-start-column="8" selection-end-line="99" selection-end-column="9" />
-          <folding>
-            <element signature="n#indexAction#0;n#StaffController#0;n#!!top" expanded="false" />
-            <element signature="n#logoutAction#0;n#StaffController#0;n#!!top" expanded="false" />
-            <element signature="n#contenutoblogAction#0;n#StaffController#0;n#!!top" expanded="false" />
-            <element signature="n#eliminablogAction#0;n#StaffController#0;n#!!top" expanded="false" />
-            <element signature="e#1881#2750#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -879,21 +534,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="81" column="35" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
-          <folding>
-            <element signature="e#5767#6015#0#HTML" expanded="false" />
-            <element signature="e#5812#5915#1#PHP" expanded="false" />
-            <element signature="e#6270#6348#0#HTML" expanded="false" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="102" selection-start-line="8" selection-start-column="102" selection-end-line="8" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/forms/NuovoPost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/admin/profilo.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        <state relative-caret-position="221">
+          <caret line="30" column="80" selection-start-line="30" selection-start-column="80" selection-end-line="30" selection-end-column="80" />
           <folding>
             <element signature="n#init#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#indexAction#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#logoutAction#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#visualizzafaqAction#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#modificafaqAction#0;n#AdminController#0;n#!!top" expanded="false" />
@@ -916,12 +589,152 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/forms/Registrati.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="88" column="49" selection-start-line="88" selection-start-column="49" selection-end-line="88" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/PublicController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="73" column="156" selection-start-line="73" selection-start-column="156" selection-end-line="73" selection-end-column="156" />
+          <folding>
+            <element signature="n#init#0;n#PublicController#0;n#!!top" expanded="false" />
+            <element signature="n#indexAction#0;n#PublicController#0;n#!!top" expanded="false" />
+            <element signature="n#faqAction#0;n#PublicController#0;n#!!top" expanded="false" />
+            <element signature="n#termsAction#0;n#PublicController#0;n#!!top" expanded="false" />
+            <element signature="n#contactsAction#0;n#PublicController#0;n#!!top" expanded="false" />
+            <element signature="n#loginAction#0;n#PublicController#0;n#!!top" expanded="false" />
+            <element signature="n#registerAction#0;n#PublicController#0;n#!!top" expanded="false" />
+            <element signature="n#autenticazioneAction#0;n#PublicController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/forms/DatiProfilo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="83" column="49" selection-start-line="83" selection-start-column="49" selection-end-line="83" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Blog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Notifica.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="29" column="117" selection-start-line="29" selection-start-column="117" selection-end-line="29" selection-end-column="117" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Privacy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="38" column="113" selection-start-line="38" selection-start-column="113" selection-end-line="38" selection-end-column="113" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Amici.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="45" column="125" selection-start-line="45" selection-start-column="125" selection-end-line="45" selection-end-column="125" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/forms/DatiUtente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" column="49" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="502" column="25" selection-start-line="502" selection-start-column="25" selection-end-line="502" selection-end-column="25" />
+          <folding>
+            <element signature="n#init#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#indexAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#logoutAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#inserimentoprimoblogAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#inserimentoprimoblogpostAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#gestioneblogAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#eliminablogAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#nuovopostAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#nuovopostverificaAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#visualizzablogAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#modificaprofiloAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#modificaprofilopostAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#amicipostAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#amiciAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#aggiungiprofiloAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#eliminaprofiloAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#cercaAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#modificaprivacyAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#modificaprivacypostAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#visualizzanotificheAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#nascondinotificaAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#sceltaprivacyAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#sceltaprivacypostAction#0;n#UserController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/profilo.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="123" column="64" selection-start-line="123" selection-start-column="64" selection-end-line="123" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Utente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/admin/contenutoblog.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
+        <state relative-caret-position="17">
+          <caret line="43" column="66" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/StaffController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="47" column="54" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
           <folding>
-            <element signature="e#5888#5966#0#HTML" expanded="false" />
+            <element signature="n#indexAction#0;n#StaffController#0;n#!!top" expanded="false" />
+            <element signature="n#logoutAction#0;n#StaffController#0;n#!!top" expanded="false" />
+            <element signature="n#eliminablogAction#0;n#StaffController#0;n#!!top" expanded="false" />
+            <element signature="e#1881#2750#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

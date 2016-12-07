@@ -35,5 +35,9 @@ class Application_Model_Privacy
         return $this->tabella->fetchAll($this->tabella->select()->where("id_amico = ?", $id));
     }
 
+    public function elencoPrivacyProfilo($blog, $amico){
+        return $this->tabella->fetchAll($this->tabella->select()->where("id_blog = $blog")->where("id_amico = $amico"));
+    }
+
 }
 
