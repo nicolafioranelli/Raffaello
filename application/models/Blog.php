@@ -43,6 +43,12 @@ class Application_Model_Blog
         return $controllo;
     }
 
+    public function checkBlog($id){
+        if(count($this->elencoBlogById($id))==0)
+            return false;
+        return true;
+    }
+
     public function elencoBlog(){
         return $this->tabella->fetchAll();
     }

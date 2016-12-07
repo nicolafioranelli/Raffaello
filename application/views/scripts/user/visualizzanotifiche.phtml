@@ -30,22 +30,27 @@
                                 $i < count($this->notificaSet);
                                 $i++): ?>
                                 <?php if ($this->notificaSet[$i]['tipo'] == 0): ?>
-                                    <td class="font-tabella-campi">
-                                        <a href="<?php echo $this->url(array(
-                                            'controller' => 'user',
-                                            'action' => 'profilo',
-                                            'user' => $this->notificaSet[$i]['user']
-                                        ));
-                                        ?>"><?php echo $this->notificaSet[$i]['mittente']; ?></a> ha pubblicato un nuovo
-                                        post
-                                        in <a href="<?php echo $this->url(array(
-                                            'controller' => 'user',
-                                            'action' => 'visualizzablog',
-                                            'blog' => $this->notificaSet[$i]['idblog']
-                                        ));
-                                        ?>">"<?php echo $this->notificaSet[$i]['blog']; ?>"</a>
-                                        il <?php echo $this->notificaSet[$i]['data']; ?>.
-                                    </td>
+                                    <?php if ($this->notificaSet{$i}['esistenzablog'] == false || $this->notificaSet{$i}['esistenzapost'] == false): ?>
+                                        <!-- DO NOTHING -->
+                                    <?php else: ?>
+                                        <td class="font-tabella-campi">
+                                            <a href="<?php echo $this->url(array(
+                                                'controller' => 'user',
+                                                'action' => 'profilo',
+                                                'user' => $this->notificaSet[$i]['user']
+                                            ));
+                                            ?>"><?php echo $this->notificaSet[$i]['mittente']; ?></a> ha pubblicato un
+                                            nuovo
+                                            post
+                                            in <a href="<?php echo $this->url(array(
+                                                'controller' => 'user',
+                                                'action' => 'visualizzablog',
+                                                'blog' => $this->notificaSet[$i]['idblog']
+                                            ));
+                                            ?>">"<?php echo $this->notificaSet[$i]['blog']; ?>"</a>
+                                            il <?php echo $this->notificaSet[$i]['data']; ?>.
+                                        </td>
+                                    <?php endif; ?>
                                 <?php elseif ($this->notificaSet[$i]['tipo'] == 1): ?>
                                     <td class="font-tabella-campi">
                                         <a href="<?php echo $this->url(array(

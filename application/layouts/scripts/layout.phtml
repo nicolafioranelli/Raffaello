@@ -55,12 +55,22 @@ if (Zend_Auth::getInstance()->hasIdentity()) {
 <header>
     <div class="row-header">
         <div class="logo">
-            <a href="<?php echo $this->url(
+            <a href="<?php
+            if($ruolo == 'guest'):
+                echo $this->url(
+                    array(
+                        'controller' => 'public',
+                        'action' => 'index',
+                    ), null, true
+                );
+            else:
+            echo $this->url(
                 array(
                     'controller' => $ruolo,
                     'action' => 'index',
                 ), null, true
-            ); ?>" class="logo-light"></a>
+            );
+            endif;?>" class="logo-light"></a>
         </div>
 
         <!-- Main Menu -->

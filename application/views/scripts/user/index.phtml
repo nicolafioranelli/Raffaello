@@ -165,34 +165,39 @@
                                 $i < count($this->notificaSet);
                                 $i++): ?>
                                 <?php if ($this->notificaSet[$i]['tipo'] == 0): ?>
-                                    <td class="font-tabella-campi">
-                                        <a href="<?php echo $this->url(array(
-                                            'controller' => 'user',
-                                            'action' => 'profilo',
-                                            'user' => $this->notificaSet[$i]['user']
-                                        ));
-                                        ?>"><?php echo $this->notificaSet[$i]['mittente']; ?></a> ha pubblicato un nuovo
-                                        post
-                                        in <a href="<?php echo $this->url(array(
-                                            'controller' => 'user',
-                                            'action' => 'visualizzablog',
-                                            'blog' => $this->notificaSet[$i]['idblog']
-                                        ));
-                                        ?>">"<?php echo $this->notificaSet[$i]['blog']; ?>"</a>
-                                        il <?php echo $this->notificaSet[$i]['data']; ?>.
-                                    </td>
-                                    <td style="font-size: 1.2em; text-align: center">
-                                        <a href="<?php echo $this->url(array(
-                                            'controller' => 'user',
-                                            'action' => 'nascondinotifica',
-                                            'idnot' => $this->notificaSet[$i]['idnotifica'],
-                                        ));
-                                        ?>">
+                                    <?php if ($this->notificaSet{$i}['esistenzablog'] == false || $this->notificaSet{$i}['esistenzapost'] == false): ?>
+                                        <!-- DO NOTHING -->
+                                    <?php else: ?>
+                                        <td class="font-tabella-campi">
+                                            <a href="<?php echo $this->url(array(
+                                                'controller' => 'user',
+                                                'action' => 'profilo',
+                                                'user' => $this->notificaSet[$i]['user']
+                                            ));
+                                            ?>"><?php echo $this->notificaSet[$i]['mittente']; ?></a> ha pubblicato un
+                                            nuovo
+                                            post
+                                            in <a href="<?php echo $this->url(array(
+                                                'controller' => 'user',
+                                                'action' => 'visualizzablog',
+                                                'blog' => $this->notificaSet[$i]['idblog']
+                                            ));
+                                            ?>">"<?php echo $this->notificaSet[$i]['blog']; ?>"</a>
+                                            il <?php echo $this->notificaSet[$i]['data']; ?>.
+                                        </td>
+                                        <td style="font-size: 1.2em; text-align: center">
+                                            <a href="<?php echo $this->url(array(
+                                                'controller' => 'user',
+                                                'action' => 'nascondinotifica',
+                                                'idnot' => $this->notificaSet[$i]['idnotifica'],
+                                            ));
+                                            ?>">
                                         <span>
                                             <i class="fa fa-times-circle" style="color: #761c19"></i>
                                         </span>
-                                        </a>
-                                    </td>
+                                            </a>
+                                        </td>
+                                    <?php endif; ?>
                                 <?php elseif ($this->notificaSet[$i]['tipo'] == 1): ?>
                                     <td class="font-tabella-campi">
                                         <a href="<?php echo $this->url(array(

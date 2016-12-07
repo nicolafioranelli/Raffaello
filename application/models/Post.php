@@ -58,6 +58,12 @@ class Application_Model_Post
             return false;
     }
 
+    public function checkPost($id){
+        if(count($this->tabella->find($id))==0)
+            return false;
+        return true;
+    }
+
     public function elencoPostByIdPost($id){
         $sql = $this->tabella->select()->where("id_post = ?", $id);
         return $this->tabella->fetchAll($sql);

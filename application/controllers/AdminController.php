@@ -8,9 +8,6 @@ class AdminController extends Zend_Controller_Action
     protected $formFaq = null;
     protected $formUtente = null;
     protected $registratiForm = null;
-    protected $delblogForm = null;
-    protected $delpostForm = null;
-
     public function init()
     {
         $this->_authService = new Application_Service_Auth();
@@ -25,9 +22,6 @@ class AdminController extends Zend_Controller_Action
             $this->view->assign("formUtente", $this->modificautenteAction());
         //INSERIMENTO STAFF
         $this->view->assign('registratiForm', $this->inseriscistaffAction());
-        //GESTIONE BLOG E POST
-        $this->view->assign('delblogForm', $this->eliminablogAction());
-        $this->view->assign('delpostForm', $this->eliminapostAction());
     }
 
     public function indexAction()
@@ -307,50 +301,34 @@ class AdminController extends Zend_Controller_Action
 
     public function eliminablogAction()
     {
-        if ($this->hasParam('blog')) {
+        if ($this->hasParam('blog') || $this->hasParam('motivazione')) {
+            $this->_helper->getHelper('layout')->disableLayout();
             $idBlog = $this->getParam('blog');
-            $this->delblogForm = new Application_Form_DelblogForm();
-            $this->delblogForm->setAction($this->_helper->url->url(array(
-                'controller' => 'admin',
-                'action' => 'eliminablogverifica',
-                'blog' => $idBlog
-            )));
+            $motivazione = $this->getParam('motivazione');
+
             $blogModel = new Application_Model_Blog();
-            $this->view->assign('titoloblog', $blogModel->elencoBlogById($idBlog)->current()->titolo);
-            return $this->delblogForm;
+            $rowset = $blogModel->elencoBlogById($idBlog);
+
+            $dati = array();
+            $dati['id_utente'] = $this->utenteCorrente->current()->id_utente;
+            $dati['id_blog'] = $idBlog;
+            $dati['id_amico'] = $rowset->current()->id_utente;
+            $dati['tipo'] = 3;
+            $dati['motivazione'] = $motivazione;
+            $notificaModel = new Application_Model_Notifica();
+            $notificaModel->inserisciNotifica($dati);
+
+            $result = $blogModel->eliminaBlog($idBlog);
+            $this->_helper->json($result);
         }
     }
 
     public function eliminapostAction()
     {
-        if ($this->hasParam('post')) {
+        $this->_helper->getHelper('layout')->disableLayout();
+        if ($this->hasParam('post') || $this->hasParam('motivazione')) {
             $idPost = $this->getParam('post');
-            $this->delpostForm = new Application_Form_DelpostForm();
-            $this->delpostForm->setAction($this->_helper->url->url(array(
-                'controller' => 'staff',
-                'action' => 'eliminapostverifica',
-                'post' => $idPost
-            )));
-            $postModel = new Application_Model_Post();
-            $this->view->assign('titolopost', $postModel->elencoPostByIdPost($idPost)->current()->titolo);
-            return $this->delpostForm;
-        }
-    }
-
-    public function eliminablogverificaAction()
-    {
-        if ($this->hasParam('post')) {
-            $request = $this->getRequest();
-            if (!$request->isPost()) {
-                return $this->_helper->redirector('eliminapost');
-            }
-            $form = $this->delblogForm;
-            if (!$form->isValid($request->getPost())) {
-                $form->setDescription('Attenzione: alcuni dati inseriti sono errati.');
-                return $this->render('eliminapost');
-            }
-
-            $idPost = $this->getParam('post');
+            $motivazione = $this->getParam('motivazione');
             $postModel = new Application_Model_Post();
             $rowset = $postModel->elencoPostByIdPost($idPost);
             $blogModel = new Application_Model_Blog();
@@ -361,44 +339,13 @@ class AdminController extends Zend_Controller_Action
             $dati['nome'] = $row->current()->titolo;
             $dati['id_amico'] = $rowset->current()->id_utente;
             $dati['tipo'] = 2;
-            $dati['motivazione'] = $this->delblogForm->getValues()['motivazione'];
+            $dati['motivazione'] = $motivazione;
 
             $notificaModel = new Application_Model_Notifica();
             $notificaModel->inserisciNotifica($dati);
-            $postModel->eliminaPost($idPost);
 
-            $this->_helper->redirector("gestioneblog", "admin");
-        }
-    }
-
-    public function eliminapostverificaAction()
-    {
-        if ($this->hasParam('blog')) {
-            $request = $this->getRequest();
-            if (!$request->isPost()) {
-                return $this->_helper->redirector('eliminablog');
-            }
-            $form = $this->delblogForm;
-            if (!$form->isValid($request->getPost())) {
-                $form->setDescription('Attenzione: alcuni dati inseriti sono errati.');
-                return $this->render('eliminablog');
-            }
-
-            $idBlog = $this->getParam('blog');
-            $blogModel = new Application_Model_Blog();
-            $rowset = $blogModel->elencoBlogById($idBlog);
-            $dati = array();
-            $dati['id_utente'] = $this->utenteCorrente->current()->id_utente;
-            $dati['id_blog'] = $idBlog;
-            $dati['id_amico'] = $rowset->current()->id_utente;
-            $dati['tipo'] = 3;
-            $dati['motivazione'] = $this->delblogForm->getValues()['motivazione'];
-
-            $notificaModel = new Application_Model_Notifica();
-            $notificaModel->inserisciNotifica($dati);
-            $blogModel->eliminaBlog($idBlog);
-
-            $this->_helper->redirector("index", "staff");
+            $result = $postModel->eliminaPost($idPost);
+            $this->_helper->json($result);
         }
     }
     /* FINE GESTIONE BLOG */

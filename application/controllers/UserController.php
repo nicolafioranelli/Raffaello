@@ -65,6 +65,8 @@ class UserController extends Zend_Controller_Action
                     $notificadati[$i]['idblog'] = $data->id_blog;
                     $notificadati[$i]['tipo'] = $data->tipo;
                     $notificadati[$i]['idnotifica'] = $data->id_notifica;
+                    $notificadati[$i]['esistenzablog'] = $blogModel->checkBlog($data->id_blog);
+                    $notificadati[$i]['esistenzapost'] = $postModel->checkPost($data->id_post);
                 } /* CASO ELIMINAZIONE AMICO */
                 elseif ($data->tipo == 1) {
                     $utenteModel = new Application_Model_Utente();
@@ -306,6 +308,8 @@ class UserController extends Zend_Controller_Action
                         $notificadati[$i]['idblog'] = $data->id_blog;
                         $notificadati[$i]['tipo'] = $data->tipo;
                         $notificadati[$i]['idnotifica'] = $data->id_notifica;
+                        $notificadati[$i]['esistenzablog'] = $blogModel->checkBlog($data->id_blog);
+                        $notificadati[$i]['esistenzapost'] = $postModel->checkPost($data->id_post);
                     } /* CASO ELIMINAZIONE AMICO */
                     elseif ($data->tipo == 1) {
                         $utenteModel = new Application_Model_Utente();
@@ -596,6 +600,8 @@ class UserController extends Zend_Controller_Action
                 $notificadati[$i]['idblog'] = $data->id_blog;
                 $notificadati[$i]['tipo'] = $data->tipo;
                 $notificadati[$i]['user'] = $utenteModel->elencoUtenteById($data->id_utente)->current()->username;
+                $notificadati[$i]['esistenzablog'] = $blogModel->checkBlog($data->id_blog);
+                $notificadati[$i]['esistenzapost'] = $postModel->checkPost($data->id_post);
             } /* CASO ELIMINAZIONE AMICO */
             elseif ($data->tipo == 1) {
                 $utenteModel = new Application_Model_Utente();

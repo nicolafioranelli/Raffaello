@@ -37,14 +37,10 @@
                                     <td class="font-tabella-campi"
                                         style="font-size: 1.2rem;"><?php echo $post->data; ?></td>
                                     <td style="font-size: 1.2em;">
-                                        <a href="<?php echo $this->url(array(
-                                            'controller' => 'staff',
-                                            'action' => 'eliminapost',
-                                            'post' => $post->id_post));
-                                        ?>">
+                                        <a href="">
                                             <span>
-                                                <i class="fa fa-times-circle"
-                                                   style="color: #761c19; font-size: 1.4em"></i>
+                                                <i class="fa fa-times-circle elimina"
+                                                   style="color: #761c19; font-size: 1.4em" id="<?php echo $post->id_post;?>"></i>
                                             </span>
                                         </a>
                                     </td>
@@ -61,3 +57,55 @@
     </div>
     </div>
 </section>
+
+<script>
+    $(".elimina").click(function (event) {
+        event.preventDefault();
+        id = event.target.id;
+        console.log("id",id);
+        motivazione = "";
+        swal({
+                title: "Stai eliminando un post!",
+                text: "Inserisci una motivazione che verrà recapitata all'utente:",
+                type: "input",
+                showCancelButton: true,
+                closeOnConfirm: false,
+                animation: "slide-from-top",
+                inputPlaceholder: "Scrivi qui la motivazione..."
+            },
+            function(inputValue){
+                if (inputValue === false) return false;
+
+                if (inputValue === "") {
+                    swal.showInputError("Questo campo non può restare vuoto!");
+                    return false
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: eliminaUrl(id),
+                    data: {post: id, motivazione: inputValue},
+                    dataType: 'json',
+                    success: messaggioSuccesso(inputValue),
+                    error: function (xhr) {
+                        console.log("xhr",xhr.responseText);
+                    }
+                })
+
+            });
+        function eliminaUrl(id) {
+            title = "<?php echo $this->url(array(
+                'controller' => 'staff',
+                'action' => 'eliminapost'
+            )); ?>";
+            params = '/blog/'.concat(id);
+            return title.concat(params);
+        }
+        function messaggioSuccesso(inputValue) {
+            swal("Cancellato!", "Il post è stato cancellato causa " + inputValue +".", "success");
+            setTimeout(location.reload.bind(location),1000);
+        }
+        function messaggioErrore() {
+            swal("Oops...", "Qualcosa è andato storto!", "error");
+        }
+    });
+</script>

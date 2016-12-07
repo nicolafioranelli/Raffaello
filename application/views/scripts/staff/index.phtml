@@ -47,11 +47,11 @@
                                     <td class="font-tabella-campi"
                                         style="font-size: 1.4rem;"><?php echo $this->blogSet[$i]['tema']; ?></td>
                                     <td style="font-size: 1.2em;">
-                                        <a href="#<?php /*echo $this->url(array(
+                                        <a href="<?php echo $this->url(array(
                                             'controller' => 'staff',
                                             'action' => 'contenutoblog',
-                                            "blog" => $this->blogSet[$i]['idblog']));*/
-                                        ?>" class="elimina" id="<?php echo $this->blogSet[$i]['idblog'];?>" >
+                                            "blog" => $this->blogSet[$i]['idblog']));
+                                        ?>">
                                             <span>
                                                 <i class="fa fa-arrow-right"
                                                    style="color: #21DC7F; font-size: 1.4em"></i>
@@ -59,16 +59,10 @@
                                         </a>
                                     </td>
                                     <td style="font-size: 1.2em;">
-                                        <a href="<?php echo $this->url(array(
-                                            'controller' => 'staff',
-                                            'action' => 'eliminablog',
-                                            'blog' => $this->blogSet[$i]['idblog']));
-                                        ?>">
                                             <span>
-                                                <i class="fa fa-times-circle"
-                                                   style="color: #761c19; font-size: 1.4em"></i>
+                                                <i class="fa fa-times-circle elimina"
+                                                   style="color: #761c19; font-size: 1.4em" id="<?php echo $this->blogSet[$i]['idblog'];?>"></i>
                                             </span>
-                                        </a>
                                     </td>
                                 </tr>
                                 <?php endfor; ?>
@@ -88,6 +82,8 @@
     $(".elimina").click(function (event) {
         event.preventDefault();
         id = event.target.id;
+        console.log("id",id);
+        motivazione = "";
         swal({
                 title: "Stai eliminando un blog!",
                 text: "Inserisci una motivazione che verrà recapitata all'utente:",
@@ -104,30 +100,28 @@
                     swal.showInputError("Questo campo non può restare vuoto!");
                     return false
                 }
-                swal("Cancellazione completata!", "Blog eliminato causa " + inputValue + ".", "success");
-            },
-            function(){
                 $.ajax({
                     type: 'POST',
                     url: eliminaUrl(id),
-                    data: id,
+                    data: {blog: id, motivazione: inputValue},
                     dataType: 'json',
-                    success: messaggioSuccesso(),
+                    success: messaggioSuccesso(inputValue),
                     error: function (xhr) {
-                        console.log(xhr.responseText);
+                        console.log("xhr",xhr.responseText);
                     }
                 })
+
             });
         function eliminaUrl(id) {
             title = "<?php echo $this->url(array(
-                'controller' => 'user',
+                'controller' => 'staff',
                 'action' => 'eliminablog'
             )); ?>";
             params = '/blog/'.concat(id);
             return title.concat(params);
         }
-        function messaggioSuccesso() {
-            swal("Cancellato!", "Il tuo blog è stato cancellato.", "success");
+        function messaggioSuccesso(inputValue) {
+            swal("Cancellato!", "Il blog è stato cancellato causa " + inputValue +".", "success");
             setTimeout(location.reload.bind(location),1000);
         }
         function messaggioErrore() {

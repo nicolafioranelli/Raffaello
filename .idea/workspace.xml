@@ -20,90 +20,7 @@
     <favorites_list name="myweb" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
-              <folding>
-                <element signature="n#init#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#indexAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#logoutAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#inserimentoprimoblogAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#inserimentoprimoblogpostAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#gestioneblogAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#nuovopostAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#nuovopostverificaAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#visualizzablogAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#modificaprofiloAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#modificaprofilopostAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#amicipostAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#amiciAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#profiloAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#aggiungiprofiloAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#eliminaprofiloAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="e#25923#26501#0#PHP" expanded="false" />
-                <element signature="n#cercaAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#modificaprivacyAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#modificaprivacypostAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#visualizzanotificheAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#nascondinotificaAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#sceltaprivacyAction#0;n#UserController#0;n#!!top" expanded="false" />
-                <element signature="n#sceltaprivacypostAction#0;n#UserController#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cerca.phtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/scripts/user/cerca.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StaffController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/StaffController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-372">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding>
-                <element signature="n#init#0;n#StaffController#0;n#!!top" expanded="false" />
-                <element signature="n#indexAction#0;n#StaffController#0;n#!!top" expanded="false" />
-                <element signature="n#logoutAction#0;n#StaffController#0;n#!!top" expanded="false" />
-                <element signature="n#contenutoblogAction#0;n#StaffController#0;n#!!top" expanded="false" />
-                <element signature="n#eliminapostAction#0;n#StaffController#0;n#!!top" expanded="false" />
-                <element signature="n#eliminablogverificaAction#0;n#StaffController#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.phtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/scripts/staff/index.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="109" column="24" selection-start-line="109" selection-start-column="24" selection-end-line="109" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gestioneblog.phtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/scripts/user/gestioneblog.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-45">
-              <caret line="100" column="46" selection-start-line="100" selection-start-column="46" selection-end-line="100" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -111,10 +28,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/scripts/admin/visualizzafaq.phtml" />
-        <option value="$PROJECT_DIR$/application/controllers/IndexController.php" />
-        <option value="$PROJECT_DIR$/application/models/Blog.php" />
-        <option value="$PROJECT_DIR$/application/models/Commento.php" />
         <option value="$PROJECT_DIR$/application/views/scripts/public/faq.phtml" />
         <option value="$PROJECT_DIR$/.zfproject.xml" />
         <option value="$PROJECT_DIR$/application/views/scripts/user/eliminablog.phtml" />
@@ -142,26 +55,30 @@
         <option value="$PROJECT_DIR$/application/models/DbTable/Privacy.php" />
         <option value="$PROJECT_DIR$/application/models/Privacy.php" />
         <option value="$PROJECT_DIR$/application/models/Notifica.php" />
-        <option value="$PROJECT_DIR$/application/views/scripts/user/visualizzanotifiche.phtml" />
-        <option value="$PROJECT_DIR$/application/views/scripts/user/visualizzablog.phtml" />
         <option value="$PROJECT_DIR$/application/models/Amici.php" />
-        <option value="$PROJECT_DIR$/application/models/Post.php" />
         <option value="$PROJECT_DIR$/application/views/scripts/public/index.phtml" />
-        <option value="$PROJECT_DIR$/application/views/scripts/user/index.phtml" />
         <option value="$PROJECT_DIR$/application/forms/NuovoBlog.php" />
         <option value="$PROJECT_DIR$/application/views/scripts/paginatore.phtml" />
         <option value="$PROJECT_DIR$/application/controllers/PublicController.php" />
-        <option value="$PROJECT_DIR$/application/controllers/StaffController.php" />
-        <option value="$PROJECT_DIR$/application/controllers/AdminController.php" />
-        <option value="$PROJECT_DIR$/application/layouts/scripts/layout.phtml" />
         <option value="$PROJECT_DIR$/public/js/jquery.min.js" />
         <option value="$PROJECT_DIR$/public/css/colors/default.css" />
         <option value="$PROJECT_DIR$/application/views/scripts/user/gestioneblog.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/staff/eliminablog.phtml" />
-        <option value="$PROJECT_DIR$/application/views/scripts/staff/index.phtml" />
         <option value="$PROJECT_DIR$/application/Bootstrap.php" />
         <option value="$PROJECT_DIR$/application/views/scripts/user/cerca.phtml" />
+        <option value="$PROJECT_DIR$/application/layouts/scripts/layout.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/staff/index.phtml" />
+        <option value="$PROJECT_DIR$/application/controllers/StaffController.php" />
+        <option value="$PROJECT_DIR$/application/views/scripts/admin/gestioneblog.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/staff/contenutoblog.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/admin/contenutoblog.phtml" />
+        <option value="$PROJECT_DIR$/application/controllers/AdminController.php" />
+        <option value="$PROJECT_DIR$/application/models/Blog.php" />
+        <option value="$PROJECT_DIR$/application/models/Post.php" />
         <option value="$PROJECT_DIR$/application/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/application/views/scripts/user/visualizzanotifiche.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/user/index.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/user/visualizzablog.phtml" />
       </list>
     </option>
   </component>
@@ -207,6 +124,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -310,7 +228,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="staff" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -392,7 +310,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -496,23 +413,24 @@
       <workItem from="1480583161235" duration="20283000" />
       <workItem from="1480674722298" duration="15818000" />
       <workItem from="1481016986308" duration="12795000" />
+      <workItem from="1481097874809" duration="9624000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210446000" />
+    <option name="totallyTimeSpent" value="220070000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21815519" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21815519" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -524,25 +442,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21815519" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -557,30 +456,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/assets/css/colors/default.css" />
-    <entry file="file://$PROJECT_DIR$/application/forms/DatiProfilo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="101" column="31" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/forms/Cerca.php" />
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/aggiungiprofilo.phtml" />
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/nuovopost.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/user/eliminablog.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -660,7 +540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -668,7 +547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -676,7 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -725,23 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/visualizzablog.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="98" column="31" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/visualizzanotifiche.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="60" column="53" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -753,19 +613,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/public/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
           <caret line="81" column="10" selection-start-line="81" selection-start-column="10" selection-end-line="81" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -781,15 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="58" column="26" selection-start-line="50" selection-start-column="20" selection-end-line="58" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -797,10 +639,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -808,7 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -852,38 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="403" column="12" selection-start-line="403" selection-start-column="12" selection-end-line="403" selection-end-column="12" />
-          <folding>
-            <element signature="n#init#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#indexAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#logoutAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#visualizzafaqAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#modificafaqAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#modificafaqpostAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#eliminafaqAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#inseriscifaqAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#inseriscifaqpostAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#visualizzautentiAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#modificautenteAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#modificautentepostAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#eliminautenteAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#visualizzastaffAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#inseriscistaffAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#inseriscistaffpostAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#profiloAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#gestioneblogAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#contenutoblogAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#eliminablogAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#eliminapostAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#eliminablogverificaAction#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#eliminapostverificaAction#0;n#AdminController#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/colors/default.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -898,85 +704,6 @@
           <caret line="733" column="90" selection-start-line="733" selection-start-column="82" selection-end-line="733" selection-end-column="90" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/layouts/scripts/layout.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-          <folding>
-            <marker date="1481028874711" expanded="true" signature="2289:2509" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="2365:2509" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="2394:2509" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="2421:2509" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="2722:2995" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="2763:2995" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="2896:2995" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="3201:3590" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="3243:3396" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="3276:3392" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="3442:3590" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="3475:3590" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="3797:3912" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="4187:4307" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="4529:4628" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="4845:4944" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="5324:5423" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="5628:5965" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="5670:5771" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="5688:5767" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="5817:5965" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="5850:5965" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="6187:6302" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="6592:6691" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="6915:7014" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="7244:7343" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="7715:7814" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="8028:8127" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="8497:8596" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="8811:9206" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="8853:9012" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="8889:9008" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="9058:9206" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="9091:9206" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="9442:9557" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="9787:9902" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="10143:10258" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="10580:10679" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="10985:11084" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="11420:11554" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="11463:11554" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="11747:11962" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="11826:11962" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="11855:11962" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="12153:12260" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="12511:12623" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="12823:12914" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="13109:13200" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="13612:14240" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="13642:14240" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="13668:14240" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="13725:13972" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="13793:13953" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="14062:14240" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="14116:14240" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="14141:14240" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="14423:14522" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="14703:14802" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="15114:15466" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="15248:15447" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="15604:16417" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="15666:16406" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="15732:16035" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="15772:15903" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="15939:16016" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="16110:16391" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="16144:16372" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="16218:16349" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="16246:16345" ph="..." />
-            <marker date="1481028874711" expanded="true" signature="16495:16530" ph="..." />
           </folding>
         </state>
       </provider>
@@ -997,14 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/staff/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="109" column="24" selection-start-line="109" selection-start-column="24" selection-end-line="109" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/Bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1013,41 +732,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/gestioneblog.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="100" column="46" selection-start-line="100" selection-start-column="46" selection-end-line="100" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/StaffController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-372">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="n#init#0;n#StaffController#0;n#!!top" expanded="false" />
-            <element signature="n#indexAction#0;n#StaffController#0;n#!!top" expanded="false" />
-            <element signature="n#logoutAction#0;n#StaffController#0;n#!!top" expanded="false" />
-            <element signature="n#contenutoblogAction#0;n#StaffController#0;n#!!top" expanded="false" />
-            <element signature="n#eliminapostAction#0;n#StaffController#0;n#!!top" expanded="false" />
-            <element signature="n#eliminablogverificaAction#0;n#StaffController#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/user/cerca.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
+        <state relative-caret-position="342">
           <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/layouts/scripts/layout.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="58" column="34" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/gestioneblog.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="100" column="46" selection-start-line="100" selection-start-column="46" selection-end-line="100" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/admin/eliminafaq.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/admin/gestioneblog.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#span#0;n#a#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="e#5837#6085#0#HTML" expanded="false" />
+            <element signature="e#5882#5985#1#PHP" expanded="false" />
+            <element signature="e#6340#6418#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/staff/contenutoblog.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
+          <folding>
+            <element signature="e#4780#4858#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
+        <state relative-caret-position="493">
+          <caret line="241" column="42" selection-start-line="241" selection-start-column="42" selection-end-line="241" selection-end-column="42" />
           <folding>
             <element signature="n#init#0;n#UserController#0;n#!!top" expanded="false" />
             <element signature="n#indexAction#0;n#UserController#0;n#!!top" expanded="false" />
@@ -1055,6 +798,7 @@
             <element signature="n#inserimentoprimoblogAction#0;n#UserController#0;n#!!top" expanded="false" />
             <element signature="n#inserimentoprimoblogpostAction#0;n#UserController#0;n#!!top" expanded="false" />
             <element signature="n#gestioneblogAction#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#eliminablogAction#0;n#UserController#0;n#!!top" expanded="false" />
             <element signature="n#nuovopostAction#0;n#UserController#0;n#!!top" expanded="false" />
             <element signature="n#nuovopostverificaAction#0;n#UserController#0;n#!!top" expanded="false" />
             <element signature="n#visualizzablogAction#0;n#UserController#0;n#!!top" expanded="false" />
@@ -1065,7 +809,7 @@
             <element signature="n#profiloAction#0;n#UserController#0;n#!!top" expanded="false" />
             <element signature="n#aggiungiprofiloAction#0;n#UserController#0;n#!!top" expanded="false" />
             <element signature="n#eliminaprofiloAction#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="e#25923#26501#0#PHP" expanded="false" />
+            <element signature="e#26315#26893#0#PHP" expanded="false" />
             <element signature="n#cercaAction#0;n#UserController#0;n#!!top" expanded="false" />
             <element signature="n#modificaprivacyAction#0;n#UserController#0;n#!!top" expanded="false" />
             <element signature="n#modificaprivacypostAction#0;n#UserController#0;n#!!top" expanded="false" />
@@ -1073,6 +817,111 @@
             <element signature="n#nascondinotificaAction#0;n#UserController#0;n#!!top" expanded="false" />
             <element signature="n#sceltaprivacyAction#0;n#UserController#0;n#!!top" expanded="false" />
             <element signature="n#sceltaprivacypostAction#0;n#UserController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/visualizzanotifiche.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="34" column="50" selection-start-line="32" selection-start-column="36" selection-end-line="34" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="199" column="51" selection-start-line="199" selection-start-column="51" selection-end-line="199" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/user/visualizzablog.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="210" column="45" selection-start-line="210" selection-start-column="45" selection-end-line="210" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Blog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/StaffController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="99" column="9" selection-start-line="78" selection-start-column="8" selection-end-line="99" selection-end-column="9" />
+          <folding>
+            <element signature="n#indexAction#0;n#StaffController#0;n#!!top" expanded="false" />
+            <element signature="n#logoutAction#0;n#StaffController#0;n#!!top" expanded="false" />
+            <element signature="n#contenutoblogAction#0;n#StaffController#0;n#!!top" expanded="false" />
+            <element signature="n#eliminablogAction#0;n#StaffController#0;n#!!top" expanded="false" />
+            <element signature="e#1881#2750#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/staff/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="81" column="35" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
+          <folding>
+            <element signature="e#5767#6015#0#HTML" expanded="false" />
+            <element signature="e#5812#5915#1#PHP" expanded="false" />
+            <element signature="e#6270#6348#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="n#init#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#indexAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#logoutAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#visualizzafaqAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#modificafaqAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#modificafaqpostAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#inseriscifaqAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#inseriscifaqpostAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#visualizzautentiAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#modificautenteAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#modificautentepostAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#eliminautenteAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#visualizzastaffAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#inseriscistaffAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#inseriscistaffpostAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#profiloAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#gestioneblogAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#contenutoblogAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#eliminablogAction#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#eliminapostAction#0;n#AdminController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/admin/contenutoblog.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
+          <folding>
+            <element signature="e#5888#5966#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
