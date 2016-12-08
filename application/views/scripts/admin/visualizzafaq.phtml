@@ -30,9 +30,9 @@
 
                             <tbody>
                             <tr>
-                                <?php if (count($this->postSet)==0): ?>
+                                <?php if (count($this->faqSet)==0): ?>
                                     <td class="font-tabella-campi">Non ci sono FAQ da visualizzare.</td>
-                                <?php endif; ?>
+                                <?php else: ?>
 
                                 <?php foreach ($this->faqSet as $faq): ?>
                                 <td class="font-tabella-campi"><?php echo $faq->id_faq; ?></td>
@@ -63,6 +63,7 @@
                                 </td>
                             </tr>
                             <?php endforeach; ?>
+                            <?php endif; ?>
 
                             </tbody>
                         </table>

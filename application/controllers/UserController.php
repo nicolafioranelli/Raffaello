@@ -58,7 +58,7 @@ class UserController extends Zend_Controller_Action
                     $notificadati[$i]['mittente'] = ucwords($utenteModel->elencoUtenteById($data->id_utente)->current()->nome . ' ' . $utenteModel->elencoUtenteById($data->id_utente)->current()->cognome);
                     $notificadati[$i]['user'] = $utenteModel->elencoUtenteById($data->id_utente)->current()->username;
                     $blogModel = new Application_Model_Blog();
-                    $notificadati[$i]['blog'] = $blogModel->elencoBlog($data->id_blog)->current()->titolo;
+                    $notificadati[$i]['blog'] = $blogModel->elencoBlogById($data->id_blog)->current()->titolo;
                     $postModel = new Application_Model_Post();
                     $tempdata = $postModel->elencoPostByIdPost($data->id_post)->current()->data;
                     $notificadati[$i]['data'] = substr($tempdata, 8, 2) . '-' . substr($tempdata, 5, 2) . '-' . substr($tempdata, 0, 4) . ' alle ' . substr($tempdata, 11, 5);
