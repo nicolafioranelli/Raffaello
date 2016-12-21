@@ -100,7 +100,7 @@ if ($this->azione == "#") {
     </section>
 </section>
 
-<?php if ($this->privacy == 0) : ?>
+<?php if ($this->visBlog == 0) : ?>
     <section id="hiring">
         <div class="cnt-hiring-bg">
             <div class="container">
@@ -136,5 +136,8 @@ if ($this->azione == "#") {
                 </div>
             </div>
         </div>
+    </section>
+<?php else: ?>
+    <section id="hiring">
     </section>
 <?php endif; ?>

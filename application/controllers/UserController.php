@@ -168,7 +168,7 @@ class UserController extends Zend_Controller_Action
     {
         if ($this->hasParam('blog')) {
             $this->_helper->getHelper('layout')->disableLayout();
-            $this->_helper->viewRenderer->setNoRender();
+            $this->_helper->viewRenderer->setNoRend-er();
             $id = $this->getParam('blog');
             $blogModel = new Application_Model_Blog();
             $result = $blogModel->eliminaBlog($id);
@@ -492,6 +492,7 @@ class UserController extends Zend_Controller_Action
                 $idAmico = 0;
                 $this->view->assign('idRicevente', $dati->current()->id_utente);
                 $privacy = $dati->current()->privacy;
+                $visBlog = 1;
 
                 $i = 0;
                 $privacyBlog = array();
@@ -511,6 +512,7 @@ class UserController extends Zend_Controller_Action
                         $nomeBottone = "Elimina amicizia";
                         $azione = "eliminaprofilo";
                         $privacy = 0;
+                        $visBlog = 0;
                     }
                 }
                 if (count($amicizieRicevute) > 0) {
@@ -522,6 +524,7 @@ class UserController extends Zend_Controller_Action
                         $nomeBottone = "Elimina";
                         $azione = "eliminaprofilo";
                         $privacy = 0;
+                        $visBlog = 0;
                     }
                 }
                 //Assegnamento variabili dinamiche alla view
@@ -532,6 +535,7 @@ class UserController extends Zend_Controller_Action
                 $this->view->assign('blog', "suoi");
                 $this->view->assign('privacy', $privacy);
                 $this->view->assign('privacyBlog', $privacyBlog);
+                $this->view->assign('visBlog', $visBlog);
             }
         }
     }
@@ -570,6 +574,7 @@ class UserController extends Zend_Controller_Action
     {
         if ($this->hasParam('search')) {
             $ricerca = str_replace('*', '%', $this->getParam('search'));
+            $ricerca = trim($ricerca);
             $cercaModel = new Application_Model_Elencoutenti();
             $this->view->assign('amiciSet', $cercaModel->ricercaUtente(strtolower($ricerca)));
         }

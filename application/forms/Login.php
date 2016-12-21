@@ -44,7 +44,7 @@ class Application_Form_Login extends Zend_Form
             'Form'
         ));
 
-        include_once('Lingua.php');
+        include('Lingua.php');
     }
 
 

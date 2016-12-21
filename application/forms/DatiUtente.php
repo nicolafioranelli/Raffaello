@@ -5,6 +5,9 @@ class Application_Form_DatiUtente extends Zend_Form
 
     public function init()
     {
+        $path = APPLICATION_PATH;
+        $path .= "/../public/image/profilo/";
+
         $this->setMethod("post");
         $this->setName("datiutente");
 
@@ -105,6 +108,15 @@ class Application_Form_DatiUtente extends Zend_Form
                 'class' => 'required')
         ));
 
+        $this->addElement('file', 'image', array(
+            'label' => 'Inserisci la tua immagine del profilo',
+            'destination' => $path,
+            'validators' => array(
+                array('Count', false, 1),
+                array('Size', false, 2048000),
+                array('Extension', false, array('jpg', 'png', 'gif'))),
+            'class' => 'form-control form-register'));
+
         $this->addElement('submit', 'modifica', array(
             'class' => 'btn btn-lg btn-primary btn-block btn-signin button-green-nic',
         ));
@@ -114,6 +126,7 @@ class Application_Form_DatiUtente extends Zend_Form
             array('Description', array('placement' => 'prepend', 'class' => 'formerror')),
             'Form',
         ));
+        include('Lingua.php');
     }
 
 

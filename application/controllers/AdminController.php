@@ -164,14 +164,16 @@ class AdminController extends Zend_Controller_Action
         if ($datiform['password'] == "") {
             unset($datiform['password']);
         }
-        $datiform['Nome'] = strtolower($datiform['Nome']);
-        $datiform['Cognome'] = strtolower($datiform['Cognome']);
+        $datiform['Nome'] = strtolower($datiform['nome']);
+        $datiform['Cognome'] = strtolower($datiform['cognome']);
         $datiform['nascita'] = substr($datiform['nascita'], 6, 4) . "-" . substr($datiform['nascita'], 3, 2) . "-" . substr($datiform['nascita'], 0, 2);
+        if ($datiform['image'] == "") {
+            unset($datiform['image']);
+        }
         $utentemodel = new Application_Model_Utente();
-        $id = $this->getParam("utente"); //prendo la faq inserito nella form
-
+        $id = $this->getParam("utente"); //prendo l'id dall'url
         $utentemodel->aggiornaUtente($datiform, $id);
-        $this->_helper->redirector("visualizzautenti", "admin");
+        $this->_helper->redirector("visualizzastaff", "admin");
     }
 
     public function eliminautenteAction()
@@ -220,6 +222,10 @@ class AdminController extends Zend_Controller_Action
             $datiform['Nome'] = strtolower($datiform['Nome']);
             $datiform['Cognome'] = strtolower($datiform['Cognome']);
             $datiform['ruolo'] = "staff";
+            $datiform['nascita'] = substr($datiform['nascita'],6,4). '-' . substr($datiform['nascita'], 3,2). '-' . substr($datiform['nascita'],0,2);
+            $generic = '01.jpg';
+            if ($datiform['image'] == '')
+                $datiform['image'] = $generic;
             $utentemodel = new Application_Model_Utente();
             $username = $datiform['username']; //prendo l'username inserito nella form
             if ($utentemodel->esistenzaUsername($username)) //controllo se l'username inserito esiste già nel db

@@ -71,7 +71,7 @@ class PublicController extends Zend_Controller_Action
             $datiform['Nome'] = strtolower($datiform['Nome']);
             $datiform['Cognome'] = strtolower($datiform['Cognome']);
             $datiform['ruolo'] = "user";
-            $datiform['nascita'] = substr($datiform['nascita'], 6, 4) . "-" . substr($datiform['nascita'], 3, 2) . "-" . substr($datiform['nascita'], 0, 2);
+            $datiform['nascita'] = substr($datiform['nascita'],6,4). '-' . substr($datiform['nascita'], 3,2). '-' . substr($datiform['nascita'],0,2);
             $generic = '01.jpg';
             if ($datiform['image'] == '')
                 $datiform['image'] = $generic;

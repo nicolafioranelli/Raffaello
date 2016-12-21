@@ -40,6 +40,7 @@ class Application_Form_DatiFaq extends Zend_Form
             array('Description', array('placement' => 'prepend', 'class' => 'formerror')),
             'Form',
         ));
+        include('Lingua.php');
     }
 
 

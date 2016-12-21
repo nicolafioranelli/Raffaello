@@ -38,7 +38,8 @@ class Application_Form_Registrati extends Zend_Form
         $this->addElement('text', 'nascita', array(
             'filters' => array('StringTrim'),
             'validators' => array(
-                array('StringLength', true, array(0, 10))
+                array('date', true, array('dd/MM/yyyy')),
+                array('StringLength', true, array(10))
             ),
             'required' => true,
             'label' => 'Nascita:',
@@ -75,9 +76,6 @@ class Application_Form_Registrati extends Zend_Form
             'class' => 'form-control form-register',
             'placeholder' => 'Inserisci la password',
             'label' => 'Password:',
-            'validators' => array(
-                array('StringLength', true, array(3, 64))
-            ),
             'label_attributes' => array(
                 'class' => 'none'
             )
@@ -125,7 +123,7 @@ class Application_Form_Registrati extends Zend_Form
             'Form',
         ));
 
-        include_once('Lingua.php');
+        include('Lingua.php');
 
     }
 

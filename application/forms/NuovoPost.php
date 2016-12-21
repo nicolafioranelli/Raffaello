@@ -52,6 +52,7 @@ class Application_Form_NuovoPost extends Zend_Form
             array('Description', array('placement' => 'prepend', 'class' => 'formerror')),
             'Form',
         ));
+        include('Lingua.php');
     }
 
 

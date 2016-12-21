@@ -28,6 +28,7 @@ class Application_Form_DelpostForm extends Zend_Form
             array('Description', array('placement' => 'prepend', 'class' => 'formerror')),
             'Form',
         ));
+        include('Lingua.php');
     }
 
 
