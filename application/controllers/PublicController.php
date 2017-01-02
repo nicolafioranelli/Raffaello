@@ -68,6 +68,7 @@ class PublicController extends Zend_Controller_Action
             return $this->render('register');
         } else {
             $datiform = $this->registratiForm->getValues();
+            unset($datiform['password_confirm']);
             $datiform['Nome'] = strtolower($datiform['Nome']);
             $datiform['Cognome'] = strtolower($datiform['Cognome']);
             $datiform['ruolo'] = "user";

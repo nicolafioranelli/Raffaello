@@ -38,8 +38,7 @@ class Application_Form_Registrati extends Zend_Form
         $this->addElement('text', 'nascita', array(
             'filters' => array('StringTrim'),
             'validators' => array(
-                array('date', true, array('dd/MM/yyyy')),
-                array('StringLength', true, array(10))
+                array('date', true, array('dd/MM/yyyy'))
             ),
             'required' => true,
             'label' => 'Nascita:',
@@ -70,7 +69,7 @@ class Application_Form_Registrati extends Zend_Form
         $this->addElement('password', 'password', array(
             'filters' => array('StringTrim'),
             'validators' => array(
-                array('StringLength', true, array(2, 64))
+                array('StringLength', true, array(3, 64))
             ),
             'required' => true,
             'class' => 'form-control form-register',
@@ -79,7 +78,21 @@ class Application_Form_Registrati extends Zend_Form
             'label_attributes' => array(
                 'class' => 'none'
             )
+        ));
 
+        $this->addElement('password', 'password_confirm', array(
+            'filters' => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(3, 64)),
+                array('Identical', true, 'password')
+            ),
+            'required' => true,
+            'class' => 'form-control form-register',
+            'placeholder' => 'Inserisci la password',
+            'label' => 'Password:',
+            'label_attributes' => array(
+                'class' => 'none'
+            )
         ));
 
         $this->addElement('text', 'telefono', array(
@@ -123,7 +136,7 @@ class Application_Form_Registrati extends Zend_Form
             'Form',
         ));
 
-        include('Lingua.php');
+        include_once('Lingua.php');
 
     }
 

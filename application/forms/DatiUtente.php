@@ -37,7 +37,8 @@ class Application_Form_DatiUtente extends Zend_Form
         $this->addElement('text', 'nascita', array(
             'filters' => array('StringTrim'),
             'validators' => array(
-                array('StringLength', true, array(0, 10))
+                array('StringLength', true, array(0, 10)),
+                array('date', true, array('dd/MM/yyyy'))
             ),
             'required' => true,
             'label' => 'Nascita:',

@@ -166,7 +166,9 @@
                                 $i++): ?>
                                 <?php if ($this->notificaSet[$i]['tipo'] == 0): ?>
                                     <?php if ($this->notificaSet{$i}['esistenzablog'] == false || $this->notificaSet{$i}['esistenzapost'] == false): ?>
-                                        <!-- DO NOTHING -->
+                                        <td class="font-tabella-campi">
+                                        <p style="text-align: center"> Non hai nessuna nuova notifica. </p>
+                                        </td>
                                     <?php else: ?>
                                         <td class="font-tabella-campi">
                                             <a href="<?php echo $this->url(array(
