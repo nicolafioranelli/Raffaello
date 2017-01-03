@@ -38,6 +38,7 @@ class Application_Form_Registrati extends Zend_Form
         $this->addElement('text', 'nascita', array(
             'filters' => array('StringTrim'),
             'validators' => array(
+                array('StringLength', true, array(10)),
                 array('date', true, array('dd/MM/yyyy'))
             ),
             'required' => true,
@@ -69,7 +70,7 @@ class Application_Form_Registrati extends Zend_Form
         $this->addElement('password', 'password', array(
             'filters' => array('StringTrim'),
             'validators' => array(
-                array('StringLength', true, array(3, 64))
+                array('StringLength', true, array(4, 64))
             ),
             'required' => true,
             'class' => 'form-control form-register',
@@ -83,7 +84,7 @@ class Application_Form_Registrati extends Zend_Form
         $this->addElement('password', 'password_confirm', array(
             'filters' => array('StringTrim'),
             'validators' => array(
-                array('StringLength', true, array(3, 64)),
+                array('StringLength', true, array(4, 64)),
                 array('Identical', true, 'password')
             ),
             'required' => true,

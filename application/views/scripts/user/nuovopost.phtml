@@ -22,4 +22,56 @@
     </div>
 </div>
 
-</body>
+<script type="text/javascript">
+    $.validator.setDefaults({
+        submitHandler: function () {
+            $("#nuovopost").submit();
+        }
+    });
+
+    $(document).ready(function () {
+        $("#nuovopost").validate({
+            rules: {
+                titolo: {
+                    required: true,
+                    minlength: 3
+                },
+                contenuto: "required"
+            },
+            messages: {
+                titolo: {
+                    required: "Il campo titolo non può essere vuoto.",
+                    minlength: "Il titolo deve essere almeno di 3 caratteri."
+                },
+                contenuto: "Il campo contenuto non può essere vuoto."
+            },
+            errorElement: "em",
+            errorPlacement: function (error, element) {
+                // Add the `help-block` class to the error element
+                error.addClass("help-block");
+
+                // Add `has-feedback` class to the parent div.form-group
+                // in order to add icons to inputs
+                element.parents(".col-sm-5").addClass("has-feedback");
+
+                if (element.prop("type") === "checkbox") {
+                    error.insertAfter(element.parent("label"));
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            success: function (label, element) {
+
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).parents(".col-sm-5").addClass("has-error").removeClass("has-success");
+                $(element).attr("style", "border: 2px solid red");
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).parents(".col-sm-5").addClass("has-success").removeClass("has-error");
+                $(element).attr("style", "2px solid #E3E7E9");
+            }
+        });
+    });
+
+</script>

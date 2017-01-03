@@ -23,7 +23,7 @@ class Application_Form_Login extends Zend_Form
         $this->addElement('password', 'password', array(
             'filters' => array('StringTrim'),
             'validators' => array(
-                array('StringLength', true, array(2, 64))
+                array('StringLength', true, array(4, 64))
             ),
             'required' => true,
             'class' => 'form-control form-login',

@@ -23,3 +23,63 @@
                 )
             ); ?>" class="no-decoration">Registrati</a></span></h2>
 </div>
+
+<script type="text/javascript">
+    $.validator.setDefaults({
+        submitHandler: function () {
+            $("#login").submit();
+        }
+    });
+
+    $(document).ready(function () {
+        $("#login").validate({
+            rules: {
+                username: {
+                    required: true,
+                    minlength: 3
+                },
+                password: {
+                    required: true,
+                    minlength: 4
+                }
+            },
+            messages: {
+                username: {
+                    required: "Il campo username non può essere vuoto.",
+                    minlength: "L'username deve essere almeno di 3 caratteri."
+                },
+                password: {
+                    required: "Il campo password non può essere vuoto.",
+                    minlength: "La password deve avere almeno 4 caratteri."
+                }
+            },
+            errorElement: "em",
+            errorPlacement: function (error, element) {
+                // Add the `help-block` class to the error element
+                error.addClass("help-block");
+
+                // Add `has-feedback` class to the parent div.form-group
+                // in order to add icons to inputs
+                element.parents(".col-sm-5").addClass("has-feedback");
+
+                if (element.prop("type") === "checkbox") {
+                    error.insertAfter(element.parent("label"));
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            success: function (label, element) {
+
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).parents(".col-sm-5").addClass("has-error").removeClass("has-success");
+                $(element).attr("style", "border: 2px solid red");
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).parents(".col-sm-5").addClass("has-success").removeClass("has-error");
+                $(element).attr("style", "2px solid #E3E7E9");
+            }
+        });
+    });
+
+</script>

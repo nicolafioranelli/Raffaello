@@ -80,6 +80,21 @@ class Application_Form_DatiUtente extends Zend_Form
             )
         ));
 
+        $this->addElement('password', 'password_confirm', array(
+            'filters' => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(4, 64)),
+                array('Identical', true, 'password')
+            ),
+            'required' => true,
+            'class' => 'form-control form-register',
+            'placeholder' => 'Compila questo campo se vuoi modificare la password.',
+            'label' => 'Password:',
+            'label_attributes' => array(
+                'class' => 'none'
+            )
+        ));
+
         $this->addElement('text', 'telefono', array(
             'filters' => array('StringTrim'),
             'validators' => array(array('Digits')
