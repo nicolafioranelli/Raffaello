@@ -354,6 +354,34 @@ class UserController extends Zend_Controller_Action
         $datiUtente = $utentiModel->elencoUtenteById($idUtente)->current()->toArray();
         $this->view->assign('utentiSet', $datiUtente);
         $this->formUtente = new Application_Form_DatiProfilo();
+        $this->formUtente->addElement('password', 'password', array(
+            'filters' => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(4, 64))
+            ),
+            'required' => false,
+            'class' => 'form-control form-register',
+            'placeholder' => 'Inserisci la password',
+            'label' => 'Password:',
+            'label_attributes' => array(
+                'class' => 'none'
+            )
+        ));
+
+        $this->formUtente->addElement('password', 'password_confirm', array(
+            'filters' => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(4, 64)),
+                array('Identical', true, 'password')
+            ),
+            'required' => false,
+            'class' => 'form-control form-register',
+            'placeholder' => 'Inserisci la password',
+            'label' => 'Conferma password:',
+            'label_attributes' => array(
+                'class' => 'none'
+            )
+        ));
         $this->formUtente->setAction($this->_helper->url->url(array(
             'controller' => 'user',
             'action' => 'modificaprofilopost',
@@ -379,7 +407,9 @@ class UserController extends Zend_Controller_Action
         $datiform = $this->formUtente->getValues();
         if ($datiform['password'] == "") {
             unset($datiform['password']);
+
         }
+        unset($datiform['password_confirm']);
         $datiform['nascita'] = substr($datiform['nascita'], 6, 4) . "-" . substr($datiform['nascita'], 3, 2) . "-" . substr($datiform['nascita'], 0, 2);
         $datiform['nome'] = strtolower($datiform['nome']);
         $datiform['cognome'] = strtolower($datiform['cognome']);

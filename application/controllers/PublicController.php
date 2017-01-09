@@ -48,6 +48,34 @@ class PublicController extends Zend_Controller_Action
     public function registerAction()
     {
         $this->registratiForm = new Application_Form_Registrati();
+        $this->registratiForm->addElement('password', 'password', array(
+            'filters' => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(4, 64))
+            ),
+            'required' => true,
+            'class' => 'form-control form-register',
+            'placeholder' => 'Inserisci la password',
+            'label' => 'Password:',
+            'label_attributes' => array(
+                'class' => 'none'
+            )
+        ));
+
+        $this->registratiForm->addElement('password', 'password_confirm', array(
+            'filters' => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(4, 64)),
+                array('Identical', true, 'password')
+            ),
+            'required' => true,
+            'class' => 'form-control form-register',
+            'placeholder' => 'Inserisci la password',
+            'label' => 'Conferma password:',
+            'label_attributes' => array(
+                'class' => 'none'
+            )
+        ));
         $this->registratiForm->setAction($this->_helper->url->url(array(
             'controller' => "public",
             'action' => 'verifica',

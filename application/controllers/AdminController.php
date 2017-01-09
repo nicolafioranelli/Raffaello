@@ -199,6 +199,34 @@ class AdminController extends Zend_Controller_Action
     public function inseriscistaffAction()
     {
         $this->registratiForm = new Application_Form_Registrati();
+        $this->registratiForm->addElement('password', 'password', array(
+            'filters' => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(4, 64))
+            ),
+            'required' => true,
+            'class' => 'form-control form-register',
+            'placeholder' => 'Inserisci la password',
+            'label' => 'Password:',
+            'label_attributes' => array(
+                'class' => 'none'
+            )
+        ));
+
+        $this->registratiForm->addElement('password', 'password_confirm', array(
+            'filters' => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(4, 64)),
+                array('Identical', true, 'password')
+            ),
+            'required' => true,
+            'class' => 'form-control form-register',
+            'placeholder' => 'Inserisci la password',
+            'label' => 'Conferma password:',
+            'label_attributes' => array(
+                'class' => 'none'
+            )
+        ));
         $this->registratiForm->setAction($this->_helper->url->url(array(
             'controller' => "admin",
             'action' => 'inseriscistaffpost',
@@ -219,6 +247,7 @@ class AdminController extends Zend_Controller_Action
             return $this->render('inseriscistaff');
         } else {
             $datiform = $this->registratiForm->getValues();
+            unset($datiform['password_confirm']);
             $datiform['Nome'] = strtolower($datiform['Nome']);
             $datiform['Cognome'] = strtolower($datiform['Cognome']);
             $datiform['ruolo'] = "staff";
