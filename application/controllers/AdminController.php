@@ -137,6 +137,18 @@ class AdminController extends Zend_Controller_Action
             $datiUtente = $utentiModel->elencoUtenteById($idUtente)->current()->toArray();
             $this->view->assign('utentiSet', $datiUtente);
             $this->formUtente = new Application_Form_DatiUtente();
+            $this->formUtente->addElement('password', 'password', array(
+                'filters' => array('StringTrim'),
+                'validators' => array(
+                    array('StringLength', true, array(4, 64))
+                ),
+                'class' => 'form-control form-register',
+                'placeholder' => 'Inserisci la password (lascia il campo vuoto se non vuoi modificarla)',
+                'label' => 'Password:',
+                'label_attributes' => array(
+                    'class' => 'none'
+                )
+            ));
             $this->formUtente->setAction($this->_helper->url->url(array(
                 'controller' => 'admin',
                 'action' => 'modificautentepost',
@@ -173,7 +185,12 @@ class AdminController extends Zend_Controller_Action
         $utentemodel = new Application_Model_Utente();
         $id = $this->getParam("utente"); //prendo l'id dall'url
         $utentemodel->aggiornaUtente($datiform, $id);
-        $this->_helper->redirector("visualizzastaff", "admin");
+        if($datiform['ruolo']=="staff") {
+            $this->_helper->redirector("visualizzastaff", "admin");
+        }
+        else{
+            $this->_helper->redirector("visualizzautenti", "admin");
+        }
     }
 
     public function eliminautenteAction()

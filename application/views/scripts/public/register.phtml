@@ -10,22 +10,21 @@
             <br>
             <?php echo $this->registratiForm; ?>
             <hr class="separator-login">
-            <h4>Hai già un account? <span><a href="<?php echo $this->url(
+            <h4 style="padding-bottom: 0px">Hai già un account? <span><a href="<?php echo $this->url(
                         array(
                             'controller' => 'public',
                             'action' => 'login',
                         )
                     ); ?>" class="no-decoration">Accedi</a></span></h4>
 
+            <h4 class="sign-now" style="margin-top: 0px; top: 35px">Registrandoti accetti i nostri <span><a href="<?php echo $this->url(
+                        array(
+                            'controller' => 'public',
+                            'action' => 'terms',
+                        )
+                    ); ?>" class="no-decoration">Termini d'utilizzo.</a></span></h4>
         </div>
-
     </div>
-    <h2 class="sign-now">Registrandoti accetti i nostri <span><a href="<?php echo $this->url(
-                array(
-                    'controller' => 'public',
-                    'action' => 'terms',
-                )
-            ); ?>" class="no-decoration">Termini d'utilizzo.</a></span></h2>
 </div>
 
 <script type="text/javascript">
@@ -41,8 +40,7 @@
                 Nome: "required",
                 Cognome: "required",
                 nascita: {
-                    required: true,
-                    date: true
+                    required: true
                 },
                 email: {
                     required: true,
@@ -74,8 +72,7 @@
                 Nome: "Inserisci il tuo nome.",
                 Cognome: "Inserisci il tuo cognome.",
                 nascita: {
-                    required: "Il campo data di nascita non può essere vuoto.",
-                    date: "Inserisci una data corretta."
+                    required: "Il campo data di nascita non può essere vuoto."
                 },
                 email: {
                     required: "Il campo email non può essere vuoto.",
@@ -105,5 +102,4 @@
             }
         });
     });
-
 </script>

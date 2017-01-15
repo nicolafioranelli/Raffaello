@@ -67,7 +67,34 @@ class Application_Form_Registrati extends Zend_Form
             ),
         ));
 
+        $this->addElement('password', 'password', array(
+            'filters' => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(4, 64))
+            ),
+            'required' => true,
+            'class' => 'form-control form-register',
+            'placeholder' => 'Inserisci la password',
+            'label' => 'Password:',
+            'label_attributes' => array(
+                'class' => 'none'
+            )
+        ));
 
+        $this->addElement('password', 'password_confirm', array(
+            'filters' => array('StringTrim'),
+            'validators' => array(
+                array('StringLength', true, array(4, 64)),
+                array('Identical', true, 'password')
+            ),
+            'required' => true,
+            'class' => 'form-control form-register',
+            'placeholder' => 'Inserisci la password',
+            'label' => 'Conferma password:',
+            'label_attributes' => array(
+                'class' => 'none'
+            )
+        ));
 
         $this->addElement('text', 'telefono', array(
             'filters' => array('StringTrim'),

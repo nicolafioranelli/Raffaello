@@ -58,12 +58,10 @@
                                         </a>
                                     </td>
                                     <td style="font-size: 1.2em;">
-                                        <a href="#">
                                             <span>
                                                 <i class="fa fa-times-circle elimina"
                                                    style="color: #761c19; font-size: 1.4em" id="<?php echo $this->blogSet[$i]['idblog'];?>"></i>
                                             </span>
-                                        </a>
                                     </td>
                                 </tr>
                                 <?php endfor; ?>
@@ -116,7 +114,7 @@
             });
         function eliminaUrl(id) {
             title = "<?php echo $this->url(array(
-                'controller' => 'staff',
+                'controller' => 'admin',
                 'action' => 'eliminablog'
             )); ?>";
             params = '/blog/'.concat(id);

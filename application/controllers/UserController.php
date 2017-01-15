@@ -114,12 +114,13 @@ class UserController extends Zend_Controller_Action
                 foreach ($rowset as $blog) {
                     $datablog[$i]['titolo'] = $blog->titolo;
                     $datablog[$i]['id_blog'] = $blog->id_blog;
-                }
-                $rowset = $utenteModel->elencoUtenteById($item->ricevente);
-                foreach ($rowset as $utente) {
-                    $datablog[$i]['nome'] = ucfirst($utente->nome);
-                    $datablog[$i]['cognome'] = ucfirst($utente->cognome);
-                    $datablog[$i]['username'] = $utente->username;
+                    $rowset = $utenteModel->elencoUtenteById($item->ricevente);
+                    foreach ($rowset as $utente) {
+                        $datablog[$i]['nome'] = ucfirst($utente->nome);
+                        $datablog[$i]['cognome'] = ucfirst($utente->cognome);
+                        $datablog[$i]['username'] = $utente->username;
+                    }
+                    $i++;
                 }
             }
             else{
@@ -127,15 +128,16 @@ class UserController extends Zend_Controller_Action
                 foreach ($rowset as $blog) {
                     $datablog[$i]['titolo'] = $blog->titolo;
                     $datablog[$i]['id_blog'] = $blog->id_blog;
+                    $rowset = $utenteModel->elencoUtenteById($item->richiedente);
+                    foreach ($rowset as $utente) {
+                        $datablog[$i]['nome'] = ucfirst($utente->nome);
+                        $datablog[$i]['cognome'] = ucfirst($utente->cognome);
+                        $datablog[$i]['username'] = $utente->username;
+                    }
+                    $i++;
                 }
-                $rowset = $utenteModel->elencoUtenteById($item->richiedente);
-                foreach ($rowset as $utente) {
-                    $datablog[$i]['nome'] = ucfirst($utente->nome);
-                    $datablog[$i]['cognome'] = ucfirst($utente->cognome);
-                    $datablog[$i]['username'] = $utente->username;
-                }
+
             }
-            $i++;
         }
         $this->view->assign('datablogSet', $datablog);
         $this->view->assign('notificaSet', $notificadati);
@@ -401,28 +403,30 @@ class UserController extends Zend_Controller_Action
                     foreach ($rowset as $blog) {
                         $datablog[$i]['titolo'] = $blog->titolo;
                         $datablog[$i]['id_blog'] = $blog->id_blog;
+                        $rowset = $utenteModel->elencoUtenteById($item->ricevente);
+                        foreach ($rowset as $utente) {
+                            $datablog[$i]['nome'] = ucfirst($utente->nome);
+                            $datablog[$i]['cognome'] = ucfirst($utente->cognome);
+                            $datablog[$i]['username'] = $utente->username;
+                        }
+                        $i++;
                     }
-                    $rowset = $utenteModel->elencoUtenteById($item->ricevente);
-                    foreach ($rowset as $utente) {
-                        $datablog[$i]['nome'] = ucfirst($utente->nome);
-                        $datablog[$i]['cognome'] = ucfirst($utente->cognome);
-                        $datablog[$i]['username'] = $utente->username;
-                    }
+
                 }
                 else{
                     $rowset = $blogModel->elencoBlogByUtente($item->richiedente);
                     foreach ($rowset as $blog) {
                         $datablog[$i]['titolo'] = $blog->titolo;
                         $datablog[$i]['id_blog'] = $blog->id_blog;
-                    }
-                    $rowset = $utenteModel->elencoUtenteById($item->richiedente);
-                    foreach ($rowset as $utente) {
-                        $datablog[$i]['nome'] = ucfirst($utente->nome);
-                        $datablog[$i]['cognome'] = ucfirst($utente->cognome);
-                        $datablog[$i]['username'] = $utente->username;
+                        $rowset = $utenteModel->elencoUtenteById($item->richiedente);
+                        foreach ($rowset as $utente) {
+                            $datablog[$i]['nome'] = ucfirst($utente->nome);
+                            $datablog[$i]['cognome'] = ucfirst($utente->cognome);
+                            $datablog[$i]['username'] = $utente->username;
+                        }
+                        $i++;
                     }
                 }
-                $i++;
             }
             $this->view->assign('datablogSet', $datablog);
             $this->view->assign('notificaSet', $notificadati);
