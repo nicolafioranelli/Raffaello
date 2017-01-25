@@ -4,6 +4,7 @@ class Application_Service_Auth
 {
     protected $_utenteModel;
     protected $_auth;
+
     public function __construct()
     {
         $this->_utenteModel = new Application_Model_Utente();
@@ -11,21 +12,19 @@ class Application_Service_Auth
 
     public function authenticate($dati)
     {
-       
         $adapter = $this->getAuthAdapter($dati);
-        $auth    = $this->getAuth();
-        $result  = $auth->authenticate($adapter);
+        $auth = $this->getAuth();
+        $result = $auth->authenticate($adapter);
         if (!$result->isValid()) {
             return false;
         }
-        $user = $this->_utenteModel->verificaLogin($dati['username'],$dati['password']);
+        $user = $this->_utenteModel->verificaLogin($dati['username'], $dati['password']);
         $auth->getStorage()->write($user);
         return true;
     }
 
     public function getAuth()
     {
-        
         if (null === $this->_auth) {
             $this->_auth = Zend_Auth::getInstance();
         }
@@ -48,7 +47,6 @@ class Application_Service_Auth
 
     public function getAuthAdapter($values)
     {
-        
         $authAdapter = new Zend_Auth_Adapter_DbTable(
             Zend_Db_Table_Abstract::getDefaultAdapter(),
             'utente',
